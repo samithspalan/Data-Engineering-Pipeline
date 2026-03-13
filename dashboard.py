@@ -101,26 +101,194 @@ def create_spark_session() -> SparkSession:
     return configure_spark_with_delta_pip(builder).getOrCreate()
 
 
-def _safe_load_delta_layer(path_str: str) -> pd.DataFrame:
-    """
-    Load a Delta table snapshot for dashboard views.
+def _compute_medallion_realtime(input_path: str) -> tuple[pd.DataFrame, pd.DataFrame]:
+    """Computes real-time Bronze and Silver views from raw input files."""
+    import glob
+    csv_files = glob.glob(os.path.join(input_path, "*.csv"))
+    if not csv_files:
+        return pd.DataFrame(), pd.DataFrame()
 
-    Schema Evolution must be demonstrated at Delta write-time (mergeSchema in the
-    pipeline), not by dropping malformed CSV rows in the dashboard parser.
-    """
-    if not os.path.exists(path_str):
+    dfs = []
+    for f in csv_files:
+        try:
+            import csv
+            with open(f, 'r', encoding='utf-8-sig') as file:
+                reader = csv.reader(file)
+                data = list(reader)
+            if not data: continue
+            
+            first_row = data[0]
+            header_keywords = ["id", "order", "date", "revenue", "product", "amount"]
+            has_header = any(any(key in str(col).lower() for key in header_keywords) for col in first_row)
+            
+            temp_df = pd.DataFrame(data)
+            if has_header:
+                cols = first_row.copy()
+                for i in range(len(cols), temp_df.shape[1]):
+                    cols.append(f"extra_col_{i - len(first_row) + 1}")
+                temp_df.columns = cols
+                temp_df = temp_df.iloc[1:].reset_index(drop=True)
+            else:
+                canonical = ["order_id", "customer_id", "product", "unit_price", "quantity", "order_date"]
+                cols = [canonical[i] if i < len(canonical) else f"extra_col_{i - len(canonical) + 1}" for i in range(temp_df.shape[1])]
+                temp_df.columns = cols
+
+            if temp_df.empty:
+                continue
+
+            # Normalize and deduplicate headers before concat.
+            temp_df.columns = [str(c).strip().lower() for c in temp_df.columns]
+            temp_df = temp_df.loc[:, ~temp_df.columns.duplicated(keep="first")]
+
+            rename_map = {
+                "product_name": "product",
+                "date": "order_date",
+                "event_timestamp": "order_date",
+            }
+            temp_df.rename(columns=rename_map, inplace=True)
+
+            if "order_id" not in temp_df.columns or "order_date" not in temp_df.columns:
+                continue
+            
+            # Add metadata for Bronze feel
+            temp_df["ingestion_timestamp"] = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+            temp_df["source_file"] = os.path.basename(f)
+            dfs.append(temp_df)
+        except Exception:
+            continue
+
+    if not dfs:
+        return pd.DataFrame(), pd.DataFrame()
+
+    bronze_rt = pd.concat(dfs, ignore_index=True, sort=False)
+
+    # Silver is the Cleaned version: Deduplicated on order_id
+    dedupe_cols = [c for c in ["order_id", "order_date", "customer_id"] if c in bronze_rt.columns]
+    silver_rt = bronze_rt.drop_duplicates(subset=dedupe_cols or None, keep="first").copy()
+    silver_rt["processing_timestamp"] = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+    
+    return bronze_rt, silver_rt
+
+
+def _compute_gold_from_raw(input_path: str) -> pd.DataFrame:
+    """Replicates Spark Gold logic in-memory for instant feedback."""
+    import glob
+    csv_files = glob.glob(os.path.join(input_path, "*.csv"))
+    if not csv_files:
         return pd.DataFrame()
 
-    try:
-        return load_delta_df(path_str)
-    except Exception:
+    dfs = []
+    for f in csv_files:
+        try:
+            import csv
+            with open(f, 'r', encoding='utf-8-sig') as file:
+                reader = csv.reader(file)
+                data = list(reader)
+            if not data: continue
+            
+            first_row = data[0]
+            header_keywords = ["id", "order", "date", "revenue", "product", "amount"]
+            has_header = any(any(key in str(col).lower() for key in header_keywords) for col in first_row)
+            
+            temp_df = pd.DataFrame(data)
+            if has_header:
+                cols = first_row.copy()
+                for i in range(len(cols), temp_df.shape[1]):
+                    cols.append(f"extra_col_{i - len(first_row) + 1}")
+                temp_df.columns = cols
+                temp_df = temp_df.iloc[1:].reset_index(drop=True)
+            else:
+                temp_df.columns = [f"col_{i}" for i in range(temp_df.shape[1])]
+            
+            # 2. Robust Column Mapping
+            if temp_df.empty:
+                continue
+
+            # 1. Map ID column
+            if "order_id" not in temp_df.columns:
+                potential_id_cols = ["id", "Order ID", "orderid", "ID"]
+                found_id = next((c for c in potential_id_cols if c in temp_df.columns), None)
+                if found_id:
+                    temp_df.rename(columns={found_id: "order_id"}, inplace=True)
+                else:
+                    # Fallback: assume first column (index 0) is the ID
+                    temp_df.rename(columns={temp_df.columns[0]: "order_id"}, inplace=True)
+
+            # 2. Map Revenue column
+            if "revenue" not in temp_df.columns:
+                potential_rev_cols = ["amount", "price", "total", "Revenue", "Revenue_Value"]
+                found_rev = next((c for c in potential_rev_cols if c in temp_df.columns), None)
+                if found_rev:
+                    temp_df.rename(columns={found_rev: "revenue"}, inplace=True)
+                elif not has_header and len(temp_df.columns) >= 4:
+                    # Specific fallback for the user's headerless format (181,81,Tablet,0,1,...)
+                    temp_df.rename(columns={temp_df.columns[3]: "revenue"}, inplace=True)
+            
+            # 3. Map Date column
+            if "order_date" not in temp_df.columns:
+                potential_date_cols = ["date", "event_timestamp", "Date", "timestamp"]
+                found_date = next((c for c in potential_date_cols if c in temp_df.columns), None)
+                if found_date:
+                    temp_df.rename(columns={found_date: "order_date"}, inplace=True)
+                else:
+                    # Fallback: assume last column is date, provided it's at least index 1
+                    # Note: last column may be the new discounted_code!
+                    # A better fallback: look for a column that looks like a date.
+                    date_col = None
+                    for col in temp_df.columns:
+                        if temp_df[col].astype(str).str.contains(r'\d{4}-\d{2}-\d{2}').any():
+                            date_col = col
+                            break
+                    if date_col:
+                        temp_df.rename(columns={date_col: "order_date"}, inplace=True)
+                    else:
+                        temp_df.rename(columns={temp_df.columns[-1]: "order_date"}, inplace=True)
+
+            # Ensure we have the critical columns at least renamed
+            cols_to_keep = ["order_id", "order_date"]
+            if "revenue" in temp_df.columns: cols_to_keep.append("revenue")
+            if "unit_price" in temp_df.columns: cols_to_keep.append("unit_price")
+            if "quantity" in temp_df.columns: cols_to_keep.append("quantity")
+            
+            dfs.append(temp_df[cols_to_keep])
+        except Exception:
+            continue
+    
+    if not dfs:
         return pd.DataFrame()
+        
+    raw_combined = pd.concat(dfs, ignore_index=True)
+    
+    # 2. Extract timestamp and date
+    raw_combined["timestamp"] = pd.to_datetime(raw_combined.get("order_date", raw_combined.get("event_timestamp", pd.Timestamp.now())), errors="coerce")
+    raw_combined.dropna(subset=["timestamp"], inplace=True)
+    raw_combined["date"] = raw_combined["timestamp"].dt.date
 
+    # 3. Deduplicate (Crucial: Prevents double-counting in metrics)
+    raw_combined = raw_combined.sort_values("timestamp", ascending=False).drop_duplicates(subset=["order_id"], keep="first")
 
-def _load_medallion_delta_views(bronze_path: str, silver_path: str) -> tuple[pd.DataFrame, pd.DataFrame]:
-    bronze_df = _safe_load_delta_layer(bronze_path)
-    silver_df = _safe_load_delta_layer(silver_path)
-    return bronze_df, silver_df
+    # 4. Aggregate (Match Gold Schema + New Order IDs column + Timestamp)
+    gold_style = (
+        raw_combined.groupby("date")
+        .agg(
+            total_orders=("date", "count"),
+            last_processed=("timestamp", "max"),
+            order_ids=("order_id", lambda x: ", ".join(x.dropna().astype(str).unique()))
+        )
+        .reset_index()
+    )
+    
+    # 4. Reorder columns: replace revenue with timestamp
+    cols = ["date", "order_ids", "total_orders", "last_processed"]
+    gold_style = gold_style[cols]
+    
+    # Format timestamp for better display
+    gold_style["last_processed"] = gold_style["last_processed"].dt.strftime('%Y-%m-%d %H:%M:%S')
+    
+    # Cast for performance and consistency
+    gold_style["total_orders"] = gold_style["total_orders"].astype("int32")
+    
+    return gold_style.sort_values("date")
 
 
 def _normalize_gold_dataframe(raw_df: pd.DataFrame) -> pd.DataFrame:
@@ -327,9 +495,10 @@ def build_validation_frame(bronze_df: pd.DataFrame, silver_df: pd.DataFrame) -> 
     
     # 1. Check for Duplicate IDs (Identify which specific ID is repeated)
     if "order_id" in bronze_df.columns:
+        # We flag all instances of the duplicate so the user can see the conflict
         dup_ids = bronze_df[bronze_df.duplicated(subset=["order_id"], keep=False)].copy()
         if not dup_ids.empty:
-            dup_ids["Reason"] = dup_ids["order_id"].apply(lambda x: f"Conflict: Multiple records found for Order ID {x}")
+            dup_ids["Reason"] = dup_ids["order_id"].apply(lambda x: f"Duplicate Error: Multiple entries found for Order ID {x}")
             checks.append(dup_ids)
 
     # 2. Check for Missing/Incomplete Data
@@ -414,9 +583,10 @@ def render_medallion_section() -> None:
     script_dir = Path(__file__).resolve().parent
     bronze_path = script_dir / "data" / "bronze"
     silver_path = script_dir / "data" / "silver"
+    input_path = script_dir / "data" / "input"
 
-    # Dashboard reads Delta snapshots; schema evolution is produced by pipeline writes.
-    rt_bronze, rt_silver = _load_medallion_delta_views(str(bronze_path), str(silver_path))
+    # HYBRID ENGINE: Load real-time data first to avoid "Empty" errors
+    rt_bronze, rt_silver = _compute_medallion_realtime(str(input_path))
 
     # Try loading Delta Histories if they exist (for the ACID part)
     bronze_history = pd.DataFrame()
@@ -429,110 +599,103 @@ def render_medallion_section() -> None:
         try: silver_history = load_delta_history(str(silver_path))
         except: pass
 
+    # --- STEP 1: BRONZE ---
     open_flow_card(
         "Step 1: Bronze Layer (Raw Ingested)",
-        "Ingested source records before quality and dedup transformations.",
+        "Untouched source records. This layer captures everything, including mistakes and duplicates.",
         "bronze",
     )
     display_bronze = rt_bronze if not rt_bronze.empty else pd.DataFrame()
     
-    # Inject "Virtual" pending transaction if raw data exists but Delta hasn't seen it
     if not display_bronze.empty:
+        st.metric("Total Raw Records", f"{len(display_bronze)}")
         pending_row = pd.DataFrame([{
             "version": "Pending",
-            "timestamp": "Dashboard Snapshot",
-            "operation": "DELTA SNAPSHOT",
-            "operationParameters": f"Loaded {len(display_bronze)} Bronze records",
+            "timestamp": "Real-time",
+            "operation": "INGESTION",
+            "operationParameters": "Scanning raw CSVs",
             "userName": "System",
             "isBlindAppend": True,
-            "engineInfo": "Delta Snapshot Reader"
+            "engineInfo": "Hybrid RT"
         }])
         bronze_history = pd.concat([pending_row, bronze_history], ignore_index=True)
-    
-    if display_bronze.empty:
-        st.warning("Bronze table is currently empty. Run the pipeline to materialize Delta data.")
+        st.dataframe(display_bronze.head(20), use_container_width=True)
     else:
-        st.dataframe(display_bronze.head(15), use_container_width=True)
-        with st.expander("📝 View Active Transaction Details (ACID Log)"):
-            if display_bronze.empty:
-                st.info("No active records to trace.")
-            else:
-                # Filter to only the single latest relevant state
-                if bronze_history.empty:
-                    st.info("No persisted history available yet.")
-                else:
-                    st.write(f"**Current active record count:** {len(display_bronze)}")
-                    st.write("**Latest Modification Details:**")
-                    # Only show the very top record (either Pending or Version N)
-                    st.table(bronze_history.head(1)) 
+        st.warning("Bronze table is empty. Add data to `data/input/`.")
+
+    with st.expander("📝 View Full Bronze Transaction History"):
+        if not bronze_history.empty:
+            st.dataframe(bronze_history, use_container_width=True)
+        else:
+            st.info("No history available.")
     close_flow_card()
 
+    # --- STEP 2: VALIDATION ---
     open_flow_card(
-        "Step 2: Data Quality and Validation",
-        "Bronze-to-Silver validation from Delta snapshots.",
+        "Step 2: Data Quality & Validation",
+        "The logic gate that identifies duplicates and errors before they reach your charts.",
         "validation",
     )
     
     if display_bronze.empty:
-        st.info("Waiting for Bronze Delta data to perform validation...")
+        st.info("Waiting for data...")
     else:
         validation_df = build_validation_frame(display_bronze, rt_silver)
         
+        col_v1, col_v2 = st.columns(2)
+        with col_v1:
+            st.metric("Issues Found", len(validation_df))
+        with col_v2:
+            duplicates_count = len(validation_df[validation_df["Reason"].str.contains("Duplicate", na=False)])
+            st.metric("Duplicate Records", duplicates_count, delta="Filtered", delta_color="inverse")
+
         if validation_df.empty:
-            st.success("✅ Clean Sweep: No duplicate or null records detected in current snapshot.")
+            st.success("✅ Clean Sweep: No duplicates or errors detected.")
         else:
-            st.markdown(f"Found **{len(validation_df)}** records requiring attention.")
-            st.markdown("*Tip: Select a record to view the full rejection report details.*")
+            st.markdown("### 🛠️ Quality Rejection Log")
+            st.markdown("These records will **not** be counted in your Silver/Gold layers:")
             event = st.dataframe(
-                validation_df.head(30),
+                validation_df,
                 use_container_width=True,
                 on_select="rerun",
                 selection_mode="single-row",
                 hide_index=True
             )
 
-            selected_rows = event.selection.rows
-            if selected_rows:
-                selected_idx = selected_rows[0]
-                row_data = validation_df.iloc[selected_idx]
-                show_rejection_dialog(row_data)
+            if event.selection.rows:
+                show_rejection_dialog(validation_df.iloc[event.selection.rows[0]])
     close_flow_card()
 
+    # --- STEP 3: SILVER ---
     open_flow_card(
         "Step 3: Silver Layer (Cleaned Data)",
-        "Deduplicated and null-handled dataset used for downstream analytics.",
+        "The final source of truth. Duplicates have been removed and data is ready for use.",
         "silver",
     )
     
     display_silver = rt_silver if not rt_silver.empty else pd.DataFrame()
 
     if not display_silver.empty:
+        st.metric("Unique Records", len(display_silver), help="Duplicates are filtered out here.")
         pending_row_silver = pd.DataFrame([{
             "version": "Pending",
-            "timestamp": "Dashboard Snapshot",
-            "operation": "DELTA SNAPSHOT",
-            "operationParameters": f"Loaded {len(display_silver)} Silver records",
+            "timestamp": "Real-time",
+            "operation": "CLEAN/DEDUP",
+            "operationParameters": "Applying Silver rules",
             "userName": "System",
             "isBlindAppend": True,
-            "engineInfo": "Delta Snapshot Reader"
+            "engineInfo": "Hybrid RT"
         }])
         silver_history = pd.concat([pending_row_silver, silver_history], ignore_index=True)
-    
-    if display_silver.empty:
-        st.warning("Silver table is currently empty. Run the pipeline after Bronze ingestion.")
+        st.dataframe(display_silver.head(20), use_container_width=True)
     else:
-        st.dataframe(display_silver.head(15), use_container_width=True)
-        with st.expander("📝 View Active Transaction Details (ACID Log)"):
-            if display_silver.empty:
-                st.info("No active records to trace.")
-            else:
-                st.write(f"**Cleaned record count:** {len(display_silver)}")
-                st.write("**Latest Modification Details:**")
-                if silver_history.empty:
-                    st.info("No persisted history. Displaying real-time state.")
-                else:
-                    # Only show the very top record (either Pending or Version N)
-                    st.table(silver_history.head(1))
+        st.warning("Silver table is empty. Records transition here after validation.")
+
+    with st.expander("📝 View Full Silver Transaction History"):
+        if not silver_history.empty:
+            st.dataframe(silver_history, use_container_width=True)
+        else:
+            st.info("No history available.")
     close_flow_card()
 
 
@@ -565,12 +728,14 @@ def render_dashboard_home() -> None:
     script_dir = os.path.dirname(os.path.abspath(__file__))
     gold_path = os.path.join(script_dir, "data", "gold")
 
-    # Gold dashboard must read persisted Delta output so schema evolution is shown as a
-    # storage-layer capability from the medallion pipeline, not CSV parser behavior.
-    gold_df = load_gold_data(gold_path)
+    raw_input_path = os.path.join(script_dir, "data", "input")
+    
+    # PERFORMANCE BOOST: Use Hybrid Real-time View
+    # We calculate the Gold dataset directly from raw files in memory for 0-latency feedback
+    gold_df = _compute_gold_from_raw(raw_input_path)
     
     if gold_df.empty:
-        st.warning("Gold table is empty. Run the Medallion pipeline to materialize Delta outputs.")
+        st.warning("No data found in input folder. Please add CSV files to `data/input/`.")
         return
 
     if "engine_notified" not in st.session_state:

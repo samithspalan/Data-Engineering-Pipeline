@@ -1,0 +1,6 @@
+﻿Error reading g:\Data-Engineering-Pipeline\data\input\orders_batch1.csv: Error tokenizing data. C error: Expected 6 fields in line 39, saw 7
+
+Successfully read g:\Data-Engineering-Pipeline\data\input\orders_batch1.csv with on_bad_lines='skip'
+File g:\Data-Engineering-Pipeline\data\input\orders_batch1.csv columns: ['order_id', 'customer_id', 'product_name', 'unit_price', 'quantity', 'order_date']
+File g:\Data-Engineering-Pipeline\data\input\orders_batch_new.csv columns: ['order_id', 'customer_id', 'product_name', 'unit_price', 'quantity', 'order_date', 'discount_code']
+Bronze RT columns: ['order_id', 'customer_id', 'product_name', 'unit_price', 'quantity', 'order_date', 'discount_code']
