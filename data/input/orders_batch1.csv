@@ -4,13 +4,11 @@ order_id,customer_id,product_name,unit_price,quantity,order_date
 183,83,Mouse,21,1,2026-03-28
 184,84,Keyboard,55,1,2026-03-28
 185,85,Monitor,355,1,2026-03-28
-186,86,Laptop,810,1,2026-03-29
-191,91,Headphones,108,1,2026-03-3
+186,86,Laptop,810,1,2026-03-29,200
+191,91,Headphones,108,1,2026-03-3,201
 192,92,Monitor,360,1,2026-03-30
 193,93,Laptop,820,1,2026-03-30
 194,94,Phone,575,1,2026-03-30
-195,95,Tablet,380,1,2026-03-30
-195,95,Tablet,380,1,2026-03-30
 196,96,Mouse,23,2,2026-03-31
 197,97,Keyboard,56,1,2026-03-31
 198,98,Headphones,110,1,2026-03-31
@@ -164,10 +162,6 @@ order_id,customer_id,product_name,unit_price,quantity,order_date
 346,246,Monitor,470,1,2026-04-30
 347,247,Laptop,1040,1,2026-04-30
 348,248,Phone,790,1,2026-04-30
-349,249,Tablet,490,1,2026-04-30
-350,250,Mouse,45,3,2026-04-30
-351,251,Keyboard,98,2,2026-05-01
-352,252,Headphones,215,1,2026-05-01
 353,253,Monitor,475,1,2026-05-01
 354,254,Laptop,1050,1,2026-05-01
 355,255,Phone,800,1,2026-05-01
@@ -413,4 +407,4 @@ order_id,customer_id,product_name,unit_price,quantity,order_date
 499,399,Headphones,320,1,2026-05-30
 500,400,Monitor,580,1,2026-05-30
 500,400,Monitor,580,1,2026-05-30
-500,400,Monitor,580,1,2026-05-30
+500,400,Monitor,580,1,2026-05-30,22
