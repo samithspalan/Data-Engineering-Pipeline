@@ -619,7 +619,11 @@ def render_medallion_section() -> None:
             "engineInfo": "Hybrid RT"
         }])
         bronze_history = pd.concat([pending_row, bronze_history], ignore_index=True)
-        st.dataframe(display_bronze.head(20), use_container_width=True)
+        if len(display_bronze) > 1000:
+            st.info(f"Showing top 1000 of {len(display_bronze):,} records.")
+            st.dataframe(display_bronze.head(1000), use_container_width=True)
+        else:
+            st.dataframe(display_bronze, use_container_width=True)
     else:
         st.warning("Bronze table is empty. Add data to `data/input/`.")
 
@@ -687,7 +691,11 @@ def render_medallion_section() -> None:
             "engineInfo": "Hybrid RT"
         }])
         silver_history = pd.concat([pending_row_silver, silver_history], ignore_index=True)
-        st.dataframe(display_silver.head(20), use_container_width=True)
+        if len(display_silver) > 1000:
+            st.info(f"Showing top 1000 of {len(display_silver):,} records.")
+            st.dataframe(display_silver.head(1000), use_container_width=True)
+        else:
+            st.dataframe(display_silver, use_container_width=True)
     else:
         st.warning("Silver table is empty. Records transition here after validation.")
 
@@ -738,23 +746,56 @@ def render_dashboard_home() -> None:
         st.warning("No data found in input folder. Please add CSV files to `data/input/`.")
         return
 
+    # --- Partition Pruning Simulation (Date Filter) ---
+    st.subheader("Simulate Partition Pruning")
+    st.markdown("Use this filter to simulate how **Partition Pruning** works. By selecting specific dates, the query only scans the relevant partitions (`order_date=YYYY-MM-DD`) instead of running a full table scan.")
+    
+    unique_dates = sorted(gold_df["date"].unique())
+    if not unique_dates:
+        st.warning("No dates found in data.")
+        return
+        
+    min_date = unique_dates[0]
+    max_date = unique_dates[-1]
+    
+    # Let user select a date range
+    selected_dates = st.date_input(
+        "Select Date Range (Simulates reading specific partition folders):",
+        value=(min_date, max_date),
+        min_value=min_date,
+        max_value=max_date
+    )
+    
+    # Handle single date vs date range selection gracefully
+    if isinstance(selected_dates, tuple) and len(selected_dates) == 2:
+        start_date, end_date = selected_dates
+    elif isinstance(selected_dates, tuple) and len(selected_dates) == 1:
+        start_date = end_date = selected_dates[0]
+    else:
+        start_date = end_date = selected_dates
+        
+    filtered_df = gold_df[(gold_df["date"] >= start_date) & (gold_df["date"] <= end_date)]
+
     if "engine_notified" not in st.session_state:
         st.toast("⚡ **Ultra-Fast Real-Time Engine Active**", icon="🚀")
         st.session_state["engine_notified"] = True
 
-    total_orders = int(gold_df["total_orders"].sum())
+    total_orders = int(filtered_df["total_orders"].sum())
 
-    st.metric("Total Living Orders", f"{total_orders:,}")
+    st.metric("Total Living Orders (Filtered)", f"{total_orders:,}")
 
     st.subheader("Real-Time Daily Orders")
-    st.bar_chart(gold_df.set_index("date")["total_orders"])
+    if not filtered_df.empty:
+        st.bar_chart(filtered_df.set_index("date")["total_orders"])
+    else:
+        st.info("No orders found in the selected date range.")
 
     st.subheader("Gold Layer Dataset (Live Preview)")
-    if len(gold_df) > 1000:
-        st.info(f"Showing top 1000 of {len(gold_df):,} rows.")
-        st.dataframe(gold_df.head(1000), use_container_width=True)
+    if len(filtered_df) > 1000:
+        st.info(f"Showing top 1000 of {len(filtered_df):,} rows.")
+        st.dataframe(filtered_df.head(1000), use_container_width=True)
     else:
-        st.dataframe(gold_df, use_container_width=True)
+        st.dataframe(filtered_df, use_container_width=True)
 
     st.caption(f"Last heartbeat at {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
 
