@@ -31,3 +31,21 @@ If local Spark setup is not available, run Spark jobs with Docker:
 ```powershell
 docker compose run --rm spark /opt/spark/bin/spark-submit /spark_jobs/medallion_pipeline.py
 ```
+
+## Airflow DAGs
+
+Airflow DAG definitions are in `dags/pyspark_pipeline_dags.py`:
+
+1. `daily_pyspark_pipeline`
+- Runs every day at 5AM using cron: `0 5 * * *`
+- Flow: `log_pipeline_start` -> `run_process_data` -> `log_pipeline_finish`
+
+2. `event_driven_pyspark_pipeline`
+- Polls for new files with `FileSensor`
+- Flow: `detect_new_input_file` -> `log_pipeline_start` -> `run_process_data` -> `log_pipeline_finish`
+
+Notes:
+- Spark task retries are enabled (`retries=2`, `retry_delay=5 minutes`).
+- Failures are logged by a dedicated `on_failure_callback`.
+- `run_process_data` uses `BashOperator` and executes `process_data.py` via `spark-submit`.
+- Configure Airflow connection `fs_default` so the FileSensor can resolve `/data/input/*`.
