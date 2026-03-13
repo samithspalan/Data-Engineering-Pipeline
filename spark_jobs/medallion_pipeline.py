@@ -52,7 +52,7 @@ def ensure_directories(paths: Tuple[str, ...]) -> None:
 
 
 def write_delta(df: DataFrame, output_path: str, mode: str = "overwrite") -> None:
-    df.write.format("delta").mode(mode).save(output_path)
+    df.write.format("delta").mode(mode).option("overwriteSchema", "true").save(output_path)
 
 
 def run_bronze_layer(spark: SparkSession, input_path: str, bronze_path: str, logger: logging.Logger) -> DataFrame:

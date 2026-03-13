@@ -3,8 +3,9 @@ services:
   spark:
     image: apache/spark:3.5.0
     container_name: spark
+    entrypoint: ["tail", "-f", "/dev/null"]
     ports:
-      - "8080:8080"
+      - "4040:4040"
     volumes:
       - ./data:/data
       - ./spark_jobs:/spark_jobs
@@ -14,10 +15,26 @@ services:
     container_name: airflow
     depends_on:
       - spark
+    command: standalone
     environment:
+      - AIRFLOW_HOME=/opt/airflow
       - AIRFLOW__CORE__LOAD_EXAMPLES=False
+      - AIRFLOW__CORE__EXECUTOR=SequentialExecutor
+      - AIRFLOW__DATABASE__SQL_ALCHEMY_CONN=sqlite:////opt/airflow/airflow.db
+      - _AIRFLOW_WWW_USER_CREATE=true
+      - _AIRFLOW_WWW_USER_USERNAME=admin
+      - _AIRFLOW_WWW_USER_PASSWORD=admin
+      - PROJECT_ROOT=/opt/airflow
+      - SPARK_JOB_PATH=/spark_jobs/medallion_pipeline.py
+      - _PIP_ADDITIONAL_REQUIREMENTS=docker
     volumes:
+      - airflow-db:/opt/airflow
       - ./dags:/opt/airflow/dags
+      - ./spark_jobs:/opt/airflow/spark_jobs
       - ./data:/data
+      - /var/run/docker.sock:/var/run/docker.sock
     ports:
       - "8081:8080"
+
+volumes:
+  airflow-db:
