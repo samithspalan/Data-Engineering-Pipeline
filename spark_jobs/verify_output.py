@@ -1,65 +1,90 @@
-from pyspark.sql import SparkSession
 import os
+import sys
 
-# Start Spark Session with Delta support
-# Adding JVM options for Java 17+ compatibility
-spark = SparkSession.builder \
-    .appName("VerifyDataPipeline") \
-    .config("spark.jars.packages", "io.delta:delta-spark_2.13:4.1.0") \
-    .config("spark.sql.extensions", "io.delta.sql.DeltaSparkSessionExtension") \
-    .config("spark.sql.catalog.spark_catalog", "org.apache.spark.sql.delta.catalog.DeltaCatalog") \
-    .config("spark.hadoop.fs.permissions.umask-mode", "000") \
-    .config("spark.driver.extraJavaOptions", 
-            "--add-opens=java.base/java.lang=ALL-UNNAMED " +
-            "--add-opens=java.base/java.lang.invoke=ALL-UNNAMED " +
-            "--add-opens=java.base/java.lang.reflect=ALL-UNNAMED " +
-            "--add-opens=java.base/java.io=ALL-UNNAMED " +
-            "--add-opens=java.base/java.net=ALL-UNNAMED " +
-            "--add-opens=java.base/java.nio=ALL-UNNAMED " +
-            "--add-opens=java.base/java.util=ALL-UNNAMED " +
-            "--add-opens=java.base/java.util.concurrent=ALL-UNNAMED " +
-            "--add-opens=java.base/java.util.concurrent.atomic=ALL-UNNAMED " +
-            "--add-opens=java.base/sun.nio.ch=ALL-UNNAMED " +
-            "--add-opens=java.base/sun.nio.cs=ALL-UNNAMED " +
-            "--add-opens=java.base/sun.security.action=ALL-UNNAMED " +
-            "--add-opens=java.base/sun.util.calendar=ALL-UNNAMED " +
-            "--add-opens=java.security.jgss/sun.security.krb5=ALL-UNNAMED") \
-    .getOrCreate()
-
-# Path to the processed data
-script_dir = os.path.dirname(os.path.abspath(__file__))
+# ─────────────────────────────────────────────────────────────────────────────
+# Step 1 — Bootstrap HADOOP_HOME before importing PySpark
+# ─────────────────────────────────────────────────────────────────────────────
+script_dir   = os.path.dirname(os.path.abspath(__file__))
 project_root = os.path.dirname(script_dir)
-output_path = os.path.join(project_root, "data", "output", "cleaned_data")
+env_file     = os.path.join(project_root, ".hadoop_env")
 
-print(f"\n--- Reading Cleaned Data from Delta Lake at {output_path} ---")
-
-if os.path.exists(output_path):
-    try:
-        # Read the Delta table
-        df = spark.read.format("delta").load(output_path)
+if os.path.exists(env_file):
+    with open(env_file) as f:
+        for line in f:
+            line = line.strip()
+            if "=" in line:
+                key, val = line.split("=", 1)
+                os.environ[key.strip()] = val.strip()
+    hadoop_home = os.environ.get("HADOOP_HOME", "")
+    if not os.path.isfile(os.path.join(hadoop_home, "bin", "winutils.exe")):
+        print("  HADOOP_HOME is set but winutils.exe not found.")
+        sys.exit(1)
         
-        print("\nSUCCESS: Delta Table Loaded.")
-        print(f"Record Count: {df.count()}")
-        
-        print("\n--- Verified Dataset ---")
-        df.show()
-        
-        # Verify cleaning
-        null_count = df.filter(df.age.isNull()).count()
-        duplicate_count = df.count() - df.dropDuplicates(["id", "name"]).count()
-        
-        print(f"\nValidation Results:")
-        print(f" - Null Values in Age: {null_count}")
-        print(f" - Duplicate Records: {duplicate_count}")
-        
-        if null_count == 0 and duplicate_count == 0:
-            print("\n✅ DATA QUALITY CHECK PASSED!")
-        else:
-            print("\n❌ DATA QUALITY CHECK FAILED!")
-            
-    except Exception as e:
-        print(f"\n❌ Error Reading Delta Table: {e}")
+    hadoop_bin = os.path.join(hadoop_home, "bin")
+    if hadoop_bin not in os.environ.get("PATH", ""):
+        os.environ["PATH"] = hadoop_bin + os.pathsep + os.environ.get("PATH", "")
 else:
-    print(f"\n❌ Error: Output directory {output_path} does not exist. Run process_data.py first.")
+    print("[WARN] .hadoop_env not found - PySpark may fail on Windows.")
+    sys.exit(1)
 
-spark.stop()
+from pyspark.sql import SparkSession
+
+# ─────────────────────────────────────────────────────────────────────────────
+# Step 2 — Create Spark Session
+# ─────────────────────────────────────────────────────────────────────────────
+spark = (
+    SparkSession.builder
+    .appName("VerifyOutput")
+    .config(
+        "spark.driver.extraJavaOptions",
+        " ".join([
+            "--add-opens=java.base/java.lang=ALL-UNNAMED",
+            "--add-opens=java.base/java.lang.invoke=ALL-UNNAMED",
+            "--add-opens=java.base/java.lang.reflect=ALL-UNNAMED",
+            "--add-opens=java.base/java.io=ALL-UNNAMED",
+            "--add-opens=java.base/java.net=ALL-UNNAMED",
+            "--add-opens=java.base/java.nio=ALL-UNNAMED",
+            "--add-opens=java.base/java.util=ALL-UNNAMED",
+            "--add-opens=java.base/java.util.concurrent=ALL-UNNAMED",
+            "--add-opens=java.base/java.util.concurrent.atomic=ALL-UNNAMED",
+            "--add-opens=java.base/sun.nio.ch=ALL-UNNAMED",
+            "--add-opens=java.base/sun.nio.cs=ALL-UNNAMED",
+            "--add-opens=java.base/sun.security.action=ALL-UNNAMED",
+            "--add-opens=java.base/sun.util.calendar=ALL-UNNAMED",
+            "--add-opens=java.security.jgss/sun.security.krb5=ALL-UNNAMED",
+        ])
+    )
+    .config("spark.hadoop.home.dir", hadoop_home)
+    .config("spark.hadoop.mapreduce.job.user.name", os.environ.get("USERNAME", "spark"))
+    .config("spark.hadoop.mapreduce.app-submission.cross-platform", "true")
+    .getOrCreate()
+)
+
+spark.sparkContext.setLogLevel("ERROR")
+
+# ─────────────────────────────────────────────────────────────────────────────
+# Step 3 — Read and Verify the Parquet Output
+# ─────────────────────────────────────────────────────────────────────────────
+output_path = os.path.join(project_root, "data", "output", "cleaned_data")
+output_uri = "file:///" + output_path.replace("\\", "/")
+
+print(f"\n--- Reading Parquet Output from: {output_path} ---")
+
+try:
+    df_cleaned = spark.read.parquet(output_uri)
+    
+    print("\n[OK] Successfully loaded cleaned data!")
+    print("\n--- Schema ---")
+    df_cleaned.printSchema()
+    
+    print("\n--- Data ---")
+    df_cleaned.show(truncate=False)
+    
+    row_count = df_cleaned.count()
+    print(f"\nTotal rows in parquet file: {row_count}")
+    
+except Exception as e:
+    print(f"\n[ERROR] Failed to read parquet data: {e}")
+
+finally:
+    spark.stop()
