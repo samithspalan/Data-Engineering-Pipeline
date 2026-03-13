@@ -7,7 +7,7 @@ from typing import Any
 import pandas as pd
 import streamlit as st
 from delta import configure_spark_with_delta_pip
-from pyspark.sql import SparkSession
+from pyspark.sql import SparkSession    
 
 
 st.set_page_config(page_title="Data Pipeline Analytics Dashboard", layout="wide")
