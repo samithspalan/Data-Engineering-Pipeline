@@ -106,8 +106,8 @@ def _read_single_csv_batch(spark: SparkSession, file_path: str) -> DataFrame:
 
     Why: Schema Evolution belongs in Delta writes, but upstream files may contain
     rows with additional trailing values before the whole source header is updated.
-    This parser keeps those rows by materializing extra columns (extra_col_1, ...)
-    instead of dropping them.
+    This parser now strictly discards extra columns not specified in the header to
+    enforce clean schema evolution as per user request.
     """
     raw_df = (
         spark.read.text(file_path)
@@ -134,24 +134,15 @@ def _read_single_csv_batch(spark: SparkSession, file_path: str) -> DataFrame:
         return raw_df.limit(0).select(*empty_exprs)
 
     split_col = F.split(F.col("value"), ",")
-    max_tokens = data_df.select(F.max(F.size(split_col)).alias("max_tokens")).collect()[0]["max_tokens"] or 0
 
     if has_header:
         header_cols = normalized_first_row
     else:
-        canonical = ["order_id", "customer_id", "product", "unit_price", "quantity", "order_date"]
-        header_cols = [
-            canonical[i] if i < len(canonical) else f"extra_col_{i - len(canonical) + 1}"
-            for i in range(max_tokens)
-        ]
+        header_cols = ["order_id", "customer_id", "product", "unit_price", "quantity", "order_date"]
 
     select_exprs = []
     for idx, col_name in enumerate(header_cols):
         select_exprs.append(F.trim(F.get(split_col, F.lit(idx))).alias(col_name))
-
-    for idx in range(len(header_cols), max_tokens):
-        extra_idx = idx - len(header_cols) + 1
-        select_exprs.append(F.trim(F.get(split_col, F.lit(idx))).alias(f"extra_col_{extra_idx}"))
 
     parsed_df = data_df.select(*select_exprs)
     return _normalize_batch_columns(parsed_df)

@@ -123,15 +123,16 @@ def _compute_medallion_realtime(input_path: str) -> tuple[pd.DataFrame, pd.DataF
             
             temp_df = pd.DataFrame(data)
             if has_header:
-                cols = first_row.copy()
-                for i in range(len(cols), temp_df.shape[1]):
-                    cols.append(f"extra_col_{i - len(first_row) + 1}")
-                temp_df.columns = cols
+                num_cols = len(first_row)
+                temp_df = temp_df.iloc[:, :num_cols]
+                temp_df.columns = first_row
                 temp_df = temp_df.iloc[1:].reset_index(drop=True)
             else:
                 canonical = ["order_id", "customer_id", "product", "unit_price", "quantity", "order_date"]
-                cols = [canonical[i] if i < len(canonical) else f"extra_col_{i - len(canonical) + 1}" for i in range(temp_df.shape[1])]
-                temp_df.columns = cols
+                num_cols = len(canonical)
+                temp_df = temp_df.iloc[:, :num_cols]
+                actual_cols = temp_df.shape[1]
+                temp_df.columns = canonical[:actual_cols]
 
             if temp_df.empty:
                 continue
@@ -192,13 +193,16 @@ def _compute_gold_from_raw(input_path: str) -> pd.DataFrame:
             
             temp_df = pd.DataFrame(data)
             if has_header:
-                cols = first_row.copy()
-                for i in range(len(cols), temp_df.shape[1]):
-                    cols.append(f"extra_col_{i - len(first_row) + 1}")
-                temp_df.columns = cols
+                num_cols = len(first_row)
+                temp_df = temp_df.iloc[:, :num_cols]
+                temp_df.columns = first_row
                 temp_df = temp_df.iloc[1:].reset_index(drop=True)
             else:
-                temp_df.columns = [f"col_{i}" for i in range(temp_df.shape[1])]
+                canonical = ["order_id", "customer_id", "product", "unit_price", "quantity", "order_date"]
+                num_cols = len(canonical)
+                temp_df = temp_df.iloc[:, :num_cols]
+                actual_cols = temp_df.shape[1]
+                temp_df.columns = canonical[:actual_cols]
             
             # 2. Robust Column Mapping
             if temp_df.empty:
@@ -380,6 +384,9 @@ def inject_shared_styles() -> None:
     st.markdown(
         """
         <style>
+        [data-testid="stAppViewContainer"] { background-color: #0f172a; color: #e2e8f0; }
+        [data-testid="stHeader"] { background-color: rgba(15, 23, 42, 0.9); }
+        h1, h2, h3, h4, p, span, div { color: #e2e8f0 !important; }
         .top-nav-wrap {
             border-radius: 14px;
             padding: 0.7rem 0.9rem;
@@ -393,7 +400,7 @@ def inject_shared_styles() -> None:
             border-radius: 18px;
             padding: 1rem 1rem 0.8rem 1rem;
             margin: 0.7rem 0 1rem 0;
-            background: rgba(255, 255, 255, 0.75);
+            background: rgba(30, 41, 59, 0.75);
             border: 1px solid rgba(148, 163, 184, 0.35);
             overflow: hidden;
             isolation: isolate;
@@ -420,7 +427,7 @@ def inject_shared_styles() -> None:
             position: absolute;
             inset: 1px;
             border-radius: 16px;
-            background: rgba(255, 255, 255, 0.62);
+            background: rgba(30, 41, 59, 0.85);
             z-index: -1;
         }
 
@@ -571,8 +578,8 @@ def open_flow_card(step_title: str, subtitle: str, tone: str) -> None:
     st.markdown(
         f"""
         <div class="flow-card {tone}">
-            <h3 style="margin:0; color:#000000;">{step_title}</h3>
-            <p style="margin:0.25rem 0 0.5rem 0; color:#334155;">{subtitle}</p>
+            <h3 style="margin:0; color:#e2e8f0;">{step_title}</h3>
+            <p style="margin:0.25rem 0 0.5rem 0; color:#94a3b8;">{subtitle}</p>
         """,
         unsafe_allow_html=True,
     )
@@ -824,12 +831,169 @@ def render_dashboard_home() -> None:
         st.session_state["engine_notified"] = True
 
     total_orders = int(filtered_df["total_orders"].sum())
+    
+    # Calculate partition metrics
+    partitions_scanned = sum(1 for d in unique_dates if start_date <= d <= end_date)
+    total_partitions = len(unique_dates)
+    scan_percentage = (partitions_scanned / total_partitions) * 100 if total_partitions > 0 else 0
 
-    st.metric("Total Living Orders (Filtered)", f"{total_orders:,}")
+    st.markdown("---")
+    colA, colB = st.columns([2, 1])
+    with colA:
+        st.success(f"""
+        ⚡ **Partition Pruning in Action!**  
+        Instead of a full table scan of **{total_partitions}** physical folders, 
+        the engine is pulling directly from just **{partitions_scanned}** specific `order_date=` partition(s).  
+        **Saved Reading {100 - scan_percentage:.1f}% of Disk Space!**
+        """)
+    with colB:
+        st.metric("Total Living Orders (Filtered)", f"{total_orders:,}")
+    st.markdown("---")
 
     st.subheader("Real-Time Daily Orders")
     if not filtered_df.empty:
-        st.bar_chart(filtered_df.set_index("date")["total_orders"])
+        import plotly.express as px
+        chart_config = {
+            'paper_bgcolor': 'rgba(0,0,0,0)',
+            'plot_bgcolor': 'rgba(0,0,0,0)',
+            'font': {'color': '#94a3b8'}
+        }
+        fig_orders = px.line(filtered_df, x='date', y='total_orders', markers=True)
+        fig_orders.update_traces(line_color='#38bdf8', line_width=3, marker=dict(size=8, color='#38bdf8'))
+        fig_orders.update_layout(
+            **chart_config, 
+            margin=dict(l=0, r=0, b=0, t=10), 
+            xaxis_title='', 
+            yaxis_title='', 
+            yaxis_gridcolor='#1e293b', 
+            xaxis_gridcolor='rgba(0,0,0,0)'
+        )
+        st.plotly_chart(fig_orders, use_container_width=True)
+        
+        # --- Adding Donut and Bar Chart sections matching user request ---
+        st.markdown("<br>", unsafe_allow_html=True)
+        cA, cB = st.columns(2)
+        
+        with cA:
+            st.markdown("### Processed Flow")
+            # Retrieve real-time metrics for Gold, Silver, and Rejected/Bronze
+            silver_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "data", "silver")
+            try:
+                # To simulate the Medallion funnel: we'll get real-time raw counts vs accepted silver counts
+                raw_input = os.path.join(os.path.dirname(os.path.abspath(__file__)), "data", "input")
+                rt_bronze, rt_silver = _compute_medallion_realtime(raw_input)
+                
+                bronze_count = len(rt_bronze)
+                silver_count = len(rt_silver)
+                rejected_count = max(0, bronze_count - silver_count)
+                
+                # If we have no data, fallback to dummy
+                if bronze_count == 0:
+                    status_data = pd.DataFrame({'status': ['Empty'], 'count': [1]})
+                else:
+                    status_data = pd.DataFrame({
+                        'status': ['Bronze', 'Rejected', 'Silver'],
+                        'count': [bronze_count, rejected_count, silver_count]
+                    })
+                    
+                fig_donut = px.pie(status_data, values='count', names='status', hole=0.6, 
+                                 color_discrete_sequence=['#475569', '#ef4444', '#3b82f6'])
+                fig_donut.update_layout(**chart_config, margin=dict(l=0, r=0, b=0, t=10), showlegend=False)
+                fig_donut.update_traces(textposition='inside', textinfo='percent+label')
+                st.plotly_chart(fig_donut, use_container_width=True)
+            except Exception:
+                st.info("Funnel data unavailable")
+                
+        with cB:
+            st.markdown("### Month-on-Month Order Growth")
+            # Always aggregate from the FULL dataset and take the last 3 months
+            mom_src = gold_df.copy()
+            mom_src['_ym'] = pd.to_datetime(mom_src['date']).dt.to_period('M')
+            monthly_all = (
+                mom_src.groupby('_ym', as_index=False)['total_orders'].sum()
+                .sort_values('_ym')
+                .reset_index(drop=True)
+            )
+
+            # Exactly 3 months — always (pad with available data if fewer than 3 exist)
+            three_months = monthly_all.tail(3).reset_index(drop=True)
+
+            # Prepend prior month just to compute first bar's growth %
+            if not three_months.empty:
+                first_ym = three_months['_ym'].iloc[0]
+                prior = monthly_all[monthly_all['_ym'] < first_ym].tail(1)
+                calc_df = pd.concat([prior, three_months], ignore_index=True)
+            else:
+                calc_df = three_months.copy()
+
+            calc_df['growth_pct'] = calc_df['total_orders'].pct_change() * 100
+            calc_df['month_label'] = calc_df['_ym'].dt.strftime('%b %Y')
+
+            # Keep only the 3 display months (drop the prepended prior row)
+            display_months = calc_df.iloc[-3:].reset_index(drop=True)
+
+            def _growth_label(v):
+                if pd.isna(v):
+                    return ""
+                return f"+{v:.1f}%" if v >= 0 else f"{v:.1f}%"
+
+            display_months = display_months.copy()
+            display_months['growth_text'] = display_months['growth_pct'].apply(_growth_label)
+            # Show orders count inside bar + growth % outside
+            display_months['bar_text'] = (
+                display_months['total_orders'].astype(str)
+                + "<br><span style='font-size:11px'>"
+                + display_months['growth_text']
+                + "</span>"
+            )
+
+            bar_colors = [
+                '#22c55e' if (pd.notna(v) and v >= 0) else '#ef4444'
+                if pd.notna(v) else '#3b82f6'
+                for v in display_months['growth_pct']
+            ]
+
+            import plotly.graph_objects as go
+            fig_bar = go.Figure()
+            for i, row in display_months.iterrows():
+                growth_v = row['growth_pct']
+                color = '#22c55e' if (pd.notna(growth_v) and growth_v >= 0) else ('#ef4444' if pd.notna(growth_v) else '#3b82f6')
+                fig_bar.add_trace(go.Bar(
+                    x=[row['month_label']],
+                    y=[row['total_orders']],
+                    name=row['month_label'],
+                    marker_color=color,
+                    marker_line_color='rgba(0,0,0,0)',
+                    opacity=0.88,
+                    width=0.45,
+                    text=[f"{int(row['total_orders']):,}"],
+                    textposition='inside',
+                    insidetextanchor='middle',
+                    textfont=dict(color='#ffffff', size=14, family='Arial Black'),
+                    showlegend=False,
+                ))
+                # Growth % annotation above each bar
+                if row['growth_text']:
+                    fig_bar.add_annotation(
+                        x=row['month_label'],
+                        y=row['total_orders'],
+                        text=row['growth_text'],
+                        showarrow=False,
+                        yanchor='bottom',
+                        yshift=8,
+                        font=dict(color='#e2e8f0', size=13, family='Arial'),
+                    )
+
+            fig_bar.update_layout(
+                **chart_config,
+                margin=dict(l=10, r=10, b=10, t=40),
+                xaxis=dict(title='', tickfont=dict(color='#94a3b8', size=13), gridcolor='rgba(0,0,0,0)'),
+                yaxis=dict(title='', gridcolor='#1e293b', tickfont=dict(color='#94a3b8')),
+                bargroupgap=0.3,
+                height=260,
+            )
+            st.plotly_chart(fig_bar, use_container_width=True)
+            
     else:
         st.info("No orders found in the selected date range.")
 
