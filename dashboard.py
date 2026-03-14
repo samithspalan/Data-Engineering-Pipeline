@@ -741,7 +741,7 @@ def render_medallion_section() -> None:
         with col_v1:
             st.metric("Issues Found", len(validation_df))
         with col_v2:
-            duplicates_count = len(validation_df[validation_df["Reason"].str.contains("Duplicate", na=False)])
+            duplicates_count = len(validation_df[validation_df["Reason"].str.contains("Duplicate", na=False)]) if "Reason" in validation_df.columns else 0
             st.metric("Duplicate Records", duplicates_count, delta="Filtered", delta_color="inverse")
 
         if validation_df.empty:
