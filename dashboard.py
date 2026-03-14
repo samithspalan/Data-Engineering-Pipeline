@@ -872,6 +872,97 @@ def render_medallion_section() -> None:
     close_flow_card()
 
 
+def render_time_travel_demo() -> None:
+    st.markdown("### 🕒 Delta Lake Time-Travel Audit")
+    st.markdown("Track how your data quality evolves over time. This chart shows the **Silver (Accepted)** vs **Quarantine (Rejected)** records for the last 5 updates.")
+    
+    script_dir = Path(__file__).resolve().parent
+    silver_path = str(script_dir / "data" / "silver")
+    quarantine_path = str(script_dir / "data" / "quarantine")
+    
+    try:
+        from deltalake import DeltaTable
+        if not os.path.exists(silver_path):
+            st.info("Silver table not found. Run the pipeline to see history.")
+            return
+
+        silver_dt = DeltaTable(silver_path)
+        silver_hist = silver_dt.history()
+        
+        # Last 5 versions
+        recent_hist = silver_hist[:5]
+        
+        quar_dt = None
+        quar_hist_df = pd.DataFrame()
+        try:
+            if os.path.exists(quarantine_path):
+                quar_dt = DeltaTable(quarantine_path)
+                quar_hist_df = pd.DataFrame(quar_dt.history())
+        except: pass
+        
+        plot_data = []
+        for h in recent_hist:
+            v = h["version"]
+            ts = h["timestamp"]
+            
+            # Load Silver count
+            silver_dt.load_as_version(int(v))
+            s_count = len(silver_dt.to_pyarrow_table())
+            
+            # Load Quarantine count at that time
+            q_count = 0
+            if quar_dt is not None and not quar_hist_df.empty:
+                # Sync with quarantine version at that timestamp (with 3-minute grace period for multi-stage jobs)
+                valid_q = quar_hist_df[quar_hist_df['timestamp'] <= ts + 180000]
+                if not valid_q.empty:
+                    q_v = int(valid_q.iloc[0]['version'])
+                    quar_dt.load_as_version(q_v)
+                    q_count = len(quar_dt.to_pyarrow_table())
+            
+            plot_data.append({
+                "Version": f"v{v}",
+                "Time": pd.to_datetime(ts, unit='ms').strftime('%H:%M:%S'),
+                "Silver (Clean)": s_count,
+                "Rejected": q_count
+            })
+            
+        if not plot_data:
+            st.info("No version history available.")
+            return
+
+        df_plot = pd.DataFrame(plot_data).iloc[::-1] # Oldest to Newest
+        
+        import plotly.graph_objects as go
+        fig = go.Figure()
+        fig.add_trace(go.Bar(
+            x=df_plot["Version"] + "<br>" + df_plot["Time"],
+            y=df_plot["Silver (Clean)"],
+            name="Silver (Clean)",
+            marker_color="#2ecc71" # Green
+        ))
+        fig.add_trace(go.Bar(
+            x=df_plot["Version"] + "<br>" + df_plot["Time"],
+            y=df_plot["Rejected"],
+            name="Rejected",
+            marker_color="#e74c3c" # Red
+        ))
+        
+        chart_config = {'paper_bgcolor': 'rgba(0,0,0,0)', 'plot_bgcolor': 'rgba(0,0,0,0)', 'font': {'color': '#94a3b8'}}
+        fig.update_layout(
+            **chart_config,
+            barmode='stack',
+            margin=dict(l=0, r=0, b=0, t=30),
+            height=350,
+            xaxis_title="Pipeline Update Version",
+            yaxis_title="Record Count",
+            legend=dict(orientation="h", yanchor="bottom", y=1.02, xanchor="right", x=1)
+        )
+        st.plotly_chart(fig, use_container_width=True)
+        
+    except Exception as e:
+        st.caption(f"Waiting for history logs... ({str(e)[:50]})")
+
+
 def render_dashboard_home() -> None:
     st.title("Data Pipeline Analytics Dashboard")
 
@@ -953,11 +1044,31 @@ def render_dashboard_home() -> None:
     scan_percentage = (partitions_scanned / total_partitions) * 100 if total_partitions > 0 else 0
 
     st.markdown("---")
-    colA, colB = st.columns([2, 1])
+    colA, colB = st.columns([1, 2])
     with colA:
-        st.write("") # Keep the column structure but remove the message
-    with colB:
         st.metric("Total Living Orders (Filtered)", f"{total_orders:,}")
+    with colB:
+        # Data Partitioning Div (Visual representation of pruning effect)
+        st.markdown(f"""
+            <div style='background: rgba(15, 23, 42, 0.4); padding: 15px; border-radius: 10px; border: 1px solid #1e293b; display: flex; align-items: center; gap: 20px;'>
+                <div style='flex: 1;'>
+                    <div style='display: flex; justify-content: space-between; margin-bottom: 5px;'>
+                        <span style='color: #64748b; font-size: 0.8rem;'>Partition Scans</span>
+                        <span style='color: #38bdf8; font-size: 0.8rem; font-weight: bold;'>{100-scan_percentage:.0f}% Savings</span>
+                    </div>
+                    <div style='background: #334155; height: 6px; border-radius: 3px; overflow: hidden;'>
+                        <div style='width: {scan_percentage}%; background: #38bdf8; height: 100%; box-shadow: 0 0 8px rgba(56, 189, 248, 0.4);'></div>
+                    </div>
+                    <div style='margin-top: 8px; color: #94a3b8; font-size: 0.75rem;'>
+                        Querying <b>{partitions_scanned}</b> / {total_partitions} partition folders
+                    </div>
+                </div>
+                <div style='text-align: center; border-left: 1px solid #334155; padding-left: 20px;'>
+                    <div style='color: #22c55e; font-size: 0.7rem; font-weight: bold; margin-bottom: 2px;'>PRUNING STATUS</div>
+                    <div style='color: #e2e8f0; font-size: 1.1rem; font-weight: 800;'>{"PASS" if scan_percentage < 100 else "ACTIVE"}</div>
+                </div>
+            </div>
+        """, unsafe_allow_html=True)
     st.markdown("---")
 
     st.subheader("Real-Time Daily Orders")
@@ -1103,6 +1214,23 @@ def render_dashboard_home() -> None:
                 height=260,
             )
             st.plotly_chart(fig_bar, use_container_width=True)
+            
+        # --- NEW: Delta Lake Time-Travel Demo Section ---
+        st.divider()
+        render_time_travel_demo()
+        
+        with st.expander("🔍 Auditing & Rollback Demonstration"):
+            st.markdown("""
+            **Technical Capabilities Demonstrated Above:**
+            - **Historical Auditing**: Every bar represents a distinct transaction version in Delta Lake.
+            - **Data Drift Detection**: Sudden spikes in the <span style='color:#e74c3c'>Red (Rejected)</span> bars indicate schema changes or upstream data quality issues.
+            - **Zero-Copy Rollback**: You can restore the table to any previous version instantly using:
+              ```sql
+              RESTORE TABLE silver_table TO VERSION AS OF <version_id>
+              ```
+            - **Debug Pattern**: By querying `versionAsOf(v)`, we can compare record-level differences between runs to identify specific corrupted rows that caused a pipeline failure.
+            """, unsafe_allow_html=True)
+        st.divider()
             
     else:
         st.info("No orders found in the selected date range.")

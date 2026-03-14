@@ -1,0 +1,5 @@
+9a4d9cf HEAD@{0}: pull: Merge made by the 'ort' strategy.
+f8d16fc HEAD@{1}: reset: moving to HEAD
+f8d16fc HEAD@{2}: commit: updated ui
+a08dc6c HEAD@{3}: commit: added Schema Evolution
+069a560 HEAD@{4}: commit (merge): added airflow
