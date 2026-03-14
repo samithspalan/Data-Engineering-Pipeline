@@ -117,111 +117,114 @@ def _compute_medallion_realtime(input_path: str) -> tuple[pd.DataFrame, pd.DataF
     
     for f in all_files:
         filename = os.path.basename(f)
+        extension = Path(f).suffix.lower()
         
-        # ── 1. Check for Unsupported File Extension ──
-        if not f.lower().endswith('.csv'):
+        # ── 1. Check for Supported File Extension (.csv or .json) ──
+        if extension not in ['.csv', '.json']:
             file_issues.append({
                 "order_id": "N/A",
                 "source_file": filename,
-                "Reason": f"Unsupported File Format: File extension '{Path(f).suffix}' is not supported. Use .csv only.",
+                "Reason": f"Unsupported File Format: File extension '{extension}' is not supported. Use .csv or .json only.",
                 "order_date": "N/A",
                 "product": "N/A"
             })
             continue
 
         try:
-            import csv
-            with open(f, 'r', encoding='utf-8-sig') as file:
-                # Use Sniffer to check for corruption/validity if possible
+            temp_df = pd.DataFrame()
+            
+            # ── 2. Handle JSON Format ──
+            if extension == '.json':
                 try:
-                    dialect = csv.Sniffer().sniff(file.read(2048))
-                    file.seek(0)
-                except Exception:
-                    # Sniffer failed, could be a very small file or actually corrupted
-                    file.seek(0)
-                    pass
-                
-                reader = csv.reader(file)
-                try:
-                    data = list(reader)
+                    temp_df = pd.read_json(f)
+                    # If it's a single object, wrap it in a list
+                    if isinstance(temp_df, pd.Series):
+                        temp_df = temp_df.to_frame().T
                 except Exception as e:
                     file_issues.append({
                         "order_id": "CRITICAL",
                         "source_file": filename,
-                        "Reason": f"Corrupted CSV: File could not be parsed. Error: {str(e)}",
+                        "Reason": f"Corrupted JSON: File could not be parsed. Error: {str(e)}",
                         "order_date": "N/A",
                         "product": "N/A"
                     })
                     continue
+
+            # ── 3. Handle CSV Format ──
+            else:
+                try:
+                    import csv
+                    with open(f, 'r', encoding='utf-8-sig') as file:
+                        reader = csv.reader(file)
+                        data = list(reader)
+                        
+                    if not data: 
+                        file_issues.append({
+                            "order_id": "EMPTY",
+                            "source_file": filename,
+                            "Reason": "Corrupted Data: File is empty or has no rows.",
+                            "order_date": "N/A",
+                            "product": "N/A"
+                        })
+                        continue
                     
-            if not data: 
+                    first_row = data[0]
+                    header_keywords = ["id", "order", "date", "revenue", "product", "amount"]
+                    has_header = any(any(key in str(col).lower() for key in header_keywords) for col in first_row)
+                    
+                    temp_df = pd.DataFrame(data)
+                    if has_header:
+                        num_cols = len(first_row)
+                        temp_df = temp_df.iloc[:, :num_cols]
+                        temp_df.columns = first_row
+                        temp_df = temp_df.iloc[1:].reset_index(drop=True)
+                    else:
+                        canonical = ["order_id", "customer_id", "product", "unit_price", "quantity", "order_date"]
+                        if len(first_row) < 3:
+                            raise ValueError(f"Inconsistent columns: Expected at least 3, found {len(first_row)}")
+                        num_cols = len(canonical)
+                        temp_df = temp_df.iloc[:, :num_cols]
+                        actual_cols = temp_df.shape[1]
+                        temp_df.columns = canonical[:actual_cols]
+                except Exception as e:
+                    file_issues.append({
+                        "order_id": "PARSE_ERROR",
+                        "source_file": filename,
+                        "Reason": f"Corrupted CSV: {str(e)}",
+                        "order_date": "N/A",
+                        "product": "N/A"
+                    })
+                    continue
+
+            # ── 4. Structural Validation & Normalization ──
+            if temp_df.empty:
+                continue
+
+            # Normalize and deduplicate headers
+            temp_df.columns = [str(c).strip().lower() for c in temp_df.columns]
+            temp_df = temp_df.loc[:, ~temp_df.columns.duplicated(keep="first")]
+
+            rename_map = {
+                "product_name": "product",
+                "date": "order_date",
+                "event_timestamp": "order_date",
+                "id": "order_id"
+            }
+            temp_df.rename(columns=rename_map, inplace=True)
+
+            if "order_id" not in temp_df.columns or "order_date" not in temp_df.columns:
                 file_issues.append({
-                    "order_id": "EMPTY",
+                    "order_id": "SCHEMA_ERROR",
                     "source_file": filename,
-                    "Reason": "Corrupted Data: File is empty or has no rows.",
+                    "Reason": "Validation Failed: Missing required columns (order_id, order_date).",
                     "order_date": "N/A",
                     "product": "N/A"
                 })
                 continue
             
-            first_row = data[0]
-            header_keywords = ["id", "order", "date", "revenue", "product", "amount"]
-            has_header = any(any(key in str(col).lower() for key in header_keywords) for col in first_row)
-            
-            try:
-                temp_df = pd.DataFrame(data)
-                if has_header:
-                    num_cols = len(first_row)
-                    temp_df = temp_df.iloc[:, :num_cols]
-                    temp_df.columns = first_row
-                    temp_df = temp_df.iloc[1:].reset_index(drop=True)
-                else:
-                    canonical = ["order_id", "customer_id", "product", "unit_price", "quantity", "order_date"]
-                    # If columns don't match our min expectations, it's corrupted for our use case
-                    if len(first_row) < 3:
-                        raise ValueError(f"Inconsistent columns: Expected at least 3, found {len(first_row)}")
-                    num_cols = len(canonical)
-                    temp_df = temp_df.iloc[:, :num_cols]
-                    actual_cols = temp_df.shape[1]
-                    temp_df.columns = canonical[:actual_cols]
-
-                if temp_df.empty:
-                    continue
-
-                # Normalize and deduplicate headers
-                temp_df.columns = [str(c).strip().lower() for c in temp_df.columns]
-                temp_df = temp_df.loc[:, ~temp_df.columns.duplicated(keep="first")]
-
-                rename_map = {
-                    "product_name": "product",
-                    "date": "order_date",
-                    "event_timestamp": "order_date",
-                    "id": "order_id"
-                }
-                temp_df.rename(columns=rename_map, inplace=True)
-
-                if "order_id" not in temp_df.columns or "order_date" not in temp_df.columns:
-                    file_issues.append({
-                        "order_id": "SCHEMA_ERROR",
-                        "source_file": filename,
-                        "Reason": "Validation Failed: Missing required columns (order_id, order_date).",
-                        "order_date": "N/A",
-                        "product": "N/A"
-                    })
-                    continue
-                
-                temp_df["ingestion_timestamp"] = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
-                temp_df["source_file"] = filename
-                dfs.append(temp_df)
-                
-            except Exception as e:
-                file_issues.append({
-                    "order_id": "PARSE_ERROR",
-                    "source_file": filename,
-                    "Reason": f"Corrupted Data: Could not structure data properly. Error: {str(e)}",
-                    "order_date": "N/A",
-                    "product": "N/A"
-                })
+            temp_df["ingestion_timestamp"] = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+            temp_df["source_file"] = filename
+            dfs.append(temp_df)
         except Exception as e:
             file_issues.append({
                 "order_id": "IO_ERROR",
@@ -246,72 +249,77 @@ def _compute_medallion_realtime(input_path: str) -> tuple[pd.DataFrame, pd.DataF
 
 
 def _compute_gold_from_raw(input_path: str) -> pd.DataFrame:
-    """Replicates Spark Gold logic in-memory for instant feedback."""
+    """Replicates Spark Gold logic in-memory for instant feedback, supporting CSV and JSON."""
     import glob
-    csv_files = glob.glob(os.path.join(input_path, "*.csv"))
-    if not csv_files:
+    all_files = glob.glob(os.path.join(input_path, "*"))
+    if not all_files:
         return pd.DataFrame()
 
     dfs = []
-    for f in csv_files:
+    for f in all_files:
+        extension = Path(f).suffix.lower()
+        if extension not in ['.csv', '.json']:
+            continue
+            
         try:
-            import csv
-            with open(f, 'r', encoding='utf-8-sig') as file:
-                reader = csv.reader(file)
-                data = list(reader)
-            if not data: continue
-            
-            first_row = data[0]
-            header_keywords = ["id", "order", "date", "revenue", "product", "amount"]
-            has_header = any(any(key in str(col).lower() for key in header_keywords) for col in first_row)
-            
-            temp_df = pd.DataFrame(data)
-            if has_header:
-                num_cols = len(first_row)
-                temp_df = temp_df.iloc[:, :num_cols]
-                temp_df.columns = first_row
-                temp_df = temp_df.iloc[1:].reset_index(drop=True)
+            temp_df = pd.DataFrame()
+            if extension == '.json':
+                temp_df = pd.read_json(f)
+                if isinstance(temp_df, pd.Series):
+                    temp_df = temp_df.to_frame().T
             else:
-                canonical = ["order_id", "customer_id", "product", "unit_price", "quantity", "order_date"]
-                num_cols = len(canonical)
-                temp_df = temp_df.iloc[:, :num_cols]
-                actual_cols = temp_df.shape[1]
-                temp_df.columns = canonical[:actual_cols]
+                import csv
+                with open(f, 'r', encoding='utf-8-sig') as file:
+                    reader = csv.reader(file)
+                    data = list(reader)
+                if not data: continue
+                
+                first_row = data[0]
+                header_keywords = ["id", "order", "date", "revenue", "product", "amount"]
+                has_header = any(any(key in str(col).lower() for key in header_keywords) for col in first_row)
+                
+                temp_df = pd.DataFrame(data)
+                if has_header:
+                    num_cols = len(first_row)
+                    temp_df = temp_df.iloc[:, :num_cols]
+                    temp_df.columns = first_row
+                    temp_df = temp_df.iloc[1:].reset_index(drop=True)
+                else:
+                    canonical = ["order_id", "customer_id", "product", "unit_price", "quantity", "order_date"]
+                    num_cols = len(canonical)
+                    temp_df = temp_df.iloc[:, :num_cols]
+                    actual_cols = temp_df.shape[1]
+                    temp_df.columns = canonical[:actual_cols]
             
-            # 2. Robust Column Mapping
             if temp_df.empty:
                 continue
 
-            # 1. Map ID column
+            # normalize columns for mapping
+            temp_df.columns = [str(c).strip().lower() for c in temp_df.columns]
+            
+            # ID column mapping
             if "order_id" not in temp_df.columns:
-                potential_id_cols = ["id", "Order ID", "orderid", "ID"]
+                potential_id_cols = ["id", "order id", "orderid"]
                 found_id = next((c for c in potential_id_cols if c in temp_df.columns), None)
                 if found_id:
                     temp_df.rename(columns={found_id: "order_id"}, inplace=True)
                 else:
-                    # Fallback: assume first column (index 0) is the ID
                     temp_df.rename(columns={temp_df.columns[0]: "order_id"}, inplace=True)
 
-            # 2. Map Revenue column
+            # Revenue mapping
             if "revenue" not in temp_df.columns:
-                potential_rev_cols = ["amount", "price", "total", "Revenue", "Revenue_Value"]
+                potential_rev_cols = ["amount", "price", "total", "revenue_value"]
                 found_rev = next((c for c in potential_rev_cols if c in temp_df.columns), None)
                 if found_rev:
                     temp_df.rename(columns={found_rev: "revenue"}, inplace=True)
-                elif not has_header and len(temp_df.columns) >= 4:
-                    # Specific fallback for the user's headerless format (181,81,Tablet,0,1,...)
-                    temp_df.rename(columns={temp_df.columns[3]: "revenue"}, inplace=True)
             
-            # 3. Map Date column
+            # Date mapping
             if "order_date" not in temp_df.columns:
-                potential_date_cols = ["date", "event_timestamp", "Date", "timestamp"]
+                potential_date_cols = ["date", "event_timestamp", "timestamp"]
                 found_date = next((c for c in potential_date_cols if c in temp_df.columns), None)
                 if found_date:
                     temp_df.rename(columns={found_date: "order_date"}, inplace=True)
                 else:
-                    # Fallback: assume last column is date, provided it's at least index 1
-                    # Note: last column may be the new discounted_code!
-                    # A better fallback: look for a column that looks like a date.
                     date_col = None
                     for col in temp_df.columns:
                         if temp_df[col].astype(str).str.contains(r'\d{4}-\d{2}-\d{2}').any():
@@ -319,16 +327,13 @@ def _compute_gold_from_raw(input_path: str) -> pd.DataFrame:
                             break
                     if date_col:
                         temp_df.rename(columns={date_col: "order_date"}, inplace=True)
-                    else:
-                        temp_df.rename(columns={temp_df.columns[-1]: "order_date"}, inplace=True)
 
-            # Ensure we have the critical columns at least renamed
             cols_to_keep = ["order_id", "order_date"]
             if "revenue" in temp_df.columns: cols_to_keep.append("revenue")
             if "unit_price" in temp_df.columns: cols_to_keep.append("unit_price")
             if "quantity" in temp_df.columns: cols_to_keep.append("quantity")
             
-            dfs.append(temp_df[cols_to_keep])
+            dfs.append(temp_df[[c for c in cols_to_keep if c in temp_df.columns]])
         except Exception:
             continue
     
@@ -336,11 +341,24 @@ def _compute_gold_from_raw(input_path: str) -> pd.DataFrame:
         return pd.DataFrame()
         
     raw_combined = pd.concat(dfs, ignore_index=True)
-    
-    # 2. Extract timestamp and date
-    raw_combined["timestamp"] = pd.to_datetime(raw_combined.get("order_date", raw_combined.get("event_timestamp", pd.Timestamp.now())), errors="coerce")
+    raw_combined["timestamp"] = pd.to_datetime(raw_combined.get("order_date", pd.Timestamp.now()), errors="coerce")
     raw_combined.dropna(subset=["timestamp"], inplace=True)
     raw_combined["date"] = raw_combined["timestamp"].dt.date
+    raw_combined = raw_combined.sort_values("timestamp", ascending=False).drop_duplicates(subset=["order_id"], keep="first")
+
+    gold_style = (
+        raw_combined.groupby("date")
+        .agg(
+            total_orders=("date", "count"),
+            last_processed=("timestamp", "max"),
+            order_ids=("order_id", lambda x: ", ".join(x.dropna().astype(str).unique()))
+        )
+        .reset_index()
+    )
+    
+    gold_style = gold_style[["date", "order_ids", "total_orders", "last_processed"]]
+    gold_style["last_processed"] = gold_style["last_processed"].dt.strftime('%Y-%m-%d %H:%M:%S')
+    return gold_style.sort_values("date")
 
     # 3. Deduplicate (Crucial: Prevents double-counting in metrics)
     raw_combined = raw_combined.sort_values("timestamp", ascending=False).drop_duplicates(subset=["order_id"], keep="first")
@@ -577,17 +595,28 @@ def build_validation_frame(bronze_df: pd.DataFrame, silver_df: pd.DataFrame, fil
 
     checks: list[pd.DataFrame] = []
     
-    # 0. Add File-Level Issues (Unsupported formats, Corrupted files)
+    # 0. Add File-Level Issues
     if file_issues_df is not None and not file_issues_df.empty:
+        file_issues_df["Occurrences"] = 1
         checks.append(file_issues_df)
 
-    # 1. Check for Duplicate IDs (Identify which specific ID is repeated)
+    # 1. Check for Duplicate IDs (with occurrence counting)
     if not bronze_df.empty and "order_id" in bronze_df.columns:
-        # We flag all instances of the duplicate so the user can see the conflict
-        dup_ids = bronze_df[bronze_df.duplicated(subset=["order_id"], keep=False)].copy()
-        if not dup_ids.empty:
-            dup_ids["Reason"] = dup_ids["order_id"].apply(lambda x: f"Duplicate Error: Multiple entries found for Order ID {x}")
-            checks.append(dup_ids)
+        # Group by order_id to see how many times each exists
+        counts = bronze_df["order_id"].value_counts().reset_index()
+        counts.columns = ["order_id", "Occurrences"]
+        
+        # Only take IDs that appear more than once
+        dups_ref = counts[counts["Occurrences"] > 1]
+        
+        if not dups_ref.empty:
+            # Join back to get the sample row data
+            dup_rows = bronze_df[bronze_df["order_id"].isin(dups_ref["order_id"])].drop_duplicates(subset=["order_id"])
+            dup_merged = dup_rows.merge(dups_ref, on="order_id")
+            dup_merged["Reason"] = dup_merged.apply(
+                lambda x: f"Duplicate Error: Found {x['Occurrences']} entries for this ID. {x['Occurrences']-1} will be filtered.", axis=1
+            )
+            checks.append(dup_merged)
 
     # 2. Check for Missing/Incomplete Data
     if not bronze_df.empty:
@@ -597,6 +626,7 @@ def build_validation_frame(bronze_df: pd.DataFrame, silver_df: pd.DataFrame, fil
                 null_mask = bronze_df[col].isna() | (bronze_df[col].astype(str) == "nan") | (bronze_df[col].astype(str) == "")
                 null_rows = bronze_df[null_mask].copy()
                 if not null_rows.empty:
+                    null_rows["Occurrences"] = 1
                     null_rows["Reason"] = f"Validation Failed: {col} is missing or null"
                     checks.append(null_rows)
 
@@ -609,17 +639,19 @@ def build_validation_frame(bronze_df: pd.DataFrame, silver_df: pd.DataFrame, fil
                     neg_mask = pd.to_numeric(bronze_df[col], errors="coerce") < 0
                     neg_rows = bronze_df[neg_mask].copy()
                     if not neg_rows.empty:
+                        neg_rows["Occurrences"] = 1
                         neg_rows["Reason"] = f"Quality Alert: Negative value detected in {col}"
                         checks.append(neg_rows)
                 except: pass
 
-    # 4. Check for Future Dates (Temporal Check)
+    # 4. Check for Future Dates
     if not bronze_df.empty and "order_date" in bronze_df.columns:
         try:
             dates = pd.to_datetime(bronze_df["order_date"], errors="coerce")
             future_mask = dates > pd.Timestamp.now() + pd.Timedelta(days=1)
             future_rows = bronze_df[future_mask].copy()
             if not future_rows.empty:
+                future_rows["Occurrences"] = 1
                 future_rows["Reason"] = "Temporal Error: Record date is set in the future"
                 checks.append(future_rows)
         except: pass
@@ -628,10 +660,10 @@ def build_validation_frame(bronze_df: pd.DataFrame, silver_df: pd.DataFrame, fil
         return pd.DataFrame()
 
     # Combine all identified issues
-    result = pd.concat(checks, ignore_index=True).drop_duplicates()
+    result = pd.concat(checks, ignore_index=True)
     
     preferred_cols = [
-        c for c in ["order_id", "source_file", "product", "category", "quantity", "price", "order_date", "Reason"]
+        c for c in ["order_id", "Occurrences", "source_file", "product", "order_date", "Reason"]
         if c in result.columns
     ]
     return result[preferred_cols] if preferred_cols else result
@@ -739,10 +771,11 @@ def render_medallion_section() -> None:
         
         col_v1, col_v2 = st.columns(2)
         with col_v1:
-            st.metric("Issues Found", len(validation_df))
+            st.metric("Unique Issue IDs", len(validation_df))
         with col_v2:
-            duplicates_count = len(validation_df[validation_df["Reason"].str.contains("Duplicate", na=False)]) if "Reason" in validation_df.columns else 0
-            st.metric("Duplicate Records", duplicates_count, delta="Filtered", delta_color="inverse")
+            # TRUE DUPLICATE COUNT: Difference between Bronze Row count and Silver Row count
+            actual_dups = len(display_bronze) - len(rt_silver) if not display_bronze.empty else 0
+            st.metric("Duplicate Records Filtered", actual_dups, delta="Filtered", delta_color="inverse")
 
         if validation_df.empty:
             st.success("✅ Clean Sweep: No duplicates or errors detected.")
@@ -1589,6 +1622,7 @@ def render_dashboard() -> None:
 
     if current_view == "Dashboard":
         render_dashboard_home()
+        # Diagnostics omitted per user request. Use render_diagnostics_workflow() if you want to restore it later.
     elif current_view == "Bronze -> Validation -> Silver":
         st.title("Medallion Flow and ACID")
         render_medallion_section()
