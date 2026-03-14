@@ -1,0 +1,4 @@
+[
+  {"order_id": "J100", "order_date": "2024-03-14", "product": "Smart Widget", "revenue": 150},
+  {"order_id": "J101", "order_date": "2024-03-14", "product": "Cloud Service", "revenue": 99}
+]

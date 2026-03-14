@@ -1,0 +1,6002 @@
+[
+  {
+    "order_id": "J1158",
+    "order_date": "2024-03-14",
+    "product": "Smart Widget",
+    "revenue": 420.42
+  },
+  {
+    "order_id": "J1005",
+    "order_date": "2024-03-14",
+    "product": "Smart Widget",
+    "revenue": 118.38
+  },
+  {
+    "order_id": "J1032",
+    "order_date": "2024-03-14",
+    "product": "Smart Widget",
+    "revenue": 403.73
+  },
+  {
+    "order_id": "J1172",
+    "order_date": "2024-03-14",
+    "product": "Bio-Sensor",
+    "revenue": 251.3
+  },
+  {
+    "order_id": "J1170",
+    "order_date": "2024-03-14",
+    "product": "Bio-Sensor",
+    "revenue": 238.27
+  },
+  {
+    "order_id": "J1185",
+    "order_date": "2024-03-14",
+    "product": "Cloud Service",
+    "revenue": 129.05
+  },
+  {
+    "order_id": "J1125",
+    "order_date": "2024-03-14",
+    "product": "Smart Widget",
+    "revenue": 383.2
+  },
+  {
+    "order_id": "J1041",
+    "order_date": "2024-03-14",
+    "product": "Quantum Core",
+    "revenue": 331.41
+  },
+  {
+    "order_id": "J1021",
+    "order_date": "2024-03-14",
+    "product": "Neural Bridge",
+    "revenue": 394.95
+  },
+  {
+    "order_id": "J1024",
+    "order_date": "2024-03-14",
+    "product": "Bio-Sensor",
+    "revenue": 349.08
+  },
+  {
+    "order_id": "J1149",
+    "order_date": "2024-03-14",
+    "product": "Quantum Core",
+    "revenue": 402.3
+  },
+  {
+    "order_id": "J1021",
+    "order_date": "2024-03-14",
+    "product": "Neural Bridge",
+    "revenue": 394.95
+  },
+  {
+    "order_id": "J1139",
+    "order_date": "2024-03-14",
+    "product": "Smart Widget",
+    "revenue": 232.07
+  },
+  {
+    "order_id": "J1019",
+    "order_date": "2024-03-14",
+    "product": "Neural Bridge",
+    "revenue": 384.85
+  },
+  {
+    "order_id": "J1122",
+    "order_date": "2024-03-14",
+    "product": "Quantum Core",
+    "revenue": 79.42
+  },
+  {
+    "order_id": "J1088",
+    "order_date": "2024-03-14",
+    "product": "Smart Widget",
+    "revenue": 179.13
+  },
+  {
+    "order_id": "J1184",
+    "order_date": "2024-03-14",
+    "product": "Cloud Service",
+    "revenue": 75.17
+  },
+  {
+    "order_id": "J1150",
+    "order_date": "2024-03-14",
+    "product": "Cloud Service",
+    "revenue": 407.95
+  },
+  {
+    "order_id": "J1094",
+    "order_date": "2024-03-14",
+    "product": "Neural Bridge",
+    "revenue": 340.74
+  },
+  {
+    "order_id": "J1165",
+    "order_date": "2024-03-14",
+    "product": "Neural Bridge",
+    "revenue": 405.06
+  },
+  {
+    "order_id": "J1137",
+    "order_date": "2024-03-14",
+    "product": "Smart Widget",
+    "revenue": 231.16
+  },
+  {
+    "order_id": "J1127",
+    "order_date": "2024-03-14",
+    "product": "Bio-Sensor",
+    "revenue": 86.42
+  },
+  {
+    "order_id": "J1081",
+    "order_date": "2024-03-14",
+    "product": "Cloud Service",
+    "revenue": 130.77
+  },
+  {
+    "order_id": "J1034",
+    "order_date": "2024-03-14",
+    "product": "Cloud Service",
+    "revenue": 412.24
+  },
+  {
+    "order_id": "J1188",
+    "order_date": "2024-03-14",
+    "product": "Smart Widget",
+    "revenue": 430.99
+  },
+  {
+    "order_id": "J1037",
+    "order_date": "2024-03-14",
+    "product": "Bio-Sensor",
+    "revenue": 443.92
+  },
+  {
+    "order_id": "J1001",
+    "order_date": "2024-03-14",
+    "product": "Smart Widget",
+    "revenue": 311.13
+  },
+  {
+    "order_id": "J1058",
+    "order_date": "2024-03-14",
+    "product": "Smart Widget",
+    "revenue": 307.28
+  },
+  {
+    "order_id": "J1013",
+    "order_date": "2024-03-14",
+    "product": "Bio-Sensor",
+    "revenue": 419.53
+  },
+  {
+    "order_id": "J1037",
+    "order_date": "2024-03-14",
+    "product": "Bio-Sensor",
+    "revenue": 443.92
+  },
+  {
+    "order_id": "J1081",
+    "order_date": "2024-03-14",
+    "product": "Cloud Service",
+    "revenue": 130.77
+  },
+  {
+    "order_id": "J1188",
+    "order_date": "2024-03-14",
+    "product": "Smart Widget",
+    "revenue": 430.99
+  },
+  {
+    "order_id": "J1127",
+    "order_date": "2024-03-14",
+    "product": "Bio-Sensor",
+    "revenue": 86.42
+  },
+  {
+    "order_id": "J1019",
+    "order_date": "2024-03-14",
+    "product": "Neural Bridge",
+    "revenue": 384.85
+  },
+  {
+    "order_id": "J1084",
+    "order_date": "2024-03-14",
+    "product": "Neural Bridge",
+    "revenue": 295.31
+  },
+  {
+    "order_id": "J1117",
+    "order_date": "2024-03-14",
+    "product": "Cloud Service",
+    "revenue": 165.85
+  },
+  {
+    "order_id": "J1045",
+    "order_date": "2024-03-14",
+    "product": "Quantum Core",
+    "revenue": 68.6
+  },
+  {
+    "order_id": "J1096",
+    "order_date": "2024-03-14",
+    "product": "Neural Bridge",
+    "revenue": 196.5
+  },
+  {
+    "order_id": "J1142",
+    "order_date": "2024-03-14",
+    "product": "Neural Bridge",
+    "revenue": 236.62
+  },
+  {
+    "order_id": "J1017",
+    "order_date": "2024-03-14",
+    "product": "Cloud Service",
+    "revenue": 182.93
+  },
+  {
+    "order_id": "J1131",
+    "order_date": "2024-03-14",
+    "product": "Smart Widget",
+    "revenue": 380.54
+  },
+  {
+    "order_id": "J1116",
+    "order_date": "2024-03-14",
+    "product": "Bio-Sensor",
+    "revenue": 241.61
+  },
+  {
+    "order_id": "J1125",
+    "order_date": "2024-03-14",
+    "product": "Smart Widget",
+    "revenue": 383.2
+  },
+  {
+    "order_id": "J1171",
+    "order_date": "2024-03-14",
+    "product": "Bio-Sensor",
+    "revenue": 431.02
+  },
+  {
+    "order_id": "J1063",
+    "order_date": "2024-03-14",
+    "product": "Quantum Core",
+    "revenue": 364.44
+  },
+  {
+    "order_id": "J1076",
+    "order_date": "2024-03-14",
+    "product": "Neural Bridge",
+    "revenue": 193.93
+  },
+  {
+    "order_id": "J1007",
+    "order_date": "2024-03-14",
+    "product": "Bio-Sensor",
+    "revenue": 328.97
+  },
+  {
+    "order_id": "J1091",
+    "order_date": "2024-03-14",
+    "product": "Neural Bridge",
+    "revenue": 477.33
+  },
+  {
+    "order_id": "J1107",
+    "order_date": "2024-03-14",
+    "product": "Neural Bridge",
+    "revenue": 185.48
+  },
+  {
+    "order_id": "J1081",
+    "order_date": "2024-03-14",
+    "product": "Cloud Service",
+    "revenue": 130.77
+  },
+  {
+    "order_id": "J1185",
+    "order_date": "2024-03-14",
+    "product": "Cloud Service",
+    "revenue": 129.05
+  },
+  {
+    "order_id": "J1148",
+    "order_date": "2024-03-14",
+    "product": "Cloud Service",
+    "revenue": 227.59
+  },
+  {
+    "order_id": "J1056",
+    "order_date": "2024-03-14",
+    "product": "Neural Bridge",
+    "revenue": 58.19
+  },
+  {
+    "order_id": "J1025",
+    "order_date": "2024-03-14",
+    "product": "Bio-Sensor",
+    "revenue": 207.02
+  },
+  {
+    "order_id": "J1073",
+    "order_date": "2024-03-14",
+    "product": "Smart Widget",
+    "revenue": 188.97
+  },
+  {
+    "order_id": "J1098",
+    "order_date": "2024-03-14",
+    "product": "Quantum Core",
+    "revenue": 407.37
+  },
+  {
+    "order_id": "J1069",
+    "order_date": "2024-03-14",
+    "product": "Quantum Core",
+    "revenue": 56.9
+  },
+  {
+    "order_id": "J1000",
+    "order_date": "2024-03-14",
+    "product": "Bio-Sensor",
+    "revenue": 210.43
+  },
+  {
+    "order_id": "J1096",
+    "order_date": "2024-03-14",
+    "product": "Neural Bridge",
+    "revenue": 196.5
+  },
+  {
+    "order_id": "J1052",
+    "order_date": "2024-03-14",
+    "product": "Quantum Core",
+    "revenue": 374.87
+  },
+  {
+    "order_id": "J1075",
+    "order_date": "2024-03-14",
+    "product": "Cloud Service",
+    "revenue": 199.38
+  },
+  {
+    "order_id": "J1075",
+    "order_date": "2024-03-14",
+    "product": "Cloud Service",
+    "revenue": 199.38
+  },
+  {
+    "order_id": "J1013",
+    "order_date": "2024-03-14",
+    "product": "Bio-Sensor",
+    "revenue": 419.53
+  },
+  {
+    "order_id": "J1154",
+    "order_date": "2024-03-14",
+    "product": "Quantum Core",
+    "revenue": 60.44
+  },
+  {
+    "order_id": "J1000",
+    "order_date": "2024-03-14",
+    "product": "Bio-Sensor",
+    "revenue": 210.43
+  },
+  {
+    "order_id": "J1152",
+    "order_date": "2024-03-14",
+    "product": "Quantum Core",
+    "revenue": 338.27
+  },
+  {
+    "order_id": "J1165",
+    "order_date": "2024-03-14",
+    "product": "Neural Bridge",
+    "revenue": 405.06
+  },
+  {
+    "order_id": "J1063",
+    "order_date": "2024-03-14",
+    "product": "Quantum Core",
+    "revenue": 364.44
+  },
+  {
+    "order_id": "J1184",
+    "order_date": "2024-03-14",
+    "product": "Cloud Service",
+    "revenue": 75.17
+  },
+  {
+    "order_id": "J1193",
+    "order_date": "2024-03-14",
+    "product": "Smart Widget",
+    "revenue": 59.11
+  },
+  {
+    "order_id": "J1078",
+    "order_date": "2024-03-14",
+    "product": "Bio-Sensor",
+    "revenue": 482.43
+  },
+  {
+    "order_id": "J1021",
+    "order_date": "2024-03-14",
+    "product": "Neural Bridge",
+    "revenue": 394.95
+  },
+  {
+    "order_id": "J1135",
+    "order_date": "2024-03-14",
+    "product": "Quantum Core",
+    "revenue": 405.93
+  },
+  {
+    "order_id": "J1175",
+    "order_date": "2024-03-14",
+    "product": "Quantum Core",
+    "revenue": 380.45
+  },
+  {
+    "order_id": "J1182",
+    "order_date": "2024-03-14",
+    "product": "Quantum Core",
+    "revenue": 216.45
+  },
+  {
+    "order_id": "J1110",
+    "order_date": "2024-03-14",
+    "product": "Bio-Sensor",
+    "revenue": 199.72
+  },
+  {
+    "order_id": "J1079",
+    "order_date": "2024-03-14",
+    "product": "Quantum Core",
+    "revenue": 134.01
+  },
+  {
+    "order_id": "J1164",
+    "order_date": "2024-03-14",
+    "product": "Smart Widget",
+    "revenue": 137.58
+  },
+  {
+    "order_id": "J1071",
+    "order_date": "2024-03-14",
+    "product": "Bio-Sensor",
+    "revenue": 334.21
+  },
+  {
+    "order_id": "J1166",
+    "order_date": "2024-03-14",
+    "product": "Cloud Service",
+    "revenue": 397.59
+  },
+  {
+    "order_id": "J1025",
+    "order_date": "2024-03-14",
+    "product": "Bio-Sensor",
+    "revenue": 207.02
+  },
+  {
+    "order_id": "J1160",
+    "order_date": "2024-03-14",
+    "product": "Bio-Sensor",
+    "revenue": 103.09
+  },
+  {
+    "order_id": "J1154",
+    "order_date": "2024-03-14",
+    "product": "Quantum Core",
+    "revenue": 60.44
+  },
+  {
+    "order_id": "J1076",
+    "order_date": "2024-03-14",
+    "product": "Neural Bridge",
+    "revenue": 193.93
+  },
+  {
+    "order_id": "J1063",
+    "order_date": "2024-03-14",
+    "product": "Quantum Core",
+    "revenue": 364.44
+  },
+  {
+    "order_id": "J1101",
+    "order_date": "2024-03-14",
+    "product": "Quantum Core",
+    "revenue": 385.35
+  },
+  {
+    "order_id": "J1042",
+    "order_date": "2024-03-14",
+    "product": "Bio-Sensor",
+    "revenue": 404.44
+  },
+  {
+    "order_id": "J1197",
+    "order_date": "2024-03-14",
+    "product": "Smart Widget",
+    "revenue": 201.99
+  },
+  {
+    "order_id": "J1108",
+    "order_date": "2024-03-14",
+    "product": "Cloud Service",
+    "revenue": 423.62
+  },
+  {
+    "order_id": "J1095",
+    "order_date": "2024-03-14",
+    "product": "Bio-Sensor",
+    "revenue": 186.24
+  },
+  {
+    "order_id": "J1113",
+    "order_date": "2024-03-14",
+    "product": "Bio-Sensor",
+    "revenue": 369.48
+  },
+  {
+    "order_id": "J1092",
+    "order_date": "2024-03-14",
+    "product": "Cloud Service",
+    "revenue": 166.99
+  },
+  {
+    "order_id": "J1079",
+    "order_date": "2024-03-14",
+    "product": "Quantum Core",
+    "revenue": 134.01
+  },
+  {
+    "order_id": "J1028",
+    "order_date": "2024-03-14",
+    "product": "Quantum Core",
+    "revenue": 107.4
+  },
+  {
+    "order_id": "J1173",
+    "order_date": "2024-03-14",
+    "product": "Bio-Sensor",
+    "revenue": 486.88
+  },
+  {
+    "order_id": "J1175",
+    "order_date": "2024-03-14",
+    "product": "Quantum Core",
+    "revenue": 380.45
+  },
+  {
+    "order_id": "J1070",
+    "order_date": "2024-03-14",
+    "product": "Bio-Sensor",
+    "revenue": 317.24
+  },
+  {
+    "order_id": "J1153",
+    "order_date": "2024-03-14",
+    "product": "Bio-Sensor",
+    "revenue": 309.61
+  },
+  {
+    "order_id": "J1100",
+    "order_date": "2024-03-14",
+    "product": "Cloud Service",
+    "revenue": 176.3
+  },
+  {
+    "order_id": "J1039",
+    "order_date": "2024-03-14",
+    "product": "Quantum Core",
+    "revenue": 200.2
+  },
+  {
+    "order_id": "J1179",
+    "order_date": "2024-03-14",
+    "product": "Quantum Core",
+    "revenue": 450.31
+  },
+  {
+    "order_id": "J1008",
+    "order_date": "2024-03-14",
+    "product": "Cloud Service",
+    "revenue": 338.57
+  },
+  {
+    "order_id": "J1125",
+    "order_date": "2024-03-14",
+    "product": "Smart Widget",
+    "revenue": 383.2
+  },
+  {
+    "order_id": "J1168",
+    "order_date": "2024-03-14",
+    "product": "Smart Widget",
+    "revenue": 462.7
+  },
+  {
+    "order_id": "J1025",
+    "order_date": "2024-03-14",
+    "product": "Bio-Sensor",
+    "revenue": 207.02
+  },
+  {
+    "order_id": "J1061",
+    "order_date": "2024-03-14",
+    "product": "Neural Bridge",
+    "revenue": 243.26
+  },
+  {
+    "order_id": "J1105",
+    "order_date": "2024-03-14",
+    "product": "Bio-Sensor",
+    "revenue": 290.2
+  },
+  {
+    "order_id": "J1071",
+    "order_date": "2024-03-14",
+    "product": "Bio-Sensor",
+    "revenue": 334.21
+  },
+  {
+    "order_id": "J1005",
+    "order_date": "2024-03-14",
+    "product": "Smart Widget",
+    "revenue": 118.38
+  },
+  {
+    "order_id": "J1031",
+    "order_date": "2024-03-14",
+    "product": "Cloud Service",
+    "revenue": 66.69
+  },
+  {
+    "order_id": "J1090",
+    "order_date": "2024-03-14",
+    "product": "Neural Bridge",
+    "revenue": 157.52
+  },
+  {
+    "order_id": "J1042",
+    "order_date": "2024-03-14",
+    "product": "Bio-Sensor",
+    "revenue": 404.44
+  },
+  {
+    "order_id": "J1141",
+    "order_date": "2024-03-14",
+    "product": "Quantum Core",
+    "revenue": 204.29
+  },
+  {
+    "order_id": "J1092",
+    "order_date": "2024-03-14",
+    "product": "Cloud Service",
+    "revenue": 166.99
+  },
+  {
+    "order_id": "J1187",
+    "order_date": "2024-03-14",
+    "product": "Neural Bridge",
+    "revenue": 178.51
+  },
+  {
+    "order_id": "J1027",
+    "order_date": "2024-03-14",
+    "product": "Bio-Sensor",
+    "revenue": 223.65
+  },
+  {
+    "order_id": "J1059",
+    "order_date": "2024-03-14",
+    "product": "Neural Bridge",
+    "revenue": 282.99
+  },
+  {
+    "order_id": "J1130",
+    "order_date": "2024-03-14",
+    "product": "Neural Bridge",
+    "revenue": 406.07
+  },
+  {
+    "order_id": "J1163",
+    "order_date": "2024-03-14",
+    "product": "Neural Bridge",
+    "revenue": 168.28
+  },
+  {
+    "order_id": "J1155",
+    "order_date": "2024-03-14",
+    "product": "Smart Widget",
+    "revenue": 452.81
+  },
+  {
+    "order_id": "J1089",
+    "order_date": "2024-03-14",
+    "product": "Smart Widget",
+    "revenue": 467.8
+  },
+  {
+    "order_id": "J1088",
+    "order_date": "2024-03-14",
+    "product": "Smart Widget",
+    "revenue": 179.13
+  },
+  {
+    "order_id": "J1035",
+    "order_date": "2024-03-14",
+    "product": "Cloud Service",
+    "revenue": 284.29
+  },
+  {
+    "order_id": "J1018",
+    "order_date": "2024-03-14",
+    "product": "Quantum Core",
+    "revenue": 358.35
+  },
+  {
+    "order_id": "J1042",
+    "order_date": "2024-03-14",
+    "product": "Bio-Sensor",
+    "revenue": 404.44
+  },
+  {
+    "order_id": "J1109",
+    "order_date": "2024-03-14",
+    "product": "Neural Bridge",
+    "revenue": 206.34
+  },
+  {
+    "order_id": "J1108",
+    "order_date": "2024-03-14",
+    "product": "Cloud Service",
+    "revenue": 423.62
+  },
+  {
+    "order_id": "J1094",
+    "order_date": "2024-03-14",
+    "product": "Neural Bridge",
+    "revenue": 340.74
+  },
+  {
+    "order_id": "J1180",
+    "order_date": "2024-03-14",
+    "product": "Bio-Sensor",
+    "revenue": 109.22
+  },
+  {
+    "order_id": "J1134",
+    "order_date": "2024-03-14",
+    "product": "Cloud Service",
+    "revenue": 263.05
+  },
+  {
+    "order_id": "J1006",
+    "order_date": "2024-03-14",
+    "product": "Smart Widget",
+    "revenue": 129.47
+  },
+  {
+    "order_id": "J1097",
+    "order_date": "2024-03-14",
+    "product": "Smart Widget",
+    "revenue": 159.86
+  },
+  {
+    "order_id": "J1093",
+    "order_date": "2024-03-14",
+    "product": "Neural Bridge",
+    "revenue": 247.7
+  },
+  {
+    "order_id": "J1023",
+    "order_date": "2024-03-14",
+    "product": "Quantum Core",
+    "revenue": 239.02
+  },
+  {
+    "order_id": "J1025",
+    "order_date": "2024-03-14",
+    "product": "Bio-Sensor",
+    "revenue": 207.02
+  },
+  {
+    "order_id": "J1122",
+    "order_date": "2024-03-14",
+    "product": "Quantum Core",
+    "revenue": 79.42
+  },
+  {
+    "order_id": "J1060",
+    "order_date": "2024-03-14",
+    "product": "Smart Widget",
+    "revenue": 252.9
+  },
+  {
+    "order_id": "J1110",
+    "order_date": "2024-03-14",
+    "product": "Bio-Sensor",
+    "revenue": 199.72
+  },
+  {
+    "order_id": "J1087",
+    "order_date": "2024-03-14",
+    "product": "Neural Bridge",
+    "revenue": 291.4
+  },
+  {
+    "order_id": "J1134",
+    "order_date": "2024-03-14",
+    "product": "Cloud Service",
+    "revenue": 263.05
+  },
+  {
+    "order_id": "J1065",
+    "order_date": "2024-03-14",
+    "product": "Quantum Core",
+    "revenue": 415.94
+  },
+  {
+    "order_id": "J1104",
+    "order_date": "2024-03-14",
+    "product": "Quantum Core",
+    "revenue": 226.22
+  },
+  {
+    "order_id": "J1183",
+    "order_date": "2024-03-14",
+    "product": "Quantum Core",
+    "revenue": 259.37
+  },
+  {
+    "order_id": "J1064",
+    "order_date": "2024-03-14",
+    "product": "Cloud Service",
+    "revenue": 53.36
+  },
+  {
+    "order_id": "J1171",
+    "order_date": "2024-03-14",
+    "product": "Bio-Sensor",
+    "revenue": 431.02
+  },
+  {
+    "order_id": "J1004",
+    "order_date": "2024-03-14",
+    "product": "Cloud Service",
+    "revenue": 88.81
+  },
+  {
+    "order_id": "J1178",
+    "order_date": "2024-03-14",
+    "product": "Neural Bridge",
+    "revenue": 233.92
+  },
+  {
+    "order_id": "J1173",
+    "order_date": "2024-03-14",
+    "product": "Bio-Sensor",
+    "revenue": 486.88
+  },
+  {
+    "order_id": "J1036",
+    "order_date": "2024-03-14",
+    "product": "Bio-Sensor",
+    "revenue": 89.26
+  },
+  {
+    "order_id": "J1180",
+    "order_date": "2024-03-14",
+    "product": "Bio-Sensor",
+    "revenue": 109.22
+  },
+  {
+    "order_id": "J1064",
+    "order_date": "2024-03-14",
+    "product": "Cloud Service",
+    "revenue": 53.36
+  },
+  {
+    "order_id": "J1125",
+    "order_date": "2024-03-14",
+    "product": "Smart Widget",
+    "revenue": 383.2
+  },
+  {
+    "order_id": "J1141",
+    "order_date": "2024-03-14",
+    "product": "Quantum Core",
+    "revenue": 204.29
+  },
+  {
+    "order_id": "J1029",
+    "order_date": "2024-03-14",
+    "product": "Neural Bridge",
+    "revenue": 341.95
+  },
+  {
+    "order_id": "J1119",
+    "order_date": "2024-03-14",
+    "product": "Quantum Core",
+    "revenue": 332.49
+  },
+  {
+    "order_id": "J1190",
+    "order_date": "2024-03-14",
+    "product": "Smart Widget",
+    "revenue": 102.68
+  },
+  {
+    "order_id": "J1140",
+    "order_date": "2024-03-14",
+    "product": "Bio-Sensor",
+    "revenue": 381.52
+  },
+  {
+    "order_id": "J1025",
+    "order_date": "2024-03-14",
+    "product": "Bio-Sensor",
+    "revenue": 207.02
+  },
+  {
+    "order_id": "J1145",
+    "order_date": "2024-03-14",
+    "product": "Smart Widget",
+    "revenue": 77.85
+  },
+  {
+    "order_id": "J1162",
+    "order_date": "2024-03-14",
+    "product": "Neural Bridge",
+    "revenue": 374.24
+  },
+  {
+    "order_id": "J1158",
+    "order_date": "2024-03-14",
+    "product": "Smart Widget",
+    "revenue": 420.42
+  },
+  {
+    "order_id": "J1066",
+    "order_date": "2024-03-14",
+    "product": "Smart Widget",
+    "revenue": 454.56
+  },
+  {
+    "order_id": "J1016",
+    "order_date": "2024-03-14",
+    "product": "Cloud Service",
+    "revenue": 57.54
+  },
+  {
+    "order_id": "J1004",
+    "order_date": "2024-03-14",
+    "product": "Cloud Service",
+    "revenue": 88.81
+  },
+  {
+    "order_id": "J1177",
+    "order_date": "2024-03-14",
+    "product": "Smart Widget",
+    "revenue": 84.21
+  },
+  {
+    "order_id": "J1181",
+    "order_date": "2024-03-14",
+    "product": "Quantum Core",
+    "revenue": 388.55
+  },
+  {
+    "order_id": "J1010",
+    "order_date": "2024-03-14",
+    "product": "Smart Widget",
+    "revenue": 311.56
+  },
+  {
+    "order_id": "J1117",
+    "order_date": "2024-03-14",
+    "product": "Cloud Service",
+    "revenue": 165.85
+  },
+  {
+    "order_id": "J1054",
+    "order_date": "2024-03-14",
+    "product": "Neural Bridge",
+    "revenue": 93.89
+  },
+  {
+    "order_id": "J1174",
+    "order_date": "2024-03-14",
+    "product": "Neural Bridge",
+    "revenue": 379.68
+  },
+  {
+    "order_id": "J1022",
+    "order_date": "2024-03-14",
+    "product": "Bio-Sensor",
+    "revenue": 89.19
+  },
+  {
+    "order_id": "J1012",
+    "order_date": "2024-03-14",
+    "product": "Neural Bridge",
+    "revenue": 167.41
+  },
+  {
+    "order_id": "J1148",
+    "order_date": "2024-03-14",
+    "product": "Cloud Service",
+    "revenue": 227.59
+  },
+  {
+    "order_id": "J1050",
+    "order_date": "2024-03-14",
+    "product": "Smart Widget",
+    "revenue": 383.09
+  },
+  {
+    "order_id": "J1120",
+    "order_date": "2024-03-14",
+    "product": "Bio-Sensor",
+    "revenue": 123.59
+  },
+  {
+    "order_id": "J1087",
+    "order_date": "2024-03-14",
+    "product": "Neural Bridge",
+    "revenue": 291.4
+  },
+  {
+    "order_id": "J1112",
+    "order_date": "2024-03-14",
+    "product": "Quantum Core",
+    "revenue": 219.69
+  },
+  {
+    "order_id": "J1008",
+    "order_date": "2024-03-14",
+    "product": "Cloud Service",
+    "revenue": 338.57
+  },
+  {
+    "order_id": "J1194",
+    "order_date": "2024-03-14",
+    "product": "Smart Widget",
+    "revenue": 341.06
+  },
+  {
+    "order_id": "J1181",
+    "order_date": "2024-03-14",
+    "product": "Quantum Core",
+    "revenue": 388.55
+  },
+  {
+    "order_id": "J1116",
+    "order_date": "2024-03-14",
+    "product": "Bio-Sensor",
+    "revenue": 241.61
+  },
+  {
+    "order_id": "J1090",
+    "order_date": "2024-03-14",
+    "product": "Neural Bridge",
+    "revenue": 157.52
+  },
+  {
+    "order_id": "J1028",
+    "order_date": "2024-03-14",
+    "product": "Quantum Core",
+    "revenue": 107.4
+  },
+  {
+    "order_id": "J1148",
+    "order_date": "2024-03-14",
+    "product": "Cloud Service",
+    "revenue": 227.59
+  },
+  {
+    "order_id": "J1121",
+    "order_date": "2024-03-14",
+    "product": "Smart Widget",
+    "revenue": 194.93
+  },
+  {
+    "order_id": "J1102",
+    "order_date": "2024-03-14",
+    "product": "Cloud Service",
+    "revenue": 270.03
+  },
+  {
+    "order_id": "J1171",
+    "order_date": "2024-03-14",
+    "product": "Bio-Sensor",
+    "revenue": 431.02
+  },
+  {
+    "order_id": "J1061",
+    "order_date": "2024-03-14",
+    "product": "Neural Bridge",
+    "revenue": 243.26
+  },
+  {
+    "order_id": "J1049",
+    "order_date": "2024-03-14",
+    "product": "Quantum Core",
+    "revenue": 290.0
+  },
+  {
+    "order_id": "J1142",
+    "order_date": "2024-03-14",
+    "product": "Neural Bridge",
+    "revenue": 236.62
+  },
+  {
+    "order_id": "J1065",
+    "order_date": "2024-03-14",
+    "product": "Quantum Core",
+    "revenue": 415.94
+  },
+  {
+    "order_id": "J1045",
+    "order_date": "2024-03-14",
+    "product": "Quantum Core",
+    "revenue": 68.6
+  },
+  {
+    "order_id": "J1172",
+    "order_date": "2024-03-14",
+    "product": "Bio-Sensor",
+    "revenue": 251.3
+  },
+  {
+    "order_id": "J1018",
+    "order_date": "2024-03-14",
+    "product": "Quantum Core",
+    "revenue": 358.35
+  },
+  {
+    "order_id": "J1140",
+    "order_date": "2024-03-14",
+    "product": "Bio-Sensor",
+    "revenue": 381.52
+  },
+  {
+    "order_id": "J1089",
+    "order_date": "2024-03-14",
+    "product": "Smart Widget",
+    "revenue": 467.8
+  },
+  {
+    "order_id": "J1079",
+    "order_date": "2024-03-14",
+    "product": "Quantum Core",
+    "revenue": 134.01
+  },
+  {
+    "order_id": "J1049",
+    "order_date": "2024-03-14",
+    "product": "Quantum Core",
+    "revenue": 290.0
+  },
+  {
+    "order_id": "J1161",
+    "order_date": "2024-03-14",
+    "product": "Neural Bridge",
+    "revenue": 414.44
+  },
+  {
+    "order_id": "J1114",
+    "order_date": "2024-03-14",
+    "product": "Bio-Sensor",
+    "revenue": 472.86
+  },
+  {
+    "order_id": "J1005",
+    "order_date": "2024-03-14",
+    "product": "Smart Widget",
+    "revenue": 118.38
+  },
+  {
+    "order_id": "J1059",
+    "order_date": "2024-03-14",
+    "product": "Neural Bridge",
+    "revenue": 282.99
+  },
+  {
+    "order_id": "J1091",
+    "order_date": "2024-03-14",
+    "product": "Neural Bridge",
+    "revenue": 477.33
+  },
+  {
+    "order_id": "J1080",
+    "order_date": "2024-03-14",
+    "product": "Neural Bridge",
+    "revenue": 297.14
+  },
+  {
+    "order_id": "J1049",
+    "order_date": "2024-03-14",
+    "product": "Quantum Core",
+    "revenue": 290.0
+  },
+  {
+    "order_id": "J1102",
+    "order_date": "2024-03-14",
+    "product": "Cloud Service",
+    "revenue": 270.03
+  },
+  {
+    "order_id": "J1195",
+    "order_date": "2024-03-14",
+    "product": "Smart Widget",
+    "revenue": 189.8
+  },
+  {
+    "order_id": "J1120",
+    "order_date": "2024-03-14",
+    "product": "Bio-Sensor",
+    "revenue": 123.59
+  },
+  {
+    "order_id": "J1054",
+    "order_date": "2024-03-14",
+    "product": "Neural Bridge",
+    "revenue": 93.89
+  },
+  {
+    "order_id": "J1030",
+    "order_date": "2024-03-14",
+    "product": "Quantum Core",
+    "revenue": 75.81
+  },
+  {
+    "order_id": "J1108",
+    "order_date": "2024-03-14",
+    "product": "Cloud Service",
+    "revenue": 423.62
+  },
+  {
+    "order_id": "J1188",
+    "order_date": "2024-03-14",
+    "product": "Smart Widget",
+    "revenue": 430.99
+  },
+  {
+    "order_id": "J1024",
+    "order_date": "2024-03-14",
+    "product": "Bio-Sensor",
+    "revenue": 349.08
+  },
+  {
+    "order_id": "J1168",
+    "order_date": "2024-03-14",
+    "product": "Smart Widget",
+    "revenue": 462.7
+  },
+  {
+    "order_id": "J1048",
+    "order_date": "2024-03-14",
+    "product": "Cloud Service",
+    "revenue": 125.41
+  },
+  {
+    "order_id": "J1063",
+    "order_date": "2024-03-14",
+    "product": "Quantum Core",
+    "revenue": 364.44
+  },
+  {
+    "order_id": "J1183",
+    "order_date": "2024-03-14",
+    "product": "Quantum Core",
+    "revenue": 259.37
+  },
+  {
+    "order_id": "J1146",
+    "order_date": "2024-03-14",
+    "product": "Smart Widget",
+    "revenue": 422.25
+  },
+  {
+    "order_id": "J1132",
+    "order_date": "2024-03-14",
+    "product": "Cloud Service",
+    "revenue": 166.54
+  },
+  {
+    "order_id": "J1103",
+    "order_date": "2024-03-14",
+    "product": "Quantum Core",
+    "revenue": 292.87
+  },
+  {
+    "order_id": "J1042",
+    "order_date": "2024-03-14",
+    "product": "Bio-Sensor",
+    "revenue": 404.44
+  },
+  {
+    "order_id": "J1171",
+    "order_date": "2024-03-14",
+    "product": "Bio-Sensor",
+    "revenue": 431.02
+  },
+  {
+    "order_id": "J1153",
+    "order_date": "2024-03-14",
+    "product": "Bio-Sensor",
+    "revenue": 309.61
+  },
+  {
+    "order_id": "J1025",
+    "order_date": "2024-03-14",
+    "product": "Bio-Sensor",
+    "revenue": 207.02
+  },
+  {
+    "order_id": "J1122",
+    "order_date": "2024-03-14",
+    "product": "Quantum Core",
+    "revenue": 79.42
+  },
+  {
+    "order_id": "J1154",
+    "order_date": "2024-03-14",
+    "product": "Quantum Core",
+    "revenue": 60.44
+  },
+  {
+    "order_id": "J1120",
+    "order_date": "2024-03-14",
+    "product": "Bio-Sensor",
+    "revenue": 123.59
+  },
+  {
+    "order_id": "J1045",
+    "order_date": "2024-03-14",
+    "product": "Quantum Core",
+    "revenue": 68.6
+  },
+  {
+    "order_id": "J1162",
+    "order_date": "2024-03-14",
+    "product": "Neural Bridge",
+    "revenue": 374.24
+  },
+  {
+    "order_id": "J1018",
+    "order_date": "2024-03-14",
+    "product": "Quantum Core",
+    "revenue": 358.35
+  },
+  {
+    "order_id": "J1002",
+    "order_date": "2024-03-14",
+    "product": "Cloud Service",
+    "revenue": 382.21
+  },
+  {
+    "order_id": "J1163",
+    "order_date": "2024-03-14",
+    "product": "Neural Bridge",
+    "revenue": 168.28
+  },
+  {
+    "order_id": "J1118",
+    "order_date": "2024-03-14",
+    "product": "Bio-Sensor",
+    "revenue": 366.41
+  },
+  {
+    "order_id": "J1035",
+    "order_date": "2024-03-14",
+    "product": "Cloud Service",
+    "revenue": 284.29
+  },
+  {
+    "order_id": "J1143",
+    "order_date": "2024-03-14",
+    "product": "Neural Bridge",
+    "revenue": 130.52
+  },
+  {
+    "order_id": "J1195",
+    "order_date": "2024-03-14",
+    "product": "Smart Widget",
+    "revenue": 189.8
+  },
+  {
+    "order_id": "J1120",
+    "order_date": "2024-03-14",
+    "product": "Bio-Sensor",
+    "revenue": 123.59
+  },
+  {
+    "order_id": "J1035",
+    "order_date": "2024-03-14",
+    "product": "Cloud Service",
+    "revenue": 284.29
+  },
+  {
+    "order_id": "J1193",
+    "order_date": "2024-03-14",
+    "product": "Smart Widget",
+    "revenue": 59.11
+  },
+  {
+    "order_id": "J1198",
+    "order_date": "2024-03-14",
+    "product": "Bio-Sensor",
+    "revenue": 278.68
+  },
+  {
+    "order_id": "J1056",
+    "order_date": "2024-03-14",
+    "product": "Neural Bridge",
+    "revenue": 58.19
+  },
+  {
+    "order_id": "J1161",
+    "order_date": "2024-03-14",
+    "product": "Neural Bridge",
+    "revenue": 414.44
+  },
+  {
+    "order_id": "J1184",
+    "order_date": "2024-03-14",
+    "product": "Cloud Service",
+    "revenue": 75.17
+  },
+  {
+    "order_id": "J1112",
+    "order_date": "2024-03-14",
+    "product": "Quantum Core",
+    "revenue": 219.69
+  },
+  {
+    "order_id": "J1156",
+    "order_date": "2024-03-14",
+    "product": "Bio-Sensor",
+    "revenue": 100.1
+  },
+  {
+    "order_id": "J1192",
+    "order_date": "2024-03-14",
+    "product": "Smart Widget",
+    "revenue": 197.14
+  },
+  {
+    "order_id": "J1112",
+    "order_date": "2024-03-14",
+    "product": "Quantum Core",
+    "revenue": 219.69
+  },
+  {
+    "order_id": "J1066",
+    "order_date": "2024-03-14",
+    "product": "Smart Widget",
+    "revenue": 454.56
+  },
+  {
+    "order_id": "J1128",
+    "order_date": "2024-03-14",
+    "product": "Neural Bridge",
+    "revenue": 196.89
+  },
+  {
+    "order_id": "J1157",
+    "order_date": "2024-03-14",
+    "product": "Bio-Sensor",
+    "revenue": 115.46
+  },
+  {
+    "order_id": "J1120",
+    "order_date": "2024-03-14",
+    "product": "Bio-Sensor",
+    "revenue": 123.59
+  },
+  {
+    "order_id": "J1170",
+    "order_date": "2024-03-14",
+    "product": "Bio-Sensor",
+    "revenue": 238.27
+  },
+  {
+    "order_id": "J1119",
+    "order_date": "2024-03-14",
+    "product": "Quantum Core",
+    "revenue": 332.49
+  },
+  {
+    "order_id": "J1187",
+    "order_date": "2024-03-14",
+    "product": "Neural Bridge",
+    "revenue": 178.51
+  },
+  {
+    "order_id": "J1195",
+    "order_date": "2024-03-14",
+    "product": "Smart Widget",
+    "revenue": 189.8
+  },
+  {
+    "order_id": "J1034",
+    "order_date": "2024-03-14",
+    "product": "Cloud Service",
+    "revenue": 412.24
+  },
+  {
+    "order_id": "J1119",
+    "order_date": "2024-03-14",
+    "product": "Quantum Core",
+    "revenue": 332.49
+  },
+  {
+    "order_id": "J1180",
+    "order_date": "2024-03-14",
+    "product": "Bio-Sensor",
+    "revenue": 109.22
+  },
+  {
+    "order_id": "J1012",
+    "order_date": "2024-03-14",
+    "product": "Neural Bridge",
+    "revenue": 167.41
+  },
+  {
+    "order_id": "J1062",
+    "order_date": "2024-03-14",
+    "product": "Quantum Core",
+    "revenue": 196.42
+  },
+  {
+    "order_id": "J1106",
+    "order_date": "2024-03-14",
+    "product": "Bio-Sensor",
+    "revenue": 103.94
+  },
+  {
+    "order_id": "J1094",
+    "order_date": "2024-03-14",
+    "product": "Neural Bridge",
+    "revenue": 340.74
+  },
+  {
+    "order_id": "J1091",
+    "order_date": "2024-03-14",
+    "product": "Neural Bridge",
+    "revenue": 477.33
+  },
+  {
+    "order_id": "J1103",
+    "order_date": "2024-03-14",
+    "product": "Quantum Core",
+    "revenue": 292.87
+  },
+  {
+    "order_id": "J1088",
+    "order_date": "2024-03-14",
+    "product": "Smart Widget",
+    "revenue": 179.13
+  },
+  {
+    "order_id": "J1150",
+    "order_date": "2024-03-14",
+    "product": "Cloud Service",
+    "revenue": 407.95
+  },
+  {
+    "order_id": "J1147",
+    "order_date": "2024-03-14",
+    "product": "Neural Bridge",
+    "revenue": 226.86
+  },
+  {
+    "order_id": "J1096",
+    "order_date": "2024-03-14",
+    "product": "Neural Bridge",
+    "revenue": 196.5
+  },
+  {
+    "order_id": "J1060",
+    "order_date": "2024-03-14",
+    "product": "Smart Widget",
+    "revenue": 252.9
+  },
+  {
+    "order_id": "J1176",
+    "order_date": "2024-03-14",
+    "product": "Bio-Sensor",
+    "revenue": 414.0
+  },
+  {
+    "order_id": "J1168",
+    "order_date": "2024-03-14",
+    "product": "Smart Widget",
+    "revenue": 462.7
+  },
+  {
+    "order_id": "J1152",
+    "order_date": "2024-03-14",
+    "product": "Quantum Core",
+    "revenue": 338.27
+  },
+  {
+    "order_id": "J1095",
+    "order_date": "2024-03-14",
+    "product": "Bio-Sensor",
+    "revenue": 186.24
+  },
+  {
+    "order_id": "J1197",
+    "order_date": "2024-03-14",
+    "product": "Smart Widget",
+    "revenue": 201.99
+  },
+  {
+    "order_id": "J1058",
+    "order_date": "2024-03-14",
+    "product": "Smart Widget",
+    "revenue": 307.28
+  },
+  {
+    "order_id": "J1052",
+    "order_date": "2024-03-14",
+    "product": "Quantum Core",
+    "revenue": 374.87
+  },
+  {
+    "order_id": "J1157",
+    "order_date": "2024-03-14",
+    "product": "Bio-Sensor",
+    "revenue": 115.46
+  },
+  {
+    "order_id": "J1046",
+    "order_date": "2024-03-14",
+    "product": "Smart Widget",
+    "revenue": 130.59
+  },
+  {
+    "order_id": "J1156",
+    "order_date": "2024-03-14",
+    "product": "Bio-Sensor",
+    "revenue": 100.1
+  },
+  {
+    "order_id": "J1150",
+    "order_date": "2024-03-14",
+    "product": "Cloud Service",
+    "revenue": 407.95
+  },
+  {
+    "order_id": "J1174",
+    "order_date": "2024-03-14",
+    "product": "Neural Bridge",
+    "revenue": 379.68
+  },
+  {
+    "order_id": "J1127",
+    "order_date": "2024-03-14",
+    "product": "Bio-Sensor",
+    "revenue": 86.42
+  },
+  {
+    "order_id": "J1095",
+    "order_date": "2024-03-14",
+    "product": "Bio-Sensor",
+    "revenue": 186.24
+  },
+  {
+    "order_id": "J1086",
+    "order_date": "2024-03-14",
+    "product": "Bio-Sensor",
+    "revenue": 322.57
+  },
+  {
+    "order_id": "J1021",
+    "order_date": "2024-03-14",
+    "product": "Neural Bridge",
+    "revenue": 394.95
+  },
+  {
+    "order_id": "J1184",
+    "order_date": "2024-03-14",
+    "product": "Cloud Service",
+    "revenue": 75.17
+  },
+  {
+    "order_id": "J1169",
+    "order_date": "2024-03-14",
+    "product": "Neural Bridge",
+    "revenue": 490.39
+  },
+  {
+    "order_id": "J1046",
+    "order_date": "2024-03-14",
+    "product": "Smart Widget",
+    "revenue": 130.59
+  },
+  {
+    "order_id": "J1149",
+    "order_date": "2024-03-14",
+    "product": "Quantum Core",
+    "revenue": 402.3
+  },
+  {
+    "order_id": "J1091",
+    "order_date": "2024-03-14",
+    "product": "Neural Bridge",
+    "revenue": 477.33
+  },
+  {
+    "order_id": "J1121",
+    "order_date": "2024-03-14",
+    "product": "Smart Widget",
+    "revenue": 194.93
+  },
+  {
+    "order_id": "J1095",
+    "order_date": "2024-03-14",
+    "product": "Bio-Sensor",
+    "revenue": 186.24
+  },
+  {
+    "order_id": "J1092",
+    "order_date": "2024-03-14",
+    "product": "Cloud Service",
+    "revenue": 166.99
+  },
+  {
+    "order_id": "J1043",
+    "order_date": "2024-03-14",
+    "product": "Cloud Service",
+    "revenue": 63.41
+  },
+  {
+    "order_id": "J1139",
+    "order_date": "2024-03-14",
+    "product": "Smart Widget",
+    "revenue": 232.07
+  },
+  {
+    "order_id": "J1173",
+    "order_date": "2024-03-14",
+    "product": "Bio-Sensor",
+    "revenue": 486.88
+  },
+  {
+    "order_id": "J1061",
+    "order_date": "2024-03-14",
+    "product": "Neural Bridge",
+    "revenue": 243.26
+  },
+  {
+    "order_id": "J1094",
+    "order_date": "2024-03-14",
+    "product": "Neural Bridge",
+    "revenue": 340.74
+  },
+  {
+    "order_id": "J1048",
+    "order_date": "2024-03-14",
+    "product": "Cloud Service",
+    "revenue": 125.41
+  },
+  {
+    "order_id": "J1168",
+    "order_date": "2024-03-14",
+    "product": "Smart Widget",
+    "revenue": 462.7
+  },
+  {
+    "order_id": "J1127",
+    "order_date": "2024-03-14",
+    "product": "Bio-Sensor",
+    "revenue": 86.42
+  },
+  {
+    "order_id": "J1022",
+    "order_date": "2024-03-14",
+    "product": "Bio-Sensor",
+    "revenue": 89.19
+  },
+  {
+    "order_id": "J1038",
+    "order_date": "2024-03-14",
+    "product": "Quantum Core",
+    "revenue": 298.28
+  },
+  {
+    "order_id": "J1181",
+    "order_date": "2024-03-14",
+    "product": "Quantum Core",
+    "revenue": 388.55
+  },
+  {
+    "order_id": "J1157",
+    "order_date": "2024-03-14",
+    "product": "Bio-Sensor",
+    "revenue": 115.46
+  },
+  {
+    "order_id": "J1049",
+    "order_date": "2024-03-14",
+    "product": "Quantum Core",
+    "revenue": 290.0
+  },
+  {
+    "order_id": "J1119",
+    "order_date": "2024-03-14",
+    "product": "Quantum Core",
+    "revenue": 332.49
+  },
+  {
+    "order_id": "J1113",
+    "order_date": "2024-03-14",
+    "product": "Bio-Sensor",
+    "revenue": 369.48
+  },
+  {
+    "order_id": "J1025",
+    "order_date": "2024-03-14",
+    "product": "Bio-Sensor",
+    "revenue": 207.02
+  },
+  {
+    "order_id": "J1127",
+    "order_date": "2024-03-14",
+    "product": "Bio-Sensor",
+    "revenue": 86.42
+  },
+  {
+    "order_id": "J1134",
+    "order_date": "2024-03-14",
+    "product": "Cloud Service",
+    "revenue": 263.05
+  },
+  {
+    "order_id": "J1141",
+    "order_date": "2024-03-14",
+    "product": "Quantum Core",
+    "revenue": 204.29
+  },
+  {
+    "order_id": "J1193",
+    "order_date": "2024-03-14",
+    "product": "Smart Widget",
+    "revenue": 59.11
+  },
+  {
+    "order_id": "J1056",
+    "order_date": "2024-03-14",
+    "product": "Neural Bridge",
+    "revenue": 58.19
+  },
+  {
+    "order_id": "J1135",
+    "order_date": "2024-03-14",
+    "product": "Quantum Core",
+    "revenue": 405.93
+  },
+  {
+    "order_id": "J1046",
+    "order_date": "2024-03-14",
+    "product": "Smart Widget",
+    "revenue": 130.59
+  },
+  {
+    "order_id": "J1053",
+    "order_date": "2024-03-14",
+    "product": "Smart Widget",
+    "revenue": 488.28
+  },
+  {
+    "order_id": "J1070",
+    "order_date": "2024-03-14",
+    "product": "Bio-Sensor",
+    "revenue": 317.24
+  },
+  {
+    "order_id": "J1043",
+    "order_date": "2024-03-14",
+    "product": "Cloud Service",
+    "revenue": 63.41
+  },
+  {
+    "order_id": "J1022",
+    "order_date": "2024-03-14",
+    "product": "Bio-Sensor",
+    "revenue": 89.19
+  },
+  {
+    "order_id": "J1045",
+    "order_date": "2024-03-14",
+    "product": "Quantum Core",
+    "revenue": 68.6
+  },
+  {
+    "order_id": "J1177",
+    "order_date": "2024-03-14",
+    "product": "Smart Widget",
+    "revenue": 84.21
+  },
+  {
+    "order_id": "J1019",
+    "order_date": "2024-03-14",
+    "product": "Neural Bridge",
+    "revenue": 384.85
+  },
+  {
+    "order_id": "J1194",
+    "order_date": "2024-03-14",
+    "product": "Smart Widget",
+    "revenue": 341.06
+  },
+  {
+    "order_id": "J1103",
+    "order_date": "2024-03-14",
+    "product": "Quantum Core",
+    "revenue": 292.87
+  },
+  {
+    "order_id": "J1063",
+    "order_date": "2024-03-14",
+    "product": "Quantum Core",
+    "revenue": 364.44
+  },
+  {
+    "order_id": "J1168",
+    "order_date": "2024-03-14",
+    "product": "Smart Widget",
+    "revenue": 462.7
+  },
+  {
+    "order_id": "J1106",
+    "order_date": "2024-03-14",
+    "product": "Bio-Sensor",
+    "revenue": 103.94
+  },
+  {
+    "order_id": "J1178",
+    "order_date": "2024-03-14",
+    "product": "Neural Bridge",
+    "revenue": 233.92
+  },
+  {
+    "order_id": "J1115",
+    "order_date": "2024-03-14",
+    "product": "Cloud Service",
+    "revenue": 132.58
+  },
+  {
+    "order_id": "J1140",
+    "order_date": "2024-03-14",
+    "product": "Bio-Sensor",
+    "revenue": 381.52
+  },
+  {
+    "order_id": "J1196",
+    "order_date": "2024-03-14",
+    "product": "Bio-Sensor",
+    "revenue": 490.14
+  },
+  {
+    "order_id": "J1156",
+    "order_date": "2024-03-14",
+    "product": "Bio-Sensor",
+    "revenue": 100.1
+  },
+  {
+    "order_id": "J1124",
+    "order_date": "2024-03-14",
+    "product": "Smart Widget",
+    "revenue": 408.04
+  },
+  {
+    "order_id": "J1125",
+    "order_date": "2024-03-14",
+    "product": "Smart Widget",
+    "revenue": 383.2
+  },
+  {
+    "order_id": "J1151",
+    "order_date": "2024-03-14",
+    "product": "Quantum Core",
+    "revenue": 410.38
+  },
+  {
+    "order_id": "J1199",
+    "order_date": "2024-03-14",
+    "product": "Bio-Sensor",
+    "revenue": 75.43
+  },
+  {
+    "order_id": "J1016",
+    "order_date": "2024-03-14",
+    "product": "Cloud Service",
+    "revenue": 57.54
+  },
+  {
+    "order_id": "J1146",
+    "order_date": "2024-03-14",
+    "product": "Smart Widget",
+    "revenue": 422.25
+  },
+  {
+    "order_id": "J1054",
+    "order_date": "2024-03-14",
+    "product": "Neural Bridge",
+    "revenue": 93.89
+  },
+  {
+    "order_id": "J1133",
+    "order_date": "2024-03-14",
+    "product": "Neural Bridge",
+    "revenue": 258.17
+  },
+  {
+    "order_id": "J1072",
+    "order_date": "2024-03-14",
+    "product": "Cloud Service",
+    "revenue": 50.2
+  },
+  {
+    "order_id": "J1028",
+    "order_date": "2024-03-14",
+    "product": "Quantum Core",
+    "revenue": 107.4
+  },
+  {
+    "order_id": "J1067",
+    "order_date": "2024-03-14",
+    "product": "Cloud Service",
+    "revenue": 428.27
+  },
+  {
+    "order_id": "J1072",
+    "order_date": "2024-03-14",
+    "product": "Cloud Service",
+    "revenue": 50.2
+  },
+  {
+    "order_id": "J1176",
+    "order_date": "2024-03-14",
+    "product": "Bio-Sensor",
+    "revenue": 414.0
+  },
+  {
+    "order_id": "J1075",
+    "order_date": "2024-03-14",
+    "product": "Cloud Service",
+    "revenue": 199.38
+  },
+  {
+    "order_id": "J1164",
+    "order_date": "2024-03-14",
+    "product": "Smart Widget",
+    "revenue": 137.58
+  },
+  {
+    "order_id": "J1119",
+    "order_date": "2024-03-14",
+    "product": "Quantum Core",
+    "revenue": 332.49
+  },
+  {
+    "order_id": "J1002",
+    "order_date": "2024-03-14",
+    "product": "Cloud Service",
+    "revenue": 382.21
+  },
+  {
+    "order_id": "J1081",
+    "order_date": "2024-03-14",
+    "product": "Cloud Service",
+    "revenue": 130.77
+  },
+  {
+    "order_id": "J1199",
+    "order_date": "2024-03-14",
+    "product": "Bio-Sensor",
+    "revenue": 75.43
+  },
+  {
+    "order_id": "J1031",
+    "order_date": "2024-03-14",
+    "product": "Cloud Service",
+    "revenue": 66.69
+  },
+  {
+    "order_id": "J1012",
+    "order_date": "2024-03-14",
+    "product": "Neural Bridge",
+    "revenue": 167.41
+  },
+  {
+    "order_id": "J1029",
+    "order_date": "2024-03-14",
+    "product": "Neural Bridge",
+    "revenue": 341.95
+  },
+  {
+    "order_id": "J1064",
+    "order_date": "2024-03-14",
+    "product": "Cloud Service",
+    "revenue": 53.36
+  },
+  {
+    "order_id": "J1125",
+    "order_date": "2024-03-14",
+    "product": "Smart Widget",
+    "revenue": 383.2
+  },
+  {
+    "order_id": "J1019",
+    "order_date": "2024-03-14",
+    "product": "Neural Bridge",
+    "revenue": 384.85
+  },
+  {
+    "order_id": "J1191",
+    "order_date": "2024-03-14",
+    "product": "Cloud Service",
+    "revenue": 177.18
+  },
+  {
+    "order_id": "J1131",
+    "order_date": "2024-03-14",
+    "product": "Smart Widget",
+    "revenue": 380.54
+  },
+  {
+    "order_id": "J1186",
+    "order_date": "2024-03-14",
+    "product": "Bio-Sensor",
+    "revenue": 126.04
+  },
+  {
+    "order_id": "J1143",
+    "order_date": "2024-03-14",
+    "product": "Neural Bridge",
+    "revenue": 130.52
+  },
+  {
+    "order_id": "J1189",
+    "order_date": "2024-03-14",
+    "product": "Bio-Sensor",
+    "revenue": 460.57
+  },
+  {
+    "order_id": "J1056",
+    "order_date": "2024-03-14",
+    "product": "Neural Bridge",
+    "revenue": 58.19
+  },
+  {
+    "order_id": "J1159",
+    "order_date": "2024-03-14",
+    "product": "Bio-Sensor",
+    "revenue": 139.91
+  },
+  {
+    "order_id": "J1029",
+    "order_date": "2024-03-14",
+    "product": "Neural Bridge",
+    "revenue": 341.95
+  },
+  {
+    "order_id": "J1099",
+    "order_date": "2024-03-14",
+    "product": "Cloud Service",
+    "revenue": 307.38
+  },
+  {
+    "order_id": "J1122",
+    "order_date": "2024-03-14",
+    "product": "Quantum Core",
+    "revenue": 79.42
+  },
+  {
+    "order_id": "J1109",
+    "order_date": "2024-03-14",
+    "product": "Neural Bridge",
+    "revenue": 206.34
+  },
+  {
+    "order_id": "J1074",
+    "order_date": "2024-03-14",
+    "product": "Quantum Core",
+    "revenue": 321.99
+  },
+  {
+    "order_id": "J1158",
+    "order_date": "2024-03-14",
+    "product": "Smart Widget",
+    "revenue": 420.42
+  },
+  {
+    "order_id": "J1008",
+    "order_date": "2024-03-14",
+    "product": "Cloud Service",
+    "revenue": 338.57
+  },
+  {
+    "order_id": "J1087",
+    "order_date": "2024-03-14",
+    "product": "Neural Bridge",
+    "revenue": 291.4
+  },
+  {
+    "order_id": "J1031",
+    "order_date": "2024-03-14",
+    "product": "Cloud Service",
+    "revenue": 66.69
+  },
+  {
+    "order_id": "J1124",
+    "order_date": "2024-03-14",
+    "product": "Smart Widget",
+    "revenue": 408.04
+  },
+  {
+    "order_id": "J1165",
+    "order_date": "2024-03-14",
+    "product": "Neural Bridge",
+    "revenue": 405.06
+  },
+  {
+    "order_id": "J1167",
+    "order_date": "2024-03-14",
+    "product": "Smart Widget",
+    "revenue": 318.46
+  },
+  {
+    "order_id": "J1142",
+    "order_date": "2024-03-14",
+    "product": "Neural Bridge",
+    "revenue": 236.62
+  },
+  {
+    "order_id": "J1152",
+    "order_date": "2024-03-14",
+    "product": "Quantum Core",
+    "revenue": 338.27
+  },
+  {
+    "order_id": "J1062",
+    "order_date": "2024-03-14",
+    "product": "Quantum Core",
+    "revenue": 196.42
+  },
+  {
+    "order_id": "J1152",
+    "order_date": "2024-03-14",
+    "product": "Quantum Core",
+    "revenue": 338.27
+  },
+  {
+    "order_id": "J1187",
+    "order_date": "2024-03-14",
+    "product": "Neural Bridge",
+    "revenue": 178.51
+  },
+  {
+    "order_id": "J1073",
+    "order_date": "2024-03-14",
+    "product": "Smart Widget",
+    "revenue": 188.97
+  },
+  {
+    "order_id": "J1141",
+    "order_date": "2024-03-14",
+    "product": "Quantum Core",
+    "revenue": 204.29
+  },
+  {
+    "order_id": "J1000",
+    "order_date": "2024-03-14",
+    "product": "Bio-Sensor",
+    "revenue": 210.43
+  },
+  {
+    "order_id": "J1053",
+    "order_date": "2024-03-14",
+    "product": "Smart Widget",
+    "revenue": 488.28
+  },
+  {
+    "order_id": "J1086",
+    "order_date": "2024-03-14",
+    "product": "Bio-Sensor",
+    "revenue": 322.57
+  },
+  {
+    "order_id": "J1052",
+    "order_date": "2024-03-14",
+    "product": "Quantum Core",
+    "revenue": 374.87
+  },
+  {
+    "order_id": "J1130",
+    "order_date": "2024-03-14",
+    "product": "Neural Bridge",
+    "revenue": 406.07
+  },
+  {
+    "order_id": "J1048",
+    "order_date": "2024-03-14",
+    "product": "Cloud Service",
+    "revenue": 125.41
+  },
+  {
+    "order_id": "J1060",
+    "order_date": "2024-03-14",
+    "product": "Smart Widget",
+    "revenue": 252.9
+  },
+  {
+    "order_id": "J1037",
+    "order_date": "2024-03-14",
+    "product": "Bio-Sensor",
+    "revenue": 443.92
+  },
+  {
+    "order_id": "J1006",
+    "order_date": "2024-03-14",
+    "product": "Smart Widget",
+    "revenue": 129.47
+  },
+  {
+    "order_id": "J1095",
+    "order_date": "2024-03-14",
+    "product": "Bio-Sensor",
+    "revenue": 186.24
+  },
+  {
+    "order_id": "J1060",
+    "order_date": "2024-03-14",
+    "product": "Smart Widget",
+    "revenue": 252.9
+  },
+  {
+    "order_id": "J1071",
+    "order_date": "2024-03-14",
+    "product": "Bio-Sensor",
+    "revenue": 334.21
+  },
+  {
+    "order_id": "J1181",
+    "order_date": "2024-03-14",
+    "product": "Quantum Core",
+    "revenue": 388.55
+  },
+  {
+    "order_id": "J1153",
+    "order_date": "2024-03-14",
+    "product": "Bio-Sensor",
+    "revenue": 309.61
+  },
+  {
+    "order_id": "J1144",
+    "order_date": "2024-03-14",
+    "product": "Smart Widget",
+    "revenue": 377.42
+  },
+  {
+    "order_id": "J1059",
+    "order_date": "2024-03-14",
+    "product": "Neural Bridge",
+    "revenue": 282.99
+  },
+  {
+    "order_id": "J1049",
+    "order_date": "2024-03-14",
+    "product": "Quantum Core",
+    "revenue": 290.0
+  },
+  {
+    "order_id": "J1163",
+    "order_date": "2024-03-14",
+    "product": "Neural Bridge",
+    "revenue": 168.28
+  },
+  {
+    "order_id": "J1091",
+    "order_date": "2024-03-14",
+    "product": "Neural Bridge",
+    "revenue": 477.33
+  },
+  {
+    "order_id": "J1064",
+    "order_date": "2024-03-14",
+    "product": "Cloud Service",
+    "revenue": 53.36
+  },
+  {
+    "order_id": "J1079",
+    "order_date": "2024-03-14",
+    "product": "Quantum Core",
+    "revenue": 134.01
+  },
+  {
+    "order_id": "J1005",
+    "order_date": "2024-03-14",
+    "product": "Smart Widget",
+    "revenue": 118.38
+  },
+  {
+    "order_id": "J1106",
+    "order_date": "2024-03-14",
+    "product": "Bio-Sensor",
+    "revenue": 103.94
+  },
+  {
+    "order_id": "J1134",
+    "order_date": "2024-03-14",
+    "product": "Cloud Service",
+    "revenue": 263.05
+  },
+  {
+    "order_id": "J1140",
+    "order_date": "2024-03-14",
+    "product": "Bio-Sensor",
+    "revenue": 381.52
+  },
+  {
+    "order_id": "J1159",
+    "order_date": "2024-03-14",
+    "product": "Bio-Sensor",
+    "revenue": 139.91
+  },
+  {
+    "order_id": "J1026",
+    "order_date": "2024-03-14",
+    "product": "Neural Bridge",
+    "revenue": 350.6
+  },
+  {
+    "order_id": "J1059",
+    "order_date": "2024-03-14",
+    "product": "Neural Bridge",
+    "revenue": 282.99
+  },
+  {
+    "order_id": "J1107",
+    "order_date": "2024-03-14",
+    "product": "Neural Bridge",
+    "revenue": 185.48
+  },
+  {
+    "order_id": "J1030",
+    "order_date": "2024-03-14",
+    "product": "Quantum Core",
+    "revenue": 75.81
+  },
+  {
+    "order_id": "J1028",
+    "order_date": "2024-03-14",
+    "product": "Quantum Core",
+    "revenue": 107.4
+  },
+  {
+    "order_id": "J1112",
+    "order_date": "2024-03-14",
+    "product": "Quantum Core",
+    "revenue": 219.69
+  },
+  {
+    "order_id": "J1145",
+    "order_date": "2024-03-14",
+    "product": "Smart Widget",
+    "revenue": 77.85
+  },
+  {
+    "order_id": "J1093",
+    "order_date": "2024-03-14",
+    "product": "Neural Bridge",
+    "revenue": 247.7
+  },
+  {
+    "order_id": "J1147",
+    "order_date": "2024-03-14",
+    "product": "Neural Bridge",
+    "revenue": 226.86
+  },
+  {
+    "order_id": "J1094",
+    "order_date": "2024-03-14",
+    "product": "Neural Bridge",
+    "revenue": 340.74
+  },
+  {
+    "order_id": "J1045",
+    "order_date": "2024-03-14",
+    "product": "Quantum Core",
+    "revenue": 68.6
+  },
+  {
+    "order_id": "J1052",
+    "order_date": "2024-03-14",
+    "product": "Quantum Core",
+    "revenue": 374.87
+  },
+  {
+    "order_id": "J1103",
+    "order_date": "2024-03-14",
+    "product": "Quantum Core",
+    "revenue": 292.87
+  },
+  {
+    "order_id": "J1008",
+    "order_date": "2024-03-14",
+    "product": "Cloud Service",
+    "revenue": 338.57
+  },
+  {
+    "order_id": "J1129",
+    "order_date": "2024-03-14",
+    "product": "Quantum Core",
+    "revenue": 205.62
+  },
+  {
+    "order_id": "J1112",
+    "order_date": "2024-03-14",
+    "product": "Quantum Core",
+    "revenue": 219.69
+  },
+  {
+    "order_id": "J1190",
+    "order_date": "2024-03-14",
+    "product": "Smart Widget",
+    "revenue": 102.68
+  },
+  {
+    "order_id": "J1095",
+    "order_date": "2024-03-14",
+    "product": "Bio-Sensor",
+    "revenue": 186.24
+  },
+  {
+    "order_id": "J1193",
+    "order_date": "2024-03-14",
+    "product": "Smart Widget",
+    "revenue": 59.11
+  },
+  {
+    "order_id": "J1135",
+    "order_date": "2024-03-14",
+    "product": "Quantum Core",
+    "revenue": 405.93
+  },
+  {
+    "order_id": "J1099",
+    "order_date": "2024-03-14",
+    "product": "Cloud Service",
+    "revenue": 307.38
+  },
+  {
+    "order_id": "J1043",
+    "order_date": "2024-03-14",
+    "product": "Cloud Service",
+    "revenue": 63.41
+  },
+  {
+    "order_id": "J1146",
+    "order_date": "2024-03-14",
+    "product": "Smart Widget",
+    "revenue": 422.25
+  },
+  {
+    "order_id": "J1194",
+    "order_date": "2024-03-14",
+    "product": "Smart Widget",
+    "revenue": 341.06
+  },
+  {
+    "order_id": "J1113",
+    "order_date": "2024-03-14",
+    "product": "Bio-Sensor",
+    "revenue": 369.48
+  },
+  {
+    "order_id": "J1080",
+    "order_date": "2024-03-14",
+    "product": "Neural Bridge",
+    "revenue": 297.14
+  },
+  {
+    "order_id": "J1190",
+    "order_date": "2024-03-14",
+    "product": "Smart Widget",
+    "revenue": 102.68
+  },
+  {
+    "order_id": "J1102",
+    "order_date": "2024-03-14",
+    "product": "Cloud Service",
+    "revenue": 270.03
+  },
+  {
+    "order_id": "J1159",
+    "order_date": "2024-03-14",
+    "product": "Bio-Sensor",
+    "revenue": 139.91
+  },
+  {
+    "order_id": "J1197",
+    "order_date": "2024-03-14",
+    "product": "Smart Widget",
+    "revenue": 201.99
+  },
+  {
+    "order_id": "J1167",
+    "order_date": "2024-03-14",
+    "product": "Smart Widget",
+    "revenue": 318.46
+  },
+  {
+    "order_id": "J1155",
+    "order_date": "2024-03-14",
+    "product": "Smart Widget",
+    "revenue": 452.81
+  },
+  {
+    "order_id": "J1042",
+    "order_date": "2024-03-14",
+    "product": "Bio-Sensor",
+    "revenue": 404.44
+  },
+  {
+    "order_id": "J1095",
+    "order_date": "2024-03-14",
+    "product": "Bio-Sensor",
+    "revenue": 186.24
+  },
+  {
+    "order_id": "J1059",
+    "order_date": "2024-03-14",
+    "product": "Neural Bridge",
+    "revenue": 282.99
+  },
+  {
+    "order_id": "J1114",
+    "order_date": "2024-03-14",
+    "product": "Bio-Sensor",
+    "revenue": 472.86
+  },
+  {
+    "order_id": "J1012",
+    "order_date": "2024-03-14",
+    "product": "Neural Bridge",
+    "revenue": 167.41
+  },
+  {
+    "order_id": "J1076",
+    "order_date": "2024-03-14",
+    "product": "Neural Bridge",
+    "revenue": 193.93
+  },
+  {
+    "order_id": "J1110",
+    "order_date": "2024-03-14",
+    "product": "Bio-Sensor",
+    "revenue": 199.72
+  },
+  {
+    "order_id": "J1172",
+    "order_date": "2024-03-14",
+    "product": "Bio-Sensor",
+    "revenue": 251.3
+  },
+  {
+    "order_id": "J1120",
+    "order_date": "2024-03-14",
+    "product": "Bio-Sensor",
+    "revenue": 123.59
+  },
+  {
+    "order_id": "J1061",
+    "order_date": "2024-03-14",
+    "product": "Neural Bridge",
+    "revenue": 243.26
+  },
+  {
+    "order_id": "J1018",
+    "order_date": "2024-03-14",
+    "product": "Quantum Core",
+    "revenue": 358.35
+  },
+  {
+    "order_id": "J1133",
+    "order_date": "2024-03-14",
+    "product": "Neural Bridge",
+    "revenue": 258.17
+  },
+  {
+    "order_id": "J1118",
+    "order_date": "2024-03-14",
+    "product": "Bio-Sensor",
+    "revenue": 366.41
+  },
+  {
+    "order_id": "J1175",
+    "order_date": "2024-03-14",
+    "product": "Quantum Core",
+    "revenue": 380.45
+  },
+  {
+    "order_id": "J1161",
+    "order_date": "2024-03-14",
+    "product": "Neural Bridge",
+    "revenue": 414.44
+  },
+  {
+    "order_id": "J1001",
+    "order_date": "2024-03-14",
+    "product": "Smart Widget",
+    "revenue": 311.13
+  },
+  {
+    "order_id": "J1107",
+    "order_date": "2024-03-14",
+    "product": "Neural Bridge",
+    "revenue": 185.48
+  },
+  {
+    "order_id": "J1045",
+    "order_date": "2024-03-14",
+    "product": "Quantum Core",
+    "revenue": 68.6
+  },
+  {
+    "order_id": "J1109",
+    "order_date": "2024-03-14",
+    "product": "Neural Bridge",
+    "revenue": 206.34
+  },
+  {
+    "order_id": "J1046",
+    "order_date": "2024-03-14",
+    "product": "Smart Widget",
+    "revenue": 130.59
+  },
+  {
+    "order_id": "J1088",
+    "order_date": "2024-03-14",
+    "product": "Smart Widget",
+    "revenue": 179.13
+  },
+  {
+    "order_id": "J1065",
+    "order_date": "2024-03-14",
+    "product": "Quantum Core",
+    "revenue": 415.94
+  },
+  {
+    "order_id": "J1138",
+    "order_date": "2024-03-14",
+    "product": "Quantum Core",
+    "revenue": 187.96
+  },
+  {
+    "order_id": "J1192",
+    "order_date": "2024-03-14",
+    "product": "Smart Widget",
+    "revenue": 197.14
+  },
+  {
+    "order_id": "J1173",
+    "order_date": "2024-03-14",
+    "product": "Bio-Sensor",
+    "revenue": 486.88
+  },
+  {
+    "order_id": "J1013",
+    "order_date": "2024-03-14",
+    "product": "Bio-Sensor",
+    "revenue": 419.53
+  },
+  {
+    "order_id": "J1076",
+    "order_date": "2024-03-14",
+    "product": "Neural Bridge",
+    "revenue": 193.93
+  },
+  {
+    "order_id": "J1165",
+    "order_date": "2024-03-14",
+    "product": "Neural Bridge",
+    "revenue": 405.06
+  },
+  {
+    "order_id": "J1198",
+    "order_date": "2024-03-14",
+    "product": "Bio-Sensor",
+    "revenue": 278.68
+  },
+  {
+    "order_id": "J1087",
+    "order_date": "2024-03-14",
+    "product": "Neural Bridge",
+    "revenue": 291.4
+  },
+  {
+    "order_id": "J1035",
+    "order_date": "2024-03-14",
+    "product": "Cloud Service",
+    "revenue": 284.29
+  },
+  {
+    "order_id": "J1152",
+    "order_date": "2024-03-14",
+    "product": "Quantum Core",
+    "revenue": 338.27
+  },
+  {
+    "order_id": "J1031",
+    "order_date": "2024-03-14",
+    "product": "Cloud Service",
+    "revenue": 66.69
+  },
+  {
+    "order_id": "J1097",
+    "order_date": "2024-03-14",
+    "product": "Smart Widget",
+    "revenue": 159.86
+  },
+  {
+    "order_id": "J1122",
+    "order_date": "2024-03-14",
+    "product": "Quantum Core",
+    "revenue": 79.42
+  },
+  {
+    "order_id": "J1143",
+    "order_date": "2024-03-14",
+    "product": "Neural Bridge",
+    "revenue": 130.52
+  },
+  {
+    "order_id": "J1122",
+    "order_date": "2024-03-14",
+    "product": "Quantum Core",
+    "revenue": 79.42
+  },
+  {
+    "order_id": "J1126",
+    "order_date": "2024-03-14",
+    "product": "Neural Bridge",
+    "revenue": 371.29
+  },
+  {
+    "order_id": "J1139",
+    "order_date": "2024-03-14",
+    "product": "Smart Widget",
+    "revenue": 232.07
+  },
+  {
+    "order_id": "J1093",
+    "order_date": "2024-03-14",
+    "product": "Neural Bridge",
+    "revenue": 247.7
+  },
+  {
+    "order_id": "J1023",
+    "order_date": "2024-03-14",
+    "product": "Quantum Core",
+    "revenue": 239.02
+  },
+  {
+    "order_id": "J1126",
+    "order_date": "2024-03-14",
+    "product": "Neural Bridge",
+    "revenue": 371.29
+  },
+  {
+    "order_id": "J1109",
+    "order_date": "2024-03-14",
+    "product": "Neural Bridge",
+    "revenue": 206.34
+  },
+  {
+    "order_id": "J1053",
+    "order_date": "2024-03-14",
+    "product": "Smart Widget",
+    "revenue": 488.28
+  },
+  {
+    "order_id": "J1159",
+    "order_date": "2024-03-14",
+    "product": "Bio-Sensor",
+    "revenue": 139.91
+  },
+  {
+    "order_id": "J1017",
+    "order_date": "2024-03-14",
+    "product": "Cloud Service",
+    "revenue": 182.93
+  },
+  {
+    "order_id": "J1091",
+    "order_date": "2024-03-14",
+    "product": "Neural Bridge",
+    "revenue": 477.33
+  },
+  {
+    "order_id": "J1121",
+    "order_date": "2024-03-14",
+    "product": "Smart Widget",
+    "revenue": 194.93
+  },
+  {
+    "order_id": "J1188",
+    "order_date": "2024-03-14",
+    "product": "Smart Widget",
+    "revenue": 430.99
+  },
+  {
+    "order_id": "J1171",
+    "order_date": "2024-03-14",
+    "product": "Bio-Sensor",
+    "revenue": 431.02
+  },
+  {
+    "order_id": "J1132",
+    "order_date": "2024-03-14",
+    "product": "Cloud Service",
+    "revenue": 166.54
+  },
+  {
+    "order_id": "J1069",
+    "order_date": "2024-03-14",
+    "product": "Quantum Core",
+    "revenue": 56.9
+  },
+  {
+    "order_id": "J1188",
+    "order_date": "2024-03-14",
+    "product": "Smart Widget",
+    "revenue": 430.99
+  },
+  {
+    "order_id": "J1007",
+    "order_date": "2024-03-14",
+    "product": "Bio-Sensor",
+    "revenue": 328.97
+  },
+  {
+    "order_id": "J1099",
+    "order_date": "2024-03-14",
+    "product": "Cloud Service",
+    "revenue": 307.38
+  },
+  {
+    "order_id": "J1183",
+    "order_date": "2024-03-14",
+    "product": "Quantum Core",
+    "revenue": 259.37
+  },
+  {
+    "order_id": "J1176",
+    "order_date": "2024-03-14",
+    "product": "Bio-Sensor",
+    "revenue": 414.0
+  },
+  {
+    "order_id": "J1087",
+    "order_date": "2024-03-14",
+    "product": "Neural Bridge",
+    "revenue": 291.4
+  },
+  {
+    "order_id": "J1074",
+    "order_date": "2024-03-14",
+    "product": "Quantum Core",
+    "revenue": 321.99
+  },
+  {
+    "order_id": "J1058",
+    "order_date": "2024-03-14",
+    "product": "Smart Widget",
+    "revenue": 307.28
+  },
+  {
+    "order_id": "J1042",
+    "order_date": "2024-03-14",
+    "product": "Bio-Sensor",
+    "revenue": 404.44
+  },
+  {
+    "order_id": "J1182",
+    "order_date": "2024-03-14",
+    "product": "Quantum Core",
+    "revenue": 216.45
+  },
+  {
+    "order_id": "J1025",
+    "order_date": "2024-03-14",
+    "product": "Bio-Sensor",
+    "revenue": 207.02
+  },
+  {
+    "order_id": "J1182",
+    "order_date": "2024-03-14",
+    "product": "Quantum Core",
+    "revenue": 216.45
+  },
+  {
+    "order_id": "J1028",
+    "order_date": "2024-03-14",
+    "product": "Quantum Core",
+    "revenue": 107.4
+  },
+  {
+    "order_id": "J1070",
+    "order_date": "2024-03-14",
+    "product": "Bio-Sensor",
+    "revenue": 317.24
+  },
+  {
+    "order_id": "J1159",
+    "order_date": "2024-03-14",
+    "product": "Bio-Sensor",
+    "revenue": 139.91
+  },
+  {
+    "order_id": "J1054",
+    "order_date": "2024-03-14",
+    "product": "Neural Bridge",
+    "revenue": 93.89
+  },
+  {
+    "order_id": "J1145",
+    "order_date": "2024-03-14",
+    "product": "Smart Widget",
+    "revenue": 77.85
+  },
+  {
+    "order_id": "J1173",
+    "order_date": "2024-03-14",
+    "product": "Bio-Sensor",
+    "revenue": 486.88
+  },
+  {
+    "order_id": "J1102",
+    "order_date": "2024-03-14",
+    "product": "Cloud Service",
+    "revenue": 270.03
+  },
+  {
+    "order_id": "J1192",
+    "order_date": "2024-03-14",
+    "product": "Smart Widget",
+    "revenue": 197.14
+  },
+  {
+    "order_id": "J1067",
+    "order_date": "2024-03-14",
+    "product": "Cloud Service",
+    "revenue": 428.27
+  },
+  {
+    "order_id": "J1174",
+    "order_date": "2024-03-14",
+    "product": "Neural Bridge",
+    "revenue": 379.68
+  },
+  {
+    "order_id": "J1088",
+    "order_date": "2024-03-14",
+    "product": "Smart Widget",
+    "revenue": 179.13
+  },
+  {
+    "order_id": "J1047",
+    "order_date": "2024-03-14",
+    "product": "Cloud Service",
+    "revenue": 199.03
+  },
+  {
+    "order_id": "J1145",
+    "order_date": "2024-03-14",
+    "product": "Smart Widget",
+    "revenue": 77.85
+  },
+  {
+    "order_id": "J1102",
+    "order_date": "2024-03-14",
+    "product": "Cloud Service",
+    "revenue": 270.03
+  },
+  {
+    "order_id": "J1182",
+    "order_date": "2024-03-14",
+    "product": "Quantum Core",
+    "revenue": 216.45
+  },
+  {
+    "order_id": "J1072",
+    "order_date": "2024-03-14",
+    "product": "Cloud Service",
+    "revenue": 50.2
+  },
+  {
+    "order_id": "J1166",
+    "order_date": "2024-03-14",
+    "product": "Cloud Service",
+    "revenue": 397.59
+  },
+  {
+    "order_id": "J1155",
+    "order_date": "2024-03-14",
+    "product": "Smart Widget",
+    "revenue": 452.81
+  },
+  {
+    "order_id": "J1169",
+    "order_date": "2024-03-14",
+    "product": "Neural Bridge",
+    "revenue": 490.39
+  },
+  {
+    "order_id": "J1044",
+    "order_date": "2024-03-14",
+    "product": "Quantum Core",
+    "revenue": 488.5
+  },
+  {
+    "order_id": "J1068",
+    "order_date": "2024-03-14",
+    "product": "Bio-Sensor",
+    "revenue": 305.17
+  },
+  {
+    "order_id": "J1000",
+    "order_date": "2024-03-14",
+    "product": "Bio-Sensor",
+    "revenue": 210.43
+  },
+  {
+    "order_id": "J1111",
+    "order_date": "2024-03-14",
+    "product": "Cloud Service",
+    "revenue": 467.6
+  },
+  {
+    "order_id": "J1052",
+    "order_date": "2024-03-14",
+    "product": "Quantum Core",
+    "revenue": 374.87
+  },
+  {
+    "order_id": "J1028",
+    "order_date": "2024-03-14",
+    "product": "Quantum Core",
+    "revenue": 107.4
+  },
+  {
+    "order_id": "J1189",
+    "order_date": "2024-03-14",
+    "product": "Bio-Sensor",
+    "revenue": 460.57
+  },
+  {
+    "order_id": "J1174",
+    "order_date": "2024-03-14",
+    "product": "Neural Bridge",
+    "revenue": 379.68
+  },
+  {
+    "order_id": "J1162",
+    "order_date": "2024-03-14",
+    "product": "Neural Bridge",
+    "revenue": 374.24
+  },
+  {
+    "order_id": "J1076",
+    "order_date": "2024-03-14",
+    "product": "Neural Bridge",
+    "revenue": 193.93
+  },
+  {
+    "order_id": "J1024",
+    "order_date": "2024-03-14",
+    "product": "Bio-Sensor",
+    "revenue": 349.08
+  },
+  {
+    "order_id": "J1146",
+    "order_date": "2024-03-14",
+    "product": "Smart Widget",
+    "revenue": 422.25
+  },
+  {
+    "order_id": "J1166",
+    "order_date": "2024-03-14",
+    "product": "Cloud Service",
+    "revenue": 397.59
+  },
+  {
+    "order_id": "J1145",
+    "order_date": "2024-03-14",
+    "product": "Smart Widget",
+    "revenue": 77.85
+  },
+  {
+    "order_id": "J1032",
+    "order_date": "2024-03-14",
+    "product": "Smart Widget",
+    "revenue": 403.73
+  },
+  {
+    "order_id": "J1119",
+    "order_date": "2024-03-14",
+    "product": "Quantum Core",
+    "revenue": 332.49
+  },
+  {
+    "order_id": "J1073",
+    "order_date": "2024-03-14",
+    "product": "Smart Widget",
+    "revenue": 188.97
+  },
+  {
+    "order_id": "J1063",
+    "order_date": "2024-03-14",
+    "product": "Quantum Core",
+    "revenue": 364.44
+  },
+  {
+    "order_id": "J1091",
+    "order_date": "2024-03-14",
+    "product": "Neural Bridge",
+    "revenue": 477.33
+  },
+  {
+    "order_id": "J1145",
+    "order_date": "2024-03-14",
+    "product": "Smart Widget",
+    "revenue": 77.85
+  },
+  {
+    "order_id": "J1025",
+    "order_date": "2024-03-14",
+    "product": "Bio-Sensor",
+    "revenue": 207.02
+  },
+  {
+    "order_id": "J1149",
+    "order_date": "2024-03-14",
+    "product": "Quantum Core",
+    "revenue": 402.3
+  },
+  {
+    "order_id": "J1164",
+    "order_date": "2024-03-14",
+    "product": "Smart Widget",
+    "revenue": 137.58
+  },
+  {
+    "order_id": "J1015",
+    "order_date": "2024-03-14",
+    "product": "Quantum Core",
+    "revenue": 86.96
+  },
+  {
+    "order_id": "J1047",
+    "order_date": "2024-03-14",
+    "product": "Cloud Service",
+    "revenue": 199.03
+  },
+  {
+    "order_id": "J1128",
+    "order_date": "2024-03-14",
+    "product": "Neural Bridge",
+    "revenue": 196.89
+  },
+  {
+    "order_id": "J1157",
+    "order_date": "2024-03-14",
+    "product": "Bio-Sensor",
+    "revenue": 115.46
+  },
+  {
+    "order_id": "J1152",
+    "order_date": "2024-03-14",
+    "product": "Quantum Core",
+    "revenue": 338.27
+  },
+  {
+    "order_id": "J1166",
+    "order_date": "2024-03-14",
+    "product": "Cloud Service",
+    "revenue": 397.59
+  },
+  {
+    "order_id": "J1113",
+    "order_date": "2024-03-14",
+    "product": "Bio-Sensor",
+    "revenue": 369.48
+  },
+  {
+    "order_id": "J1157",
+    "order_date": "2024-03-14",
+    "product": "Bio-Sensor",
+    "revenue": 115.46
+  },
+  {
+    "order_id": "J1161",
+    "order_date": "2024-03-14",
+    "product": "Neural Bridge",
+    "revenue": 414.44
+  },
+  {
+    "order_id": "J1064",
+    "order_date": "2024-03-14",
+    "product": "Cloud Service",
+    "revenue": 53.36
+  },
+  {
+    "order_id": "J1075",
+    "order_date": "2024-03-14",
+    "product": "Cloud Service",
+    "revenue": 199.38
+  },
+  {
+    "order_id": "J1104",
+    "order_date": "2024-03-14",
+    "product": "Quantum Core",
+    "revenue": 226.22
+  },
+  {
+    "order_id": "J1010",
+    "order_date": "2024-03-14",
+    "product": "Smart Widget",
+    "revenue": 311.56
+  },
+  {
+    "order_id": "J1146",
+    "order_date": "2024-03-14",
+    "product": "Smart Widget",
+    "revenue": 422.25
+  },
+  {
+    "order_id": "J1075",
+    "order_date": "2024-03-14",
+    "product": "Cloud Service",
+    "revenue": 199.38
+  },
+  {
+    "order_id": "J1131",
+    "order_date": "2024-03-14",
+    "product": "Smart Widget",
+    "revenue": 380.54
+  },
+  {
+    "order_id": "J1141",
+    "order_date": "2024-03-14",
+    "product": "Quantum Core",
+    "revenue": 204.29
+  },
+  {
+    "order_id": "J1082",
+    "order_date": "2024-03-14",
+    "product": "Neural Bridge",
+    "revenue": 69.84
+  },
+  {
+    "order_id": "J1106",
+    "order_date": "2024-03-14",
+    "product": "Bio-Sensor",
+    "revenue": 103.94
+  },
+  {
+    "order_id": "J1067",
+    "order_date": "2024-03-14",
+    "product": "Cloud Service",
+    "revenue": 428.27
+  },
+  {
+    "order_id": "J1083",
+    "order_date": "2024-03-14",
+    "product": "Smart Widget",
+    "revenue": 288.45
+  },
+  {
+    "order_id": "J1095",
+    "order_date": "2024-03-14",
+    "product": "Bio-Sensor",
+    "revenue": 186.24
+  },
+  {
+    "order_id": "J1153",
+    "order_date": "2024-03-14",
+    "product": "Bio-Sensor",
+    "revenue": 309.61
+  },
+  {
+    "order_id": "J1100",
+    "order_date": "2024-03-14",
+    "product": "Cloud Service",
+    "revenue": 176.3
+  },
+  {
+    "order_id": "J1175",
+    "order_date": "2024-03-14",
+    "product": "Quantum Core",
+    "revenue": 380.45
+  },
+  {
+    "order_id": "J1128",
+    "order_date": "2024-03-14",
+    "product": "Neural Bridge",
+    "revenue": 196.89
+  },
+  {
+    "order_id": "J1020",
+    "order_date": "2024-03-14",
+    "product": "Quantum Core",
+    "revenue": 144.35
+  },
+  {
+    "order_id": "J1136",
+    "order_date": "2024-03-14",
+    "product": "Bio-Sensor",
+    "revenue": 130.61
+  },
+  {
+    "order_id": "J1192",
+    "order_date": "2024-03-14",
+    "product": "Smart Widget",
+    "revenue": 197.14
+  },
+  {
+    "order_id": "J1108",
+    "order_date": "2024-03-14",
+    "product": "Cloud Service",
+    "revenue": 423.62
+  },
+  {
+    "order_id": "J1106",
+    "order_date": "2024-03-14",
+    "product": "Bio-Sensor",
+    "revenue": 103.94
+  },
+  {
+    "order_id": "J1101",
+    "order_date": "2024-03-14",
+    "product": "Quantum Core",
+    "revenue": 385.35
+  },
+  {
+    "order_id": "J1086",
+    "order_date": "2024-03-14",
+    "product": "Bio-Sensor",
+    "revenue": 322.57
+  },
+  {
+    "order_id": "J1087",
+    "order_date": "2024-03-14",
+    "product": "Neural Bridge",
+    "revenue": 291.4
+  },
+  {
+    "order_id": "J1004",
+    "order_date": "2024-03-14",
+    "product": "Cloud Service",
+    "revenue": 88.81
+  },
+  {
+    "order_id": "J1097",
+    "order_date": "2024-03-14",
+    "product": "Smart Widget",
+    "revenue": 159.86
+  },
+  {
+    "order_id": "J1115",
+    "order_date": "2024-03-14",
+    "product": "Cloud Service",
+    "revenue": 132.58
+  },
+  {
+    "order_id": "J1144",
+    "order_date": "2024-03-14",
+    "product": "Smart Widget",
+    "revenue": 377.42
+  },
+  {
+    "order_id": "J1053",
+    "order_date": "2024-03-14",
+    "product": "Smart Widget",
+    "revenue": 488.28
+  },
+  {
+    "order_id": "J1114",
+    "order_date": "2024-03-14",
+    "product": "Bio-Sensor",
+    "revenue": 472.86
+  },
+  {
+    "order_id": "J1178",
+    "order_date": "2024-03-14",
+    "product": "Neural Bridge",
+    "revenue": 233.92
+  },
+  {
+    "order_id": "J1091",
+    "order_date": "2024-03-14",
+    "product": "Neural Bridge",
+    "revenue": 477.33
+  },
+  {
+    "order_id": "J1047",
+    "order_date": "2024-03-14",
+    "product": "Cloud Service",
+    "revenue": 199.03
+  },
+  {
+    "order_id": "J1005",
+    "order_date": "2024-03-14",
+    "product": "Smart Widget",
+    "revenue": 118.38
+  },
+  {
+    "order_id": "J1086",
+    "order_date": "2024-03-14",
+    "product": "Bio-Sensor",
+    "revenue": 322.57
+  },
+  {
+    "order_id": "J1168",
+    "order_date": "2024-03-14",
+    "product": "Smart Widget",
+    "revenue": 462.7
+  },
+  {
+    "order_id": "J1084",
+    "order_date": "2024-03-14",
+    "product": "Neural Bridge",
+    "revenue": 295.31
+  },
+  {
+    "order_id": "J1031",
+    "order_date": "2024-03-14",
+    "product": "Cloud Service",
+    "revenue": 66.69
+  },
+  {
+    "order_id": "J1004",
+    "order_date": "2024-03-14",
+    "product": "Cloud Service",
+    "revenue": 88.81
+  },
+  {
+    "order_id": "J1000",
+    "order_date": "2024-03-14",
+    "product": "Bio-Sensor",
+    "revenue": 210.43
+  },
+  {
+    "order_id": "J1149",
+    "order_date": "2024-03-14",
+    "product": "Quantum Core",
+    "revenue": 402.3
+  },
+  {
+    "order_id": "J1138",
+    "order_date": "2024-03-14",
+    "product": "Quantum Core",
+    "revenue": 187.96
+  },
+  {
+    "order_id": "J1030",
+    "order_date": "2024-03-14",
+    "product": "Quantum Core",
+    "revenue": 75.81
+  },
+  {
+    "order_id": "J1146",
+    "order_date": "2024-03-14",
+    "product": "Smart Widget",
+    "revenue": 422.25
+  },
+  {
+    "order_id": "J1131",
+    "order_date": "2024-03-14",
+    "product": "Smart Widget",
+    "revenue": 380.54
+  },
+  {
+    "order_id": "J1151",
+    "order_date": "2024-03-14",
+    "product": "Quantum Core",
+    "revenue": 410.38
+  },
+  {
+    "order_id": "J1090",
+    "order_date": "2024-03-14",
+    "product": "Neural Bridge",
+    "revenue": 157.52
+  },
+  {
+    "order_id": "J1014",
+    "order_date": "2024-03-14",
+    "product": "Neural Bridge",
+    "revenue": 139.96
+  },
+  {
+    "order_id": "J1061",
+    "order_date": "2024-03-14",
+    "product": "Neural Bridge",
+    "revenue": 243.26
+  },
+  {
+    "order_id": "J1124",
+    "order_date": "2024-03-14",
+    "product": "Smart Widget",
+    "revenue": 408.04
+  },
+  {
+    "order_id": "J1094",
+    "order_date": "2024-03-14",
+    "product": "Neural Bridge",
+    "revenue": 340.74
+  },
+  {
+    "order_id": "J1134",
+    "order_date": "2024-03-14",
+    "product": "Cloud Service",
+    "revenue": 263.05
+  },
+  {
+    "order_id": "J1078",
+    "order_date": "2024-03-14",
+    "product": "Bio-Sensor",
+    "revenue": 482.43
+  },
+  {
+    "order_id": "J1043",
+    "order_date": "2024-03-14",
+    "product": "Cloud Service",
+    "revenue": 63.41
+  },
+  {
+    "order_id": "J1023",
+    "order_date": "2024-03-14",
+    "product": "Quantum Core",
+    "revenue": 239.02
+  },
+  {
+    "order_id": "J1131",
+    "order_date": "2024-03-14",
+    "product": "Smart Widget",
+    "revenue": 380.54
+  },
+  {
+    "order_id": "J1137",
+    "order_date": "2024-03-14",
+    "product": "Smart Widget",
+    "revenue": 231.16
+  },
+  {
+    "order_id": "J1042",
+    "order_date": "2024-03-14",
+    "product": "Bio-Sensor",
+    "revenue": 404.44
+  },
+  {
+    "order_id": "J1052",
+    "order_date": "2024-03-14",
+    "product": "Quantum Core",
+    "revenue": 374.87
+  },
+  {
+    "order_id": "J1041",
+    "order_date": "2024-03-14",
+    "product": "Quantum Core",
+    "revenue": 331.41
+  },
+  {
+    "order_id": "J1107",
+    "order_date": "2024-03-14",
+    "product": "Neural Bridge",
+    "revenue": 185.48
+  },
+  {
+    "order_id": "J1114",
+    "order_date": "2024-03-14",
+    "product": "Bio-Sensor",
+    "revenue": 472.86
+  },
+  {
+    "order_id": "J1154",
+    "order_date": "2024-03-14",
+    "product": "Quantum Core",
+    "revenue": 60.44
+  },
+  {
+    "order_id": "J1117",
+    "order_date": "2024-03-14",
+    "product": "Cloud Service",
+    "revenue": 165.85
+  },
+  {
+    "order_id": "J1189",
+    "order_date": "2024-03-14",
+    "product": "Bio-Sensor",
+    "revenue": 460.57
+  },
+  {
+    "order_id": "J1113",
+    "order_date": "2024-03-14",
+    "product": "Bio-Sensor",
+    "revenue": 369.48
+  },
+  {
+    "order_id": "J1114",
+    "order_date": "2024-03-14",
+    "product": "Bio-Sensor",
+    "revenue": 472.86
+  },
+  {
+    "order_id": "J1036",
+    "order_date": "2024-03-14",
+    "product": "Bio-Sensor",
+    "revenue": 89.26
+  },
+  {
+    "order_id": "J1062",
+    "order_date": "2024-03-14",
+    "product": "Quantum Core",
+    "revenue": 196.42
+  },
+  {
+    "order_id": "J1128",
+    "order_date": "2024-03-14",
+    "product": "Neural Bridge",
+    "revenue": 196.89
+  },
+  {
+    "order_id": "J1171",
+    "order_date": "2024-03-14",
+    "product": "Bio-Sensor",
+    "revenue": 431.02
+  },
+  {
+    "order_id": "J1177",
+    "order_date": "2024-03-14",
+    "product": "Smart Widget",
+    "revenue": 84.21
+  },
+  {
+    "order_id": "J1082",
+    "order_date": "2024-03-14",
+    "product": "Neural Bridge",
+    "revenue": 69.84
+  },
+  {
+    "order_id": "J1166",
+    "order_date": "2024-03-14",
+    "product": "Cloud Service",
+    "revenue": 397.59
+  },
+  {
+    "order_id": "J1027",
+    "order_date": "2024-03-14",
+    "product": "Bio-Sensor",
+    "revenue": 223.65
+  },
+  {
+    "order_id": "J1075",
+    "order_date": "2024-03-14",
+    "product": "Cloud Service",
+    "revenue": 199.38
+  },
+  {
+    "order_id": "J1084",
+    "order_date": "2024-03-14",
+    "product": "Neural Bridge",
+    "revenue": 295.31
+  },
+  {
+    "order_id": "J1030",
+    "order_date": "2024-03-14",
+    "product": "Quantum Core",
+    "revenue": 75.81
+  },
+  {
+    "order_id": "J1199",
+    "order_date": "2024-03-14",
+    "product": "Bio-Sensor",
+    "revenue": 75.43
+  },
+  {
+    "order_id": "J1073",
+    "order_date": "2024-03-14",
+    "product": "Smart Widget",
+    "revenue": 188.97
+  },
+  {
+    "order_id": "J1026",
+    "order_date": "2024-03-14",
+    "product": "Neural Bridge",
+    "revenue": 350.6
+  },
+  {
+    "order_id": "J1083",
+    "order_date": "2024-03-14",
+    "product": "Smart Widget",
+    "revenue": 288.45
+  },
+  {
+    "order_id": "J1035",
+    "order_date": "2024-03-14",
+    "product": "Cloud Service",
+    "revenue": 284.29
+  },
+  {
+    "order_id": "J1162",
+    "order_date": "2024-03-14",
+    "product": "Neural Bridge",
+    "revenue": 374.24
+  },
+  {
+    "order_id": "J1022",
+    "order_date": "2024-03-14",
+    "product": "Bio-Sensor",
+    "revenue": 89.19
+  },
+  {
+    "order_id": "J1055",
+    "order_date": "2024-03-14",
+    "product": "Smart Widget",
+    "revenue": 423.03
+  },
+  {
+    "order_id": "J1149",
+    "order_date": "2024-03-14",
+    "product": "Quantum Core",
+    "revenue": 402.3
+  },
+  {
+    "order_id": "J1157",
+    "order_date": "2024-03-14",
+    "product": "Bio-Sensor",
+    "revenue": 115.46
+  },
+  {
+    "order_id": "J1148",
+    "order_date": "2024-03-14",
+    "product": "Cloud Service",
+    "revenue": 227.59
+  },
+  {
+    "order_id": "J1187",
+    "order_date": "2024-03-14",
+    "product": "Neural Bridge",
+    "revenue": 178.51
+  },
+  {
+    "order_id": "J1144",
+    "order_date": "2024-03-14",
+    "product": "Smart Widget",
+    "revenue": 377.42
+  },
+  {
+    "order_id": "J1002",
+    "order_date": "2024-03-14",
+    "product": "Cloud Service",
+    "revenue": 382.21
+  },
+  {
+    "order_id": "J1160",
+    "order_date": "2024-03-14",
+    "product": "Bio-Sensor",
+    "revenue": 103.09
+  },
+  {
+    "order_id": "J1000",
+    "order_date": "2024-03-14",
+    "product": "Bio-Sensor",
+    "revenue": 210.43
+  },
+  {
+    "order_id": "J1180",
+    "order_date": "2024-03-14",
+    "product": "Bio-Sensor",
+    "revenue": 109.22
+  },
+  {
+    "order_id": "J1098",
+    "order_date": "2024-03-14",
+    "product": "Quantum Core",
+    "revenue": 407.37
+  },
+  {
+    "order_id": "J1022",
+    "order_date": "2024-03-14",
+    "product": "Bio-Sensor",
+    "revenue": 89.19
+  },
+  {
+    "order_id": "J1100",
+    "order_date": "2024-03-14",
+    "product": "Cloud Service",
+    "revenue": 176.3
+  },
+  {
+    "order_id": "J1100",
+    "order_date": "2024-03-14",
+    "product": "Cloud Service",
+    "revenue": 176.3
+  },
+  {
+    "order_id": "J1178",
+    "order_date": "2024-03-14",
+    "product": "Neural Bridge",
+    "revenue": 233.92
+  },
+  {
+    "order_id": "J1025",
+    "order_date": "2024-03-14",
+    "product": "Bio-Sensor",
+    "revenue": 207.02
+  },
+  {
+    "order_id": "J1121",
+    "order_date": "2024-03-14",
+    "product": "Smart Widget",
+    "revenue": 194.93
+  },
+  {
+    "order_id": "J1064",
+    "order_date": "2024-03-14",
+    "product": "Cloud Service",
+    "revenue": 53.36
+  },
+  {
+    "order_id": "J1181",
+    "order_date": "2024-03-14",
+    "product": "Quantum Core",
+    "revenue": 388.55
+  },
+  {
+    "order_id": "J1194",
+    "order_date": "2024-03-14",
+    "product": "Smart Widget",
+    "revenue": 341.06
+  },
+  {
+    "order_id": "J1132",
+    "order_date": "2024-03-14",
+    "product": "Cloud Service",
+    "revenue": 166.54
+  },
+  {
+    "order_id": "J1163",
+    "order_date": "2024-03-14",
+    "product": "Neural Bridge",
+    "revenue": 168.28
+  },
+  {
+    "order_id": "J1119",
+    "order_date": "2024-03-14",
+    "product": "Quantum Core",
+    "revenue": 332.49
+  },
+  {
+    "order_id": "J1007",
+    "order_date": "2024-03-14",
+    "product": "Bio-Sensor",
+    "revenue": 328.97
+  },
+  {
+    "order_id": "J1135",
+    "order_date": "2024-03-14",
+    "product": "Quantum Core",
+    "revenue": 405.93
+  },
+  {
+    "order_id": "J1166",
+    "order_date": "2024-03-14",
+    "product": "Cloud Service",
+    "revenue": 397.59
+  },
+  {
+    "order_id": "J1108",
+    "order_date": "2024-03-14",
+    "product": "Cloud Service",
+    "revenue": 423.62
+  },
+  {
+    "order_id": "J1084",
+    "order_date": "2024-03-14",
+    "product": "Neural Bridge",
+    "revenue": 295.31
+  },
+  {
+    "order_id": "J1178",
+    "order_date": "2024-03-14",
+    "product": "Neural Bridge",
+    "revenue": 233.92
+  },
+  {
+    "order_id": "J1026",
+    "order_date": "2024-03-14",
+    "product": "Neural Bridge",
+    "revenue": 350.6
+  },
+  {
+    "order_id": "J1076",
+    "order_date": "2024-03-14",
+    "product": "Neural Bridge",
+    "revenue": 193.93
+  },
+  {
+    "order_id": "J1025",
+    "order_date": "2024-03-14",
+    "product": "Bio-Sensor",
+    "revenue": 207.02
+  },
+  {
+    "order_id": "J1145",
+    "order_date": "2024-03-14",
+    "product": "Smart Widget",
+    "revenue": 77.85
+  },
+  {
+    "order_id": "J1006",
+    "order_date": "2024-03-14",
+    "product": "Smart Widget",
+    "revenue": 129.47
+  },
+  {
+    "order_id": "J1175",
+    "order_date": "2024-03-14",
+    "product": "Quantum Core",
+    "revenue": 380.45
+  },
+  {
+    "order_id": "J1052",
+    "order_date": "2024-03-14",
+    "product": "Quantum Core",
+    "revenue": 374.87
+  },
+  {
+    "order_id": "J1138",
+    "order_date": "2024-03-14",
+    "product": "Quantum Core",
+    "revenue": 187.96
+  },
+  {
+    "order_id": "J1137",
+    "order_date": "2024-03-14",
+    "product": "Smart Widget",
+    "revenue": 231.16
+  },
+  {
+    "order_id": "J1168",
+    "order_date": "2024-03-14",
+    "product": "Smart Widget",
+    "revenue": 462.7
+  },
+  {
+    "order_id": "J1026",
+    "order_date": "2024-03-14",
+    "product": "Neural Bridge",
+    "revenue": 350.6
+  },
+  {
+    "order_id": "J1136",
+    "order_date": "2024-03-14",
+    "product": "Bio-Sensor",
+    "revenue": 130.61
+  },
+  {
+    "order_id": "J1002",
+    "order_date": "2024-03-14",
+    "product": "Cloud Service",
+    "revenue": 382.21
+  },
+  {
+    "order_id": "J1049",
+    "order_date": "2024-03-14",
+    "product": "Quantum Core",
+    "revenue": 290.0
+  },
+  {
+    "order_id": "J1076",
+    "order_date": "2024-03-14",
+    "product": "Neural Bridge",
+    "revenue": 193.93
+  },
+  {
+    "order_id": "J1023",
+    "order_date": "2024-03-14",
+    "product": "Quantum Core",
+    "revenue": 239.02
+  },
+  {
+    "order_id": "J1083",
+    "order_date": "2024-03-14",
+    "product": "Smart Widget",
+    "revenue": 288.45
+  },
+  {
+    "order_id": "J1197",
+    "order_date": "2024-03-14",
+    "product": "Smart Widget",
+    "revenue": 201.99
+  },
+  {
+    "order_id": "J1073",
+    "order_date": "2024-03-14",
+    "product": "Smart Widget",
+    "revenue": 188.97
+  },
+  {
+    "order_id": "J1034",
+    "order_date": "2024-03-14",
+    "product": "Cloud Service",
+    "revenue": 412.24
+  },
+  {
+    "order_id": "J1112",
+    "order_date": "2024-03-14",
+    "product": "Quantum Core",
+    "revenue": 219.69
+  },
+  {
+    "order_id": "J1037",
+    "order_date": "2024-03-14",
+    "product": "Bio-Sensor",
+    "revenue": 443.92
+  },
+  {
+    "order_id": "J1151",
+    "order_date": "2024-03-14",
+    "product": "Quantum Core",
+    "revenue": 410.38
+  },
+  {
+    "order_id": "J1096",
+    "order_date": "2024-03-14",
+    "product": "Neural Bridge",
+    "revenue": 196.5
+  },
+  {
+    "order_id": "J1115",
+    "order_date": "2024-03-14",
+    "product": "Cloud Service",
+    "revenue": 132.58
+  },
+  {
+    "order_id": "J1018",
+    "order_date": "2024-03-14",
+    "product": "Quantum Core",
+    "revenue": 358.35
+  },
+  {
+    "order_id": "J1181",
+    "order_date": "2024-03-14",
+    "product": "Quantum Core",
+    "revenue": 388.55
+  },
+  {
+    "order_id": "J1181",
+    "order_date": "2024-03-14",
+    "product": "Quantum Core",
+    "revenue": 388.55
+  },
+  {
+    "order_id": "J1135",
+    "order_date": "2024-03-14",
+    "product": "Quantum Core",
+    "revenue": 405.93
+  },
+  {
+    "order_id": "J1189",
+    "order_date": "2024-03-14",
+    "product": "Bio-Sensor",
+    "revenue": 460.57
+  },
+  {
+    "order_id": "J1178",
+    "order_date": "2024-03-14",
+    "product": "Neural Bridge",
+    "revenue": 233.92
+  },
+  {
+    "order_id": "J1082",
+    "order_date": "2024-03-14",
+    "product": "Neural Bridge",
+    "revenue": 69.84
+  },
+  {
+    "order_id": "J1124",
+    "order_date": "2024-03-14",
+    "product": "Smart Widget",
+    "revenue": 408.04
+  },
+  {
+    "order_id": "J1074",
+    "order_date": "2024-03-14",
+    "product": "Quantum Core",
+    "revenue": 321.99
+  },
+  {
+    "order_id": "J1137",
+    "order_date": "2024-03-14",
+    "product": "Smart Widget",
+    "revenue": 231.16
+  },
+  {
+    "order_id": "J1169",
+    "order_date": "2024-03-14",
+    "product": "Neural Bridge",
+    "revenue": 490.39
+  },
+  {
+    "order_id": "J1122",
+    "order_date": "2024-03-14",
+    "product": "Quantum Core",
+    "revenue": 79.42
+  },
+  {
+    "order_id": "J1134",
+    "order_date": "2024-03-14",
+    "product": "Cloud Service",
+    "revenue": 263.05
+  },
+  {
+    "order_id": "J1051",
+    "order_date": "2024-03-14",
+    "product": "Bio-Sensor",
+    "revenue": 256.54
+  },
+  {
+    "order_id": "J1186",
+    "order_date": "2024-03-14",
+    "product": "Bio-Sensor",
+    "revenue": 126.04
+  },
+  {
+    "order_id": "J1097",
+    "order_date": "2024-03-14",
+    "product": "Smart Widget",
+    "revenue": 159.86
+  },
+  {
+    "order_id": "J1089",
+    "order_date": "2024-03-14",
+    "product": "Smart Widget",
+    "revenue": 467.8
+  },
+  {
+    "order_id": "J1177",
+    "order_date": "2024-03-14",
+    "product": "Smart Widget",
+    "revenue": 84.21
+  },
+  {
+    "order_id": "J1034",
+    "order_date": "2024-03-14",
+    "product": "Cloud Service",
+    "revenue": 412.24
+  },
+  {
+    "order_id": "J1140",
+    "order_date": "2024-03-14",
+    "product": "Bio-Sensor",
+    "revenue": 381.52
+  },
+  {
+    "order_id": "J1161",
+    "order_date": "2024-03-14",
+    "product": "Neural Bridge",
+    "revenue": 414.44
+  },
+  {
+    "order_id": "J1133",
+    "order_date": "2024-03-14",
+    "product": "Neural Bridge",
+    "revenue": 258.17
+  },
+  {
+    "order_id": "J1190",
+    "order_date": "2024-03-14",
+    "product": "Smart Widget",
+    "revenue": 102.68
+  },
+  {
+    "order_id": "J1160",
+    "order_date": "2024-03-14",
+    "product": "Bio-Sensor",
+    "revenue": 103.09
+  },
+  {
+    "order_id": "J1007",
+    "order_date": "2024-03-14",
+    "product": "Bio-Sensor",
+    "revenue": 328.97
+  },
+  {
+    "order_id": "J1128",
+    "order_date": "2024-03-14",
+    "product": "Neural Bridge",
+    "revenue": 196.89
+  },
+  {
+    "order_id": "J1123",
+    "order_date": "2024-03-14",
+    "product": "Smart Widget",
+    "revenue": 319.03
+  },
+  {
+    "order_id": "J1079",
+    "order_date": "2024-03-14",
+    "product": "Quantum Core",
+    "revenue": 134.01
+  },
+  {
+    "order_id": "J1164",
+    "order_date": "2024-03-14",
+    "product": "Smart Widget",
+    "revenue": 137.58
+  },
+  {
+    "order_id": "J1166",
+    "order_date": "2024-03-14",
+    "product": "Cloud Service",
+    "revenue": 397.59
+  },
+  {
+    "order_id": "J1080",
+    "order_date": "2024-03-14",
+    "product": "Neural Bridge",
+    "revenue": 297.14
+  },
+  {
+    "order_id": "J1083",
+    "order_date": "2024-03-14",
+    "product": "Smart Widget",
+    "revenue": 288.45
+  },
+  {
+    "order_id": "J1076",
+    "order_date": "2024-03-14",
+    "product": "Neural Bridge",
+    "revenue": 193.93
+  },
+  {
+    "order_id": "J1027",
+    "order_date": "2024-03-14",
+    "product": "Bio-Sensor",
+    "revenue": 223.65
+  },
+  {
+    "order_id": "J1150",
+    "order_date": "2024-03-14",
+    "product": "Cloud Service",
+    "revenue": 407.95
+  },
+  {
+    "order_id": "J1096",
+    "order_date": "2024-03-14",
+    "product": "Neural Bridge",
+    "revenue": 196.5
+  },
+  {
+    "order_id": "J1082",
+    "order_date": "2024-03-14",
+    "product": "Neural Bridge",
+    "revenue": 69.84
+  },
+  {
+    "order_id": "J1196",
+    "order_date": "2024-03-14",
+    "product": "Bio-Sensor",
+    "revenue": 490.14
+  },
+  {
+    "order_id": "J1188",
+    "order_date": "2024-03-14",
+    "product": "Smart Widget",
+    "revenue": 430.99
+  },
+  {
+    "order_id": "J1127",
+    "order_date": "2024-03-14",
+    "product": "Bio-Sensor",
+    "revenue": 86.42
+  },
+  {
+    "order_id": "J1018",
+    "order_date": "2024-03-14",
+    "product": "Quantum Core",
+    "revenue": 358.35
+  },
+  {
+    "order_id": "J1198",
+    "order_date": "2024-03-14",
+    "product": "Bio-Sensor",
+    "revenue": 278.68
+  },
+  {
+    "order_id": "J1120",
+    "order_date": "2024-03-14",
+    "product": "Bio-Sensor",
+    "revenue": 123.59
+  },
+  {
+    "order_id": "J1003",
+    "order_date": "2024-03-14",
+    "product": "Bio-Sensor",
+    "revenue": 168.83
+  },
+  {
+    "order_id": "J1075",
+    "order_date": "2024-03-14",
+    "product": "Cloud Service",
+    "revenue": 199.38
+  },
+  {
+    "order_id": "J1079",
+    "order_date": "2024-03-14",
+    "product": "Quantum Core",
+    "revenue": 134.01
+  },
+  {
+    "order_id": "J1123",
+    "order_date": "2024-03-14",
+    "product": "Smart Widget",
+    "revenue": 319.03
+  },
+  {
+    "order_id": "J1055",
+    "order_date": "2024-03-14",
+    "product": "Smart Widget",
+    "revenue": 423.03
+  },
+  {
+    "order_id": "J1105",
+    "order_date": "2024-03-14",
+    "product": "Bio-Sensor",
+    "revenue": 290.2
+  },
+  {
+    "order_id": "J1129",
+    "order_date": "2024-03-14",
+    "product": "Quantum Core",
+    "revenue": 205.62
+  },
+  {
+    "order_id": "J1067",
+    "order_date": "2024-03-14",
+    "product": "Cloud Service",
+    "revenue": 428.27
+  },
+  {
+    "order_id": "J1034",
+    "order_date": "2024-03-14",
+    "product": "Cloud Service",
+    "revenue": 412.24
+  },
+  {
+    "order_id": "J1025",
+    "order_date": "2024-03-14",
+    "product": "Bio-Sensor",
+    "revenue": 207.02
+  },
+  {
+    "order_id": "J1150",
+    "order_date": "2024-03-14",
+    "product": "Cloud Service",
+    "revenue": 407.95
+  },
+  {
+    "order_id": "J1014",
+    "order_date": "2024-03-14",
+    "product": "Neural Bridge",
+    "revenue": 139.96
+  },
+  {
+    "order_id": "J1125",
+    "order_date": "2024-03-14",
+    "product": "Smart Widget",
+    "revenue": 383.2
+  },
+  {
+    "order_id": "J1123",
+    "order_date": "2024-03-14",
+    "product": "Smart Widget",
+    "revenue": 319.03
+  },
+  {
+    "order_id": "J1190",
+    "order_date": "2024-03-14",
+    "product": "Smart Widget",
+    "revenue": 102.68
+  },
+  {
+    "order_id": "J1150",
+    "order_date": "2024-03-14",
+    "product": "Cloud Service",
+    "revenue": 407.95
+  },
+  {
+    "order_id": "J1051",
+    "order_date": "2024-03-14",
+    "product": "Bio-Sensor",
+    "revenue": 256.54
+  },
+  {
+    "order_id": "J1114",
+    "order_date": "2024-03-14",
+    "product": "Bio-Sensor",
+    "revenue": 472.86
+  },
+  {
+    "order_id": "J1127",
+    "order_date": "2024-03-14",
+    "product": "Bio-Sensor",
+    "revenue": 86.42
+  },
+  {
+    "order_id": "J1167",
+    "order_date": "2024-03-14",
+    "product": "Smart Widget",
+    "revenue": 318.46
+  },
+  {
+    "order_id": "J1169",
+    "order_date": "2024-03-14",
+    "product": "Neural Bridge",
+    "revenue": 490.39
+  },
+  {
+    "order_id": "J1195",
+    "order_date": "2024-03-14",
+    "product": "Smart Widget",
+    "revenue": 189.8
+  },
+  {
+    "order_id": "J1062",
+    "order_date": "2024-03-14",
+    "product": "Quantum Core",
+    "revenue": 196.42
+  },
+  {
+    "order_id": "J1124",
+    "order_date": "2024-03-14",
+    "product": "Smart Widget",
+    "revenue": 408.04
+  },
+  {
+    "order_id": "J1174",
+    "order_date": "2024-03-14",
+    "product": "Neural Bridge",
+    "revenue": 379.68
+  },
+  {
+    "order_id": "J1056",
+    "order_date": "2024-03-14",
+    "product": "Neural Bridge",
+    "revenue": 58.19
+  },
+  {
+    "order_id": "J1164",
+    "order_date": "2024-03-14",
+    "product": "Smart Widget",
+    "revenue": 137.58
+  },
+  {
+    "order_id": "J1099",
+    "order_date": "2024-03-14",
+    "product": "Cloud Service",
+    "revenue": 307.38
+  },
+  {
+    "order_id": "J1019",
+    "order_date": "2024-03-14",
+    "product": "Neural Bridge",
+    "revenue": 384.85
+  },
+  {
+    "order_id": "J1164",
+    "order_date": "2024-03-14",
+    "product": "Smart Widget",
+    "revenue": 137.58
+  },
+  {
+    "order_id": "J1008",
+    "order_date": "2024-03-14",
+    "product": "Cloud Service",
+    "revenue": 338.57
+  },
+  {
+    "order_id": "J1121",
+    "order_date": "2024-03-14",
+    "product": "Smart Widget",
+    "revenue": 194.93
+  },
+  {
+    "order_id": "J1180",
+    "order_date": "2024-03-14",
+    "product": "Bio-Sensor",
+    "revenue": 109.22
+  },
+  {
+    "order_id": "J1121",
+    "order_date": "2024-03-14",
+    "product": "Smart Widget",
+    "revenue": 194.93
+  },
+  {
+    "order_id": "J1008",
+    "order_date": "2024-03-14",
+    "product": "Cloud Service",
+    "revenue": 338.57
+  },
+  {
+    "order_id": "J1177",
+    "order_date": "2024-03-14",
+    "product": "Smart Widget",
+    "revenue": 84.21
+  },
+  {
+    "order_id": "J1059",
+    "order_date": "2024-03-14",
+    "product": "Neural Bridge",
+    "revenue": 282.99
+  },
+  {
+    "order_id": "J1193",
+    "order_date": "2024-03-14",
+    "product": "Smart Widget",
+    "revenue": 59.11
+  },
+  {
+    "order_id": "J1118",
+    "order_date": "2024-03-14",
+    "product": "Bio-Sensor",
+    "revenue": 366.41
+  },
+  {
+    "order_id": "J1096",
+    "order_date": "2024-03-14",
+    "product": "Neural Bridge",
+    "revenue": 196.5
+  },
+  {
+    "order_id": "J1067",
+    "order_date": "2024-03-14",
+    "product": "Cloud Service",
+    "revenue": 428.27
+  },
+  {
+    "order_id": "J1176",
+    "order_date": "2024-03-14",
+    "product": "Bio-Sensor",
+    "revenue": 414.0
+  },
+  {
+    "order_id": "J1179",
+    "order_date": "2024-03-14",
+    "product": "Quantum Core",
+    "revenue": 450.31
+  },
+  {
+    "order_id": "J1004",
+    "order_date": "2024-03-14",
+    "product": "Cloud Service",
+    "revenue": 88.81
+  },
+  {
+    "order_id": "J1010",
+    "order_date": "2024-03-14",
+    "product": "Smart Widget",
+    "revenue": 311.56
+  },
+  {
+    "order_id": "J1152",
+    "order_date": "2024-03-14",
+    "product": "Quantum Core",
+    "revenue": 338.27
+  },
+  {
+    "order_id": "J1132",
+    "order_date": "2024-03-14",
+    "product": "Cloud Service",
+    "revenue": 166.54
+  },
+  {
+    "order_id": "J1070",
+    "order_date": "2024-03-14",
+    "product": "Bio-Sensor",
+    "revenue": 317.24
+  },
+  {
+    "order_id": "J1154",
+    "order_date": "2024-03-14",
+    "product": "Quantum Core",
+    "revenue": 60.44
+  },
+  {
+    "order_id": "J1097",
+    "order_date": "2024-03-14",
+    "product": "Smart Widget",
+    "revenue": 159.86
+  },
+  {
+    "order_id": "J1105",
+    "order_date": "2024-03-14",
+    "product": "Bio-Sensor",
+    "revenue": 290.2
+  },
+  {
+    "order_id": "J1085",
+    "order_date": "2024-03-14",
+    "product": "Bio-Sensor",
+    "revenue": 338.91
+  },
+  {
+    "order_id": "J1063",
+    "order_date": "2024-03-14",
+    "product": "Quantum Core",
+    "revenue": 364.44
+  },
+  {
+    "order_id": "J1136",
+    "order_date": "2024-03-14",
+    "product": "Bio-Sensor",
+    "revenue": 130.61
+  },
+  {
+    "order_id": "J1152",
+    "order_date": "2024-03-14",
+    "product": "Quantum Core",
+    "revenue": 338.27
+  },
+  {
+    "order_id": "J1044",
+    "order_date": "2024-03-14",
+    "product": "Quantum Core",
+    "revenue": 488.5
+  },
+  {
+    "order_id": "J1084",
+    "order_date": "2024-03-14",
+    "product": "Neural Bridge",
+    "revenue": 295.31
+  },
+  {
+    "order_id": "J1123",
+    "order_date": "2024-03-14",
+    "product": "Smart Widget",
+    "revenue": 319.03
+  },
+  {
+    "order_id": "J1170",
+    "order_date": "2024-03-14",
+    "product": "Bio-Sensor",
+    "revenue": 238.27
+  },
+  {
+    "order_id": "J1095",
+    "order_date": "2024-03-14",
+    "product": "Bio-Sensor",
+    "revenue": 186.24
+  },
+  {
+    "order_id": "J1089",
+    "order_date": "2024-03-14",
+    "product": "Smart Widget",
+    "revenue": 467.8
+  },
+  {
+    "order_id": "J1174",
+    "order_date": "2024-03-14",
+    "product": "Neural Bridge",
+    "revenue": 379.68
+  },
+  {
+    "order_id": "J1124",
+    "order_date": "2024-03-14",
+    "product": "Smart Widget",
+    "revenue": 408.04
+  },
+  {
+    "order_id": "J1042",
+    "order_date": "2024-03-14",
+    "product": "Bio-Sensor",
+    "revenue": 404.44
+  },
+  {
+    "order_id": "J1159",
+    "order_date": "2024-03-14",
+    "product": "Bio-Sensor",
+    "revenue": 139.91
+  },
+  {
+    "order_id": "J1097",
+    "order_date": "2024-03-14",
+    "product": "Smart Widget",
+    "revenue": 159.86
+  },
+  {
+    "order_id": "J1044",
+    "order_date": "2024-03-14",
+    "product": "Quantum Core",
+    "revenue": 488.5
+  },
+  {
+    "order_id": "J1174",
+    "order_date": "2024-03-14",
+    "product": "Neural Bridge",
+    "revenue": 379.68
+  },
+  {
+    "order_id": "J1062",
+    "order_date": "2024-03-14",
+    "product": "Quantum Core",
+    "revenue": 196.42
+  },
+  {
+    "order_id": "J1134",
+    "order_date": "2024-03-14",
+    "product": "Cloud Service",
+    "revenue": 263.05
+  },
+  {
+    "order_id": "J1067",
+    "order_date": "2024-03-14",
+    "product": "Cloud Service",
+    "revenue": 428.27
+  },
+  {
+    "order_id": "J1195",
+    "order_date": "2024-03-14",
+    "product": "Smart Widget",
+    "revenue": 189.8
+  },
+  {
+    "order_id": "J1138",
+    "order_date": "2024-03-14",
+    "product": "Quantum Core",
+    "revenue": 187.96
+  },
+  {
+    "order_id": "J1058",
+    "order_date": "2024-03-14",
+    "product": "Smart Widget",
+    "revenue": 307.28
+  },
+  {
+    "order_id": "J1158",
+    "order_date": "2024-03-14",
+    "product": "Smart Widget",
+    "revenue": 420.42
+  },
+  {
+    "order_id": "J1003",
+    "order_date": "2024-03-14",
+    "product": "Bio-Sensor",
+    "revenue": 168.83
+  },
+  {
+    "order_id": "J1174",
+    "order_date": "2024-03-14",
+    "product": "Neural Bridge",
+    "revenue": 379.68
+  },
+  {
+    "order_id": "J1000",
+    "order_date": "2024-03-14",
+    "product": "Bio-Sensor",
+    "revenue": 210.43
+  },
+  {
+    "order_id": "J1133",
+    "order_date": "2024-03-14",
+    "product": "Neural Bridge",
+    "revenue": 258.17
+  },
+  {
+    "order_id": "J1050",
+    "order_date": "2024-03-14",
+    "product": "Smart Widget",
+    "revenue": 383.09
+  },
+  {
+    "order_id": "J1038",
+    "order_date": "2024-03-14",
+    "product": "Quantum Core",
+    "revenue": 298.28
+  },
+  {
+    "order_id": "J1060",
+    "order_date": "2024-03-14",
+    "product": "Smart Widget",
+    "revenue": 252.9
+  },
+  {
+    "order_id": "J1008",
+    "order_date": "2024-03-14",
+    "product": "Cloud Service",
+    "revenue": 338.57
+  },
+  {
+    "order_id": "J1164",
+    "order_date": "2024-03-14",
+    "product": "Smart Widget",
+    "revenue": 137.58
+  },
+  {
+    "order_id": "J1103",
+    "order_date": "2024-03-14",
+    "product": "Quantum Core",
+    "revenue": 292.87
+  },
+  {
+    "order_id": "J1049",
+    "order_date": "2024-03-14",
+    "product": "Quantum Core",
+    "revenue": 290.0
+  },
+  {
+    "order_id": "J1136",
+    "order_date": "2024-03-14",
+    "product": "Bio-Sensor",
+    "revenue": 130.61
+  },
+  {
+    "order_id": "J1076",
+    "order_date": "2024-03-14",
+    "product": "Neural Bridge",
+    "revenue": 193.93
+  },
+  {
+    "order_id": "J1106",
+    "order_date": "2024-03-14",
+    "product": "Bio-Sensor",
+    "revenue": 103.94
+  },
+  {
+    "order_id": "J1062",
+    "order_date": "2024-03-14",
+    "product": "Quantum Core",
+    "revenue": 196.42
+  },
+  {
+    "order_id": "J1044",
+    "order_date": "2024-03-14",
+    "product": "Quantum Core",
+    "revenue": 488.5
+  },
+  {
+    "order_id": "J1177",
+    "order_date": "2024-03-14",
+    "product": "Smart Widget",
+    "revenue": 84.21
+  },
+  {
+    "order_id": "J1155",
+    "order_date": "2024-03-14",
+    "product": "Smart Widget",
+    "revenue": 452.81
+  },
+  {
+    "order_id": "J1177",
+    "order_date": "2024-03-14",
+    "product": "Smart Widget",
+    "revenue": 84.21
+  },
+  {
+    "order_id": "J1049",
+    "order_date": "2024-03-14",
+    "product": "Quantum Core",
+    "revenue": 290.0
+  },
+  {
+    "order_id": "J1092",
+    "order_date": "2024-03-14",
+    "product": "Cloud Service",
+    "revenue": 166.99
+  },
+  {
+    "order_id": "J1136",
+    "order_date": "2024-03-14",
+    "product": "Bio-Sensor",
+    "revenue": 130.61
+  },
+  {
+    "order_id": "J1142",
+    "order_date": "2024-03-14",
+    "product": "Neural Bridge",
+    "revenue": 236.62
+  },
+  {
+    "order_id": "J1149",
+    "order_date": "2024-03-14",
+    "product": "Quantum Core",
+    "revenue": 402.3
+  },
+  {
+    "order_id": "J1134",
+    "order_date": "2024-03-14",
+    "product": "Cloud Service",
+    "revenue": 263.05
+  },
+  {
+    "order_id": "J1006",
+    "order_date": "2024-03-14",
+    "product": "Smart Widget",
+    "revenue": 129.47
+  },
+  {
+    "order_id": "J1038",
+    "order_date": "2024-03-14",
+    "product": "Quantum Core",
+    "revenue": 298.28
+  },
+  {
+    "order_id": "J1046",
+    "order_date": "2024-03-14",
+    "product": "Smart Widget",
+    "revenue": 130.59
+  },
+  {
+    "order_id": "J1171",
+    "order_date": "2024-03-14",
+    "product": "Bio-Sensor",
+    "revenue": 431.02
+  },
+  {
+    "order_id": "J1081",
+    "order_date": "2024-03-14",
+    "product": "Cloud Service",
+    "revenue": 130.77
+  },
+  {
+    "order_id": "J1163",
+    "order_date": "2024-03-14",
+    "product": "Neural Bridge",
+    "revenue": 168.28
+  },
+  {
+    "order_id": "J1050",
+    "order_date": "2024-03-14",
+    "product": "Smart Widget",
+    "revenue": 383.09
+  },
+  {
+    "order_id": "J1149",
+    "order_date": "2024-03-14",
+    "product": "Quantum Core",
+    "revenue": 402.3
+  },
+  {
+    "order_id": "J1007",
+    "order_date": "2024-03-14",
+    "product": "Bio-Sensor",
+    "revenue": 328.97
+  },
+  {
+    "order_id": "J1153",
+    "order_date": "2024-03-14",
+    "product": "Bio-Sensor",
+    "revenue": 309.61
+  },
+  {
+    "order_id": "J1111",
+    "order_date": "2024-03-14",
+    "product": "Cloud Service",
+    "revenue": 467.6
+  },
+  {
+    "order_id": "J1127",
+    "order_date": "2024-03-14",
+    "product": "Bio-Sensor",
+    "revenue": 86.42
+  },
+  {
+    "order_id": "J1126",
+    "order_date": "2024-03-14",
+    "product": "Neural Bridge",
+    "revenue": 371.29
+  },
+  {
+    "order_id": "J1181",
+    "order_date": "2024-03-14",
+    "product": "Quantum Core",
+    "revenue": 388.55
+  },
+  {
+    "order_id": "J1188",
+    "order_date": "2024-03-14",
+    "product": "Smart Widget",
+    "revenue": 430.99
+  },
+  {
+    "order_id": "J1062",
+    "order_date": "2024-03-14",
+    "product": "Quantum Core",
+    "revenue": 196.42
+  },
+  {
+    "order_id": "J1043",
+    "order_date": "2024-03-14",
+    "product": "Cloud Service",
+    "revenue": 63.41
+  },
+  {
+    "order_id": "J1043",
+    "order_date": "2024-03-14",
+    "product": "Cloud Service",
+    "revenue": 63.41
+  },
+  {
+    "order_id": "J1065",
+    "order_date": "2024-03-14",
+    "product": "Quantum Core",
+    "revenue": 415.94
+  },
+  {
+    "order_id": "J1006",
+    "order_date": "2024-03-14",
+    "product": "Smart Widget",
+    "revenue": 129.47
+  },
+  {
+    "order_id": "J1186",
+    "order_date": "2024-03-14",
+    "product": "Bio-Sensor",
+    "revenue": 126.04
+  },
+  {
+    "order_id": "J1158",
+    "order_date": "2024-03-14",
+    "product": "Smart Widget",
+    "revenue": 420.42
+  },
+  {
+    "order_id": "J1097",
+    "order_date": "2024-03-14",
+    "product": "Smart Widget",
+    "revenue": 159.86
+  },
+  {
+    "order_id": "J1064",
+    "order_date": "2024-03-14",
+    "product": "Cloud Service",
+    "revenue": 53.36
+  },
+  {
+    "order_id": "J1048",
+    "order_date": "2024-03-14",
+    "product": "Cloud Service",
+    "revenue": 125.41
+  },
+  {
+    "order_id": "J1143",
+    "order_date": "2024-03-14",
+    "product": "Neural Bridge",
+    "revenue": 130.52
+  },
+  {
+    "order_id": "J1134",
+    "order_date": "2024-03-14",
+    "product": "Cloud Service",
+    "revenue": 263.05
+  },
+  {
+    "order_id": "J1186",
+    "order_date": "2024-03-14",
+    "product": "Bio-Sensor",
+    "revenue": 126.04
+  },
+  {
+    "order_id": "J1092",
+    "order_date": "2024-03-14",
+    "product": "Cloud Service",
+    "revenue": 166.99
+  },
+  {
+    "order_id": "J1153",
+    "order_date": "2024-03-14",
+    "product": "Bio-Sensor",
+    "revenue": 309.61
+  },
+  {
+    "order_id": "J1024",
+    "order_date": "2024-03-14",
+    "product": "Bio-Sensor",
+    "revenue": 349.08
+  },
+  {
+    "order_id": "J1147",
+    "order_date": "2024-03-14",
+    "product": "Neural Bridge",
+    "revenue": 226.86
+  },
+  {
+    "order_id": "J1132",
+    "order_date": "2024-03-14",
+    "product": "Cloud Service",
+    "revenue": 166.54
+  },
+  {
+    "order_id": "J1073",
+    "order_date": "2024-03-14",
+    "product": "Smart Widget",
+    "revenue": 188.97
+  },
+  {
+    "order_id": "J1130",
+    "order_date": "2024-03-14",
+    "product": "Neural Bridge",
+    "revenue": 406.07
+  },
+  {
+    "order_id": "J1170",
+    "order_date": "2024-03-14",
+    "product": "Bio-Sensor",
+    "revenue": 238.27
+  },
+  {
+    "order_id": "J1011",
+    "order_date": "2024-03-14",
+    "product": "Quantum Core",
+    "revenue": 212.09
+  },
+  {
+    "order_id": "J1014",
+    "order_date": "2024-03-14",
+    "product": "Neural Bridge",
+    "revenue": 139.96
+  },
+  {
+    "order_id": "J1120",
+    "order_date": "2024-03-14",
+    "product": "Bio-Sensor",
+    "revenue": 123.59
+  },
+  {
+    "order_id": "J1194",
+    "order_date": "2024-03-14",
+    "product": "Smart Widget",
+    "revenue": 341.06
+  },
+  {
+    "order_id": "J1103",
+    "order_date": "2024-03-14",
+    "product": "Quantum Core",
+    "revenue": 292.87
+  },
+  {
+    "order_id": "J1087",
+    "order_date": "2024-03-14",
+    "product": "Neural Bridge",
+    "revenue": 291.4
+  },
+  {
+    "order_id": "J1071",
+    "order_date": "2024-03-14",
+    "product": "Bio-Sensor",
+    "revenue": 334.21
+  },
+  {
+    "order_id": "J1015",
+    "order_date": "2024-03-14",
+    "product": "Quantum Core",
+    "revenue": 86.96
+  },
+  {
+    "order_id": "J1082",
+    "order_date": "2024-03-14",
+    "product": "Neural Bridge",
+    "revenue": 69.84
+  },
+  {
+    "order_id": "J1066",
+    "order_date": "2024-03-14",
+    "product": "Smart Widget",
+    "revenue": 454.56
+  },
+  {
+    "order_id": "J1009",
+    "order_date": "2024-03-14",
+    "product": "Bio-Sensor",
+    "revenue": 63.51
+  },
+  {
+    "order_id": "J1175",
+    "order_date": "2024-03-14",
+    "product": "Quantum Core",
+    "revenue": 380.45
+  },
+  {
+    "order_id": "J1181",
+    "order_date": "2024-03-14",
+    "product": "Quantum Core",
+    "revenue": 388.55
+  },
+  {
+    "order_id": "J1026",
+    "order_date": "2024-03-14",
+    "product": "Neural Bridge",
+    "revenue": 350.6
+  },
+  {
+    "order_id": "J1054",
+    "order_date": "2024-03-14",
+    "product": "Neural Bridge",
+    "revenue": 93.89
+  },
+  {
+    "order_id": "J1112",
+    "order_date": "2024-03-14",
+    "product": "Quantum Core",
+    "revenue": 219.69
+  },
+  {
+    "order_id": "J1155",
+    "order_date": "2024-03-14",
+    "product": "Smart Widget",
+    "revenue": 452.81
+  },
+  {
+    "order_id": "J1022",
+    "order_date": "2024-03-14",
+    "product": "Bio-Sensor",
+    "revenue": 89.19
+  },
+  {
+    "order_id": "J1091",
+    "order_date": "2024-03-14",
+    "product": "Neural Bridge",
+    "revenue": 477.33
+  },
+  {
+    "order_id": "J1113",
+    "order_date": "2024-03-14",
+    "product": "Bio-Sensor",
+    "revenue": 369.48
+  },
+  {
+    "order_id": "J1180",
+    "order_date": "2024-03-14",
+    "product": "Bio-Sensor",
+    "revenue": 109.22
+  },
+  {
+    "order_id": "J1163",
+    "order_date": "2024-03-14",
+    "product": "Neural Bridge",
+    "revenue": 168.28
+  },
+  {
+    "order_id": "J1121",
+    "order_date": "2024-03-14",
+    "product": "Smart Widget",
+    "revenue": 194.93
+  },
+  {
+    "order_id": "J1001",
+    "order_date": "2024-03-14",
+    "product": "Smart Widget",
+    "revenue": 311.13
+  },
+  {
+    "order_id": "J1043",
+    "order_date": "2024-03-14",
+    "product": "Cloud Service",
+    "revenue": 63.41
+  },
+  {
+    "order_id": "J1124",
+    "order_date": "2024-03-14",
+    "product": "Smart Widget",
+    "revenue": 408.04
+  },
+  {
+    "order_id": "J1123",
+    "order_date": "2024-03-14",
+    "product": "Smart Widget",
+    "revenue": 319.03
+  },
+  {
+    "order_id": "J1063",
+    "order_date": "2024-03-14",
+    "product": "Quantum Core",
+    "revenue": 364.44
+  },
+  {
+    "order_id": "J1058",
+    "order_date": "2024-03-14",
+    "product": "Smart Widget",
+    "revenue": 307.28
+  },
+  {
+    "order_id": "J1000",
+    "order_date": "2024-03-14",
+    "product": "Bio-Sensor",
+    "revenue": 210.43
+  },
+  {
+    "order_id": "J1089",
+    "order_date": "2024-03-14",
+    "product": "Smart Widget",
+    "revenue": 467.8
+  },
+  {
+    "order_id": "J1094",
+    "order_date": "2024-03-14",
+    "product": "Neural Bridge",
+    "revenue": 340.74
+  },
+  {
+    "order_id": "J1190",
+    "order_date": "2024-03-14",
+    "product": "Smart Widget",
+    "revenue": 102.68
+  },
+  {
+    "order_id": "J1078",
+    "order_date": "2024-03-14",
+    "product": "Bio-Sensor",
+    "revenue": 482.43
+  },
+  {
+    "order_id": "J1051",
+    "order_date": "2024-03-14",
+    "product": "Bio-Sensor",
+    "revenue": 256.54
+  },
+  {
+    "order_id": "J1166",
+    "order_date": "2024-03-14",
+    "product": "Cloud Service",
+    "revenue": 397.59
+  },
+  {
+    "order_id": "J1054",
+    "order_date": "2024-03-14",
+    "product": "Neural Bridge",
+    "revenue": 93.89
+  },
+  {
+    "order_id": "J1141",
+    "order_date": "2024-03-14",
+    "product": "Quantum Core",
+    "revenue": 204.29
+  },
+  {
+    "order_id": "J1187",
+    "order_date": "2024-03-14",
+    "product": "Neural Bridge",
+    "revenue": 178.51
+  },
+  {
+    "order_id": "J1021",
+    "order_date": "2024-03-14",
+    "product": "Neural Bridge",
+    "revenue": 394.95
+  },
+  {
+    "order_id": "J1031",
+    "order_date": "2024-03-14",
+    "product": "Cloud Service",
+    "revenue": 66.69
+  },
+  {
+    "order_id": "J1001",
+    "order_date": "2024-03-14",
+    "product": "Smart Widget",
+    "revenue": 311.13
+  },
+  {
+    "order_id": "J1163",
+    "order_date": "2024-03-14",
+    "product": "Neural Bridge",
+    "revenue": 168.28
+  },
+  {
+    "order_id": "J1047",
+    "order_date": "2024-03-14",
+    "product": "Cloud Service",
+    "revenue": 199.03
+  },
+  {
+    "order_id": "J1096",
+    "order_date": "2024-03-14",
+    "product": "Neural Bridge",
+    "revenue": 196.5
+  },
+  {
+    "order_id": "J1156",
+    "order_date": "2024-03-14",
+    "product": "Bio-Sensor",
+    "revenue": 100.1
+  },
+  {
+    "order_id": "J1043",
+    "order_date": "2024-03-14",
+    "product": "Cloud Service",
+    "revenue": 63.41
+  },
+  {
+    "order_id": "J1124",
+    "order_date": "2024-03-14",
+    "product": "Smart Widget",
+    "revenue": 408.04
+  },
+  {
+    "order_id": "J1196",
+    "order_date": "2024-03-14",
+    "product": "Bio-Sensor",
+    "revenue": 490.14
+  },
+  {
+    "order_id": "J1006",
+    "order_date": "2024-03-14",
+    "product": "Smart Widget",
+    "revenue": 129.47
+  },
+  {
+    "order_id": "J1060",
+    "order_date": "2024-03-14",
+    "product": "Smart Widget",
+    "revenue": 252.9
+  },
+  {
+    "order_id": "J1013",
+    "order_date": "2024-03-14",
+    "product": "Bio-Sensor",
+    "revenue": 419.53
+  },
+  {
+    "order_id": "J1182",
+    "order_date": "2024-03-14",
+    "product": "Quantum Core",
+    "revenue": 216.45
+  },
+  {
+    "order_id": "J1072",
+    "order_date": "2024-03-14",
+    "product": "Cloud Service",
+    "revenue": 50.2
+  },
+  {
+    "order_id": "J1082",
+    "order_date": "2024-03-14",
+    "product": "Neural Bridge",
+    "revenue": 69.84
+  },
+  {
+    "order_id": "J1143",
+    "order_date": "2024-03-14",
+    "product": "Neural Bridge",
+    "revenue": 130.52
+  },
+  {
+    "order_id": "J1160",
+    "order_date": "2024-03-14",
+    "product": "Bio-Sensor",
+    "revenue": 103.09
+  },
+  {
+    "order_id": "J1013",
+    "order_date": "2024-03-14",
+    "product": "Bio-Sensor",
+    "revenue": 419.53
+  },
+  {
+    "order_id": "J1140",
+    "order_date": "2024-03-14",
+    "product": "Bio-Sensor",
+    "revenue": 381.52
+  },
+  {
+    "order_id": "J1155",
+    "order_date": "2024-03-14",
+    "product": "Smart Widget",
+    "revenue": 452.81
+  },
+  {
+    "order_id": "J1016",
+    "order_date": "2024-03-14",
+    "product": "Cloud Service",
+    "revenue": 57.54
+  },
+  {
+    "order_id": "J1108",
+    "order_date": "2024-03-14",
+    "product": "Cloud Service",
+    "revenue": 423.62
+  },
+  {
+    "order_id": "J1092",
+    "order_date": "2024-03-14",
+    "product": "Cloud Service",
+    "revenue": 166.99
+  },
+  {
+    "order_id": "J1186",
+    "order_date": "2024-03-14",
+    "product": "Bio-Sensor",
+    "revenue": 126.04
+  },
+  {
+    "order_id": "J1045",
+    "order_date": "2024-03-14",
+    "product": "Quantum Core",
+    "revenue": 68.6
+  },
+  {
+    "order_id": "J1110",
+    "order_date": "2024-03-14",
+    "product": "Bio-Sensor",
+    "revenue": 199.72
+  },
+  {
+    "order_id": "J1175",
+    "order_date": "2024-03-14",
+    "product": "Quantum Core",
+    "revenue": 380.45
+  },
+  {
+    "order_id": "J1178",
+    "order_date": "2024-03-14",
+    "product": "Neural Bridge",
+    "revenue": 233.92
+  },
+  {
+    "order_id": "J1155",
+    "order_date": "2024-03-14",
+    "product": "Smart Widget",
+    "revenue": 452.81
+  },
+  {
+    "order_id": "J1184",
+    "order_date": "2024-03-14",
+    "product": "Cloud Service",
+    "revenue": 75.17
+  },
+  {
+    "order_id": "J1129",
+    "order_date": "2024-03-14",
+    "product": "Quantum Core",
+    "revenue": 205.62
+  },
+  {
+    "order_id": "J1147",
+    "order_date": "2024-03-14",
+    "product": "Neural Bridge",
+    "revenue": 226.86
+  },
+  {
+    "order_id": "J1023",
+    "order_date": "2024-03-14",
+    "product": "Quantum Core",
+    "revenue": 239.02
+  },
+  {
+    "order_id": "J1129",
+    "order_date": "2024-03-14",
+    "product": "Quantum Core",
+    "revenue": 205.62
+  },
+  {
+    "order_id": "J1160",
+    "order_date": "2024-03-14",
+    "product": "Bio-Sensor",
+    "revenue": 103.09
+  },
+  {
+    "order_id": "J1049",
+    "order_date": "2024-03-14",
+    "product": "Quantum Core",
+    "revenue": 290.0
+  },
+  {
+    "order_id": "J1012",
+    "order_date": "2024-03-14",
+    "product": "Neural Bridge",
+    "revenue": 167.41
+  },
+  {
+    "order_id": "J1171",
+    "order_date": "2024-03-14",
+    "product": "Bio-Sensor",
+    "revenue": 431.02
+  },
+  {
+    "order_id": "J1116",
+    "order_date": "2024-03-14",
+    "product": "Bio-Sensor",
+    "revenue": 241.61
+  },
+  {
+    "order_id": "J1185",
+    "order_date": "2024-03-14",
+    "product": "Cloud Service",
+    "revenue": 129.05
+  },
+  {
+    "order_id": "J1031",
+    "order_date": "2024-03-14",
+    "product": "Cloud Service",
+    "revenue": 66.69
+  },
+  {
+    "order_id": "J1073",
+    "order_date": "2024-03-14",
+    "product": "Smart Widget",
+    "revenue": 188.97
+  },
+  {
+    "order_id": "J1135",
+    "order_date": "2024-03-14",
+    "product": "Quantum Core",
+    "revenue": 405.93
+  },
+  {
+    "order_id": "J1153",
+    "order_date": "2024-03-14",
+    "product": "Bio-Sensor",
+    "revenue": 309.61
+  },
+  {
+    "order_id": "J1103",
+    "order_date": "2024-03-14",
+    "product": "Quantum Core",
+    "revenue": 292.87
+  },
+  {
+    "order_id": "J1130",
+    "order_date": "2024-03-14",
+    "product": "Neural Bridge",
+    "revenue": 406.07
+  },
+  {
+    "order_id": "J1076",
+    "order_date": "2024-03-14",
+    "product": "Neural Bridge",
+    "revenue": 193.93
+  },
+  {
+    "order_id": "J1103",
+    "order_date": "2024-03-14",
+    "product": "Quantum Core",
+    "revenue": 292.87
+  },
+  {
+    "order_id": "J1114",
+    "order_date": "2024-03-14",
+    "product": "Bio-Sensor",
+    "revenue": 472.86
+  },
+  {
+    "order_id": "J1161",
+    "order_date": "2024-03-14",
+    "product": "Neural Bridge",
+    "revenue": 414.44
+  },
+  {
+    "order_id": "J1006",
+    "order_date": "2024-03-14",
+    "product": "Smart Widget",
+    "revenue": 129.47
+  },
+  {
+    "order_id": "J1083",
+    "order_date": "2024-03-14",
+    "product": "Smart Widget",
+    "revenue": 288.45
+  },
+  {
+    "order_id": "J1080",
+    "order_date": "2024-03-14",
+    "product": "Neural Bridge",
+    "revenue": 297.14
+  },
+  {
+    "order_id": "J1149",
+    "order_date": "2024-03-14",
+    "product": "Quantum Core",
+    "revenue": 402.3
+  },
+  {
+    "order_id": "J1089",
+    "order_date": "2024-03-14",
+    "product": "Smart Widget",
+    "revenue": 467.8
+  },
+  {
+    "order_id": "J1031",
+    "order_date": "2024-03-14",
+    "product": "Cloud Service",
+    "revenue": 66.69
+  },
+  {
+    "order_id": "J1074",
+    "order_date": "2024-03-14",
+    "product": "Quantum Core",
+    "revenue": 321.99
+  },
+  {
+    "order_id": "J1074",
+    "order_date": "2024-03-14",
+    "product": "Quantum Core",
+    "revenue": 321.99
+  },
+  {
+    "order_id": "J1117",
+    "order_date": "2024-03-14",
+    "product": "Cloud Service",
+    "revenue": 165.85
+  },
+  {
+    "order_id": "J1114",
+    "order_date": "2024-03-14",
+    "product": "Bio-Sensor",
+    "revenue": 472.86
+  },
+  {
+    "order_id": "J1186",
+    "order_date": "2024-03-14",
+    "product": "Bio-Sensor",
+    "revenue": 126.04
+  },
+  {
+    "order_id": "J1038",
+    "order_date": "2024-03-14",
+    "product": "Quantum Core",
+    "revenue": 298.28
+  },
+  {
+    "order_id": "J1180",
+    "order_date": "2024-03-14",
+    "product": "Bio-Sensor",
+    "revenue": 109.22
+  },
+  {
+    "order_id": "J1181",
+    "order_date": "2024-03-14",
+    "product": "Quantum Core",
+    "revenue": 388.55
+  },
+  {
+    "order_id": "J1076",
+    "order_date": "2024-03-14",
+    "product": "Neural Bridge",
+    "revenue": 193.93
+  },
+  {
+    "order_id": "J1171",
+    "order_date": "2024-03-14",
+    "product": "Bio-Sensor",
+    "revenue": 431.02
+  },
+  {
+    "order_id": "J1088",
+    "order_date": "2024-03-14",
+    "product": "Smart Widget",
+    "revenue": 179.13
+  },
+  {
+    "order_id": "J1120",
+    "order_date": "2024-03-14",
+    "product": "Bio-Sensor",
+    "revenue": 123.59
+  },
+  {
+    "order_id": "J1030",
+    "order_date": "2024-03-14",
+    "product": "Quantum Core",
+    "revenue": 75.81
+  },
+  {
+    "order_id": "J1168",
+    "order_date": "2024-03-14",
+    "product": "Smart Widget",
+    "revenue": 462.7
+  },
+  {
+    "order_id": "J1195",
+    "order_date": "2024-03-14",
+    "product": "Smart Widget",
+    "revenue": 189.8
+  },
+  {
+    "order_id": "J1079",
+    "order_date": "2024-03-14",
+    "product": "Quantum Core",
+    "revenue": 134.01
+  },
+  {
+    "order_id": "J1091",
+    "order_date": "2024-03-14",
+    "product": "Neural Bridge",
+    "revenue": 477.33
+  },
+  {
+    "order_id": "J1054",
+    "order_date": "2024-03-14",
+    "product": "Neural Bridge",
+    "revenue": 93.89
+  },
+  {
+    "order_id": "J1148",
+    "order_date": "2024-03-14",
+    "product": "Cloud Service",
+    "revenue": 227.59
+  },
+  {
+    "order_id": "J1049",
+    "order_date": "2024-03-14",
+    "product": "Quantum Core",
+    "revenue": 290.0
+  },
+  {
+    "order_id": "J1045",
+    "order_date": "2024-03-14",
+    "product": "Quantum Core",
+    "revenue": 68.6
+  },
+  {
+    "order_id": "J1088",
+    "order_date": "2024-03-14",
+    "product": "Smart Widget",
+    "revenue": 179.13
+  },
+  {
+    "order_id": "J1174",
+    "order_date": "2024-03-14",
+    "product": "Neural Bridge",
+    "revenue": 379.68
+  },
+  {
+    "order_id": "J1039",
+    "order_date": "2024-03-14",
+    "product": "Quantum Core",
+    "revenue": 200.2
+  },
+  {
+    "order_id": "J1121",
+    "order_date": "2024-03-14",
+    "product": "Smart Widget",
+    "revenue": 194.93
+  },
+  {
+    "order_id": "J1110",
+    "order_date": "2024-03-14",
+    "product": "Bio-Sensor",
+    "revenue": 199.72
+  },
+  {
+    "order_id": "J1166",
+    "order_date": "2024-03-14",
+    "product": "Cloud Service",
+    "revenue": 397.59
+  },
+  {
+    "order_id": "J1024",
+    "order_date": "2024-03-14",
+    "product": "Bio-Sensor",
+    "revenue": 349.08
+  }
+]

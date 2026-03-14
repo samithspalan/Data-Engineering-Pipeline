@@ -179,9 +179,9 @@ def _compute_medallion_realtime(input_path: str) -> tuple[pd.DataFrame, pd.DataF
                         temp_df.columns = first_row
                         temp_df = temp_df.iloc[1:].reset_index(drop=True)
                     else:
-                        canonical = ["order_id", "customer_id", "product", "unit_price", "quantity", "order_date"]
-                        if len(first_row) < 3:
-                            raise ValueError(f"Inconsistent columns: Expected at least 3, found {len(first_row)}")
+                        canonical = ["order_id", "order_date", "product", "revenue"]
+                        if len(first_row) < 2:
+                            raise ValueError(f"Inconsistent columns: Expected at least 2 (order_id, order_date), found {len(first_row)}")
                         num_cols = len(canonical)
                         temp_df = temp_df.iloc[:, :num_cols]
                         actual_cols = temp_df.shape[1]
@@ -208,7 +208,8 @@ def _compute_medallion_realtime(input_path: str) -> tuple[pd.DataFrame, pd.DataF
                 "product_name": "product",
                 "date": "order_date",
                 "event_timestamp": "order_date",
-                "id": "order_id"
+                "id": "order_id",
+                "name": "product"
             }
             temp_df.rename(columns=rename_map, inplace=True)
 
@@ -241,7 +242,7 @@ def _compute_medallion_realtime(input_path: str) -> tuple[pd.DataFrame, pd.DataF
     bronze_rt = pd.concat(dfs, ignore_index=True, sort=False)
 
     # Silver is the Cleaned version: Deduplicated on order_id
-    dedupe_cols = [c for c in ["order_id", "order_date", "customer_id"] if c in bronze_rt.columns]
+    dedupe_cols = [c for c in ["order_id", "order_date"] if c in bronze_rt.columns]
     silver_rt = bronze_rt.drop_duplicates(subset=dedupe_cols or None, keep="first").copy()
     silver_rt["processing_timestamp"] = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
     
@@ -601,18 +602,19 @@ def build_validation_frame(bronze_df: pd.DataFrame, silver_df: pd.DataFrame, fil
         checks.append(file_issues_df)
 
     # 1. Check for Duplicate IDs (with occurrence counting)
-    if not bronze_df.empty and "order_id" in bronze_df.columns:
-        # Group by order_id to see how many times each exists
-        counts = bronze_df["order_id"].value_counts().reset_index()
-        counts.columns = ["order_id", "Occurrences"]
+    id_col = "order_id" if "order_id" in bronze_df.columns else "id"
+    if not bronze_df.empty and id_col in bronze_df.columns:
+        # Group by ID to see how many times each exists
+        counts = bronze_df[id_col].value_counts().reset_index()
+        counts.columns = [id_col, "Occurrences"]
         
         # Only take IDs that appear more than once
         dups_ref = counts[counts["Occurrences"] > 1]
         
         if not dups_ref.empty:
             # Join back to get the sample row data
-            dup_rows = bronze_df[bronze_df["order_id"].isin(dups_ref["order_id"])].drop_duplicates(subset=["order_id"])
-            dup_merged = dup_rows.merge(dups_ref, on="order_id")
+            dup_rows = bronze_df[bronze_df[id_col].isin(dups_ref[id_col])].drop_duplicates(subset=[id_col])
+            dup_merged = dup_rows.merge(dups_ref, on=id_col)
             dup_merged["Reason"] = dup_merged.apply(
                 lambda x: f"Duplicate Error: Found {x['Occurrences']} entries for this ID. {x['Occurrences']-1} will be filtered.", axis=1
             )
@@ -620,7 +622,7 @@ def build_validation_frame(bronze_df: pd.DataFrame, silver_df: pd.DataFrame, fil
 
     # 2. Check for Missing/Incomplete Data
     if not bronze_df.empty:
-        critical_cols = ["order_id", "order_date"]
+        critical_cols = ["id", "name", "order_id", "order_date"]
         for col in critical_cols:
             if col in bronze_df.columns:
                 null_mask = bronze_df[col].isna() | (bronze_df[col].astype(str) == "nan") | (bronze_df[col].astype(str) == "")
@@ -953,12 +955,7 @@ def render_dashboard_home() -> None:
     st.markdown("---")
     colA, colB = st.columns([2, 1])
     with colA:
-        st.success(f"""
-        ⚡ **Partition Pruning in Action!**  
-        Instead of a full table scan of **{total_partitions}** physical folders, 
-        the engine is pulling directly from just **{partitions_scanned}** specific `order_date=` partition(s).  
-        **Saved Reading {100 - scan_percentage:.1f}% of Disk Space!**
-        """)
+        st.write("") # Keep the column structure but remove the message
     with colB:
         st.metric("Total Living Orders (Filtered)", f"{total_orders:,}")
     st.markdown("---")
