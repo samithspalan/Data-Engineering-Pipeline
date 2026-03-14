@@ -1,51 +1,99 @@
-# Data-Engineering-Pipeline
-This project is about an End to End Data Engineering Pipeline using Apache Spark and Apache Airflow where raw data is processed, transformed, and stored in Delta format.
+# 🚀 Medallion Architecture Data Pipeline with Delta Lake & Streamlit
 
-## Run Dashboard
+An enterprise-grade, event-driven data engineering pipeline implementing the **Medallion Architecture (Bronze → Silver → Gold)**. This project leverages **Apache Spark** for processing, **Delta Lake** for ACID transactions and Time-Travel, **Apache Airflow** for orchestration, and **Streamlit** for real-time monitoring and Root-Cause Analysis (RCA).
 
-1. Activate the project environment and install dependencies:
+---
 
+## 🏗️ Architecture Overview
+
+The pipeline processes raw CSV and JSON data through three distinct layers:
+1.  **Bronze (Raw)**: Captures incoming raw data in its original form.
+2.  **Silver (Validated)**: Cleans, deduplicates, and enforces data quality checks. Rejected records are redirected to a **Quarantine** table.
+3.  **Gold (Aggregated)**: Stores business-level aggregates (Daily orders, growth metrics) optimized for ultra-fast dashboarding.
+
+---
+
+## ✨ Key Features built
+
+### 📊 Real-Time Analytics Dashboard
+- **Live Heartbeat**: 1-second auto-refresh engine for zero-latency monitoring.
+- **Dynamic Funnel**: Visualizes the flow from Bronze through Rejections to Silver using interactive donut charts.
+- **Business Intelligence**: Month-on-Month (MoM) order growth tracking with automated percentage calculations.
+- **Partition Pruning Simulation**: Interactive UI to demonstrate Spark's performance optimization by selectively scanning partition folders.
+
+### 🕒 Delta Lake Time-Travel & Audit
+- **Pipeline Update History**: A full-width stacked bar chart tracking the last 5 updates.
+- **Quality Evolution**: Side-by-side comparison of **Silver (Clean)** vs **Quarantine (Rejected)** records across versions.
+- **Rollback Demonstration**: Explained workflows for using `versionAsOf` to debug data drift and perform zero-copy restores.
+
+### 🛠️ Advanced Root-Cause Analysis (RCA) [Diagnostic Tab]
+- **Trend Visualization**: High-level line charts for Row Counts, DQ Scores, and Rejection Ratios.
+- **Column-Level Diagnostics**: Automated null-checks, uniqueness analysis, and record sampling for any historical version.
+- **Record Inspection**: Side-by-side data frames showing Valid records vs Rejected records (with specific rejection reasons) for auditability.
+
+### 🤖 Intelligent Orchestration & Alerts
+- **Hybrid Scheduling**: Supports both Daily Batch (Scheduled) and Event-Driven (polling `data/input`) triggers using Airflow.
+- **Automated Notifications**: Integrated **Resend API** for email alerts on pipeline Success/Failure.
+- **Error Handling**: Dedicated callbacks and quality logs stored in `quality_report.json`.
+
+---
+
+## 🛠️ Installation & Setup
+
+### 1. Prerequisites
+- **Python 3.10+**
+- **Java JDK 17** (Required for Apache Spark)
+- **Hadoop Winutils** (If running on Windows)
+
+### 2. Environment Setup
+Clone the repository and set up a virtual environment:
 ```powershell
+# Create and activate environment
+python -m venv .venv
 .\.venv\Scripts\Activate.ps1
+
+# Install dependencies
 pip install -r requirements.txt
 ```
 
-2. Start Streamlit:
+### 3. Configuration
+Create a `.env` file in the root directory (refer to `.env.example`):
+```env
+RESEND_API_KEY=your_api_key_here
+OWNER_EMAIL=your_email@example.com
+```
 
+### 4. Running the Project
+
+#### 🚀 Launch the Dashboard
 ```powershell
 streamlit run dashboard.py
 ```
 
-## Windows Spark Notes
+#### ⚙️ Execute Spark Job (Local)
+```powershell
+spark-submit spark_jobs/medallion_pipeline.py
+```
 
-For local PySpark on Windows, both Java and Hadoop WinUtils are required.
-
-1. Use JDK 17 and set `JAVA_HOME`.
-2. Ensure `HADOOP_HOME` points to a folder that contains `bin\winutils.exe`.
-3. Optional project-local layout supported by the dashboard: `.hadoop\bin\winutils.exe`.
-
-If `winutils.exe` is missing, the dashboard falls back to a native Python Delta reader (`deltalake`) when dependencies are installed.
-
-If local Spark setup is not available, run Spark jobs with Docker:
-
+#### 🐳 Docker Execution (Spark-only)
 ```powershell
 docker compose run --rm spark /opt/spark/bin/spark-submit /spark_jobs/medallion_pipeline.py
 ```
 
-## Airflow DAGs
+---
 
-Airflow DAG definitions are in `dags/pyspark_pipeline_dags.py`:
+## 📁 Project Structure
+- `dashboard.py`: Main Streamlit application with live analytics and RCA.
+- `spark_jobs/`: PySpark implementation of the Medallion architecture.
+- `dags/`: Airflow DAG definitions for scheduled and event-driven runs.
+- `data/`: Local storage for Delta tables (Bronze, Silver, Gold, Quarantine).
+- `utils/`: Helper modules for notifications and pipeline status.
 
-1. `daily_pyspark_pipeline`
-- Runs every day at 5AM using cron: `0 5 * * *`
-- Flow: `log_pipeline_start` -> `run_process_data` -> `log_pipeline_finish`
+---
 
-2. `event_driven_pyspark_pipeline`
-- Polls for new files with `FileSensor`
-- Flow: `detect_new_input_file` -> `log_pipeline_start` -> `run_process_data` -> `log_pipeline_finish`
-
-Notes:
-- Spark task retries are enabled (`retries=2`, `retry_delay=5 minutes`).
-- Failures are logged by a dedicated `on_failure_callback`.
-- `run_process_data` uses `BashOperator` and executes `process_data.py` via `spark-submit`.
-- Configure Airflow connection `fs_default` so the FileSensor can resolve `/data/input/*`.
+## 🔍 Auditing & Debugging
+To inspect a specific historical state of the Silver table via Spark:
+```python
+df = spark.read.format("delta").option("versionAsOf", 5).load("data/silver")
+```
+Rejections can be found in `data/quarantine` with the `rejection_reason` column explaining why the record failed validation.
