@@ -1,3 +1,0 @@
-order_id,customer_id,product_name,unit_price,quantity,order_date
-999,,Broken Product,-50,0,invalid-date
-1000,500,Good Product,25.99,1,2026-03-30
