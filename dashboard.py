@@ -480,12 +480,67 @@ def inject_shared_styles() -> None:
         [data-testid="stAppViewContainer"] { background-color: #0f172a; color: #e2e8f0; }
         [data-testid="stHeader"] { background-color: rgba(15, 23, 42, 0.9); }
         h1, h2, h3, h4, p, span, div { color: #e2e8f0 !important; }
-        .top-nav-wrap {
-            border-radius: 14px;
-            padding: 0.7rem 0.9rem;
-            margin-bottom: 0.8rem;
-            border: 1px solid rgba(14, 165, 233, 0.25);
-            background: linear-gradient(90deg, rgba(14,165,233,0.12), rgba(34,197,94,0.12));
+        .top-nav-placeholder {
+            height: 80px;
+        }
+
+        /* Navbar Background / Transparent Header */
+        [data-testid="stHeader"] {
+            background-color: transparent !important;
+            backdrop-filter: none !important;
+        }
+
+        /* Premium Fixed Centered Navbar */
+        div[data-testid="stRadio"] {
+            position: fixed !important;
+            top: 15px !important;
+            left: 50% !important;
+            transform: translateX(-50%) !important;
+            z-index: 1000000 !important;
+            background: rgba(15, 23, 42, 0.65) !important;
+            backdrop-filter: blur(18px) !important;
+            border: 1px solid rgba(148, 163, 184, 0.2) !important;
+            border-radius: 50px !important;
+            padding: 6px 24px !important;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5) !important;
+            width: auto !important;
+        }
+
+        /* Hide radio dots and style labels as nav items */
+        div[data-testid="stRadio"] [role="radiogroup"] {
+            gap: 12px !important;
+            background: transparent !important;
+        }
+
+        div[data-testid="stRadio"] [role="radiogroup"] label {
+            background: transparent !important;
+            padding: 8px 18px !important;
+            border-radius: 30px !important;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+            color: #94a3b8 !important;
+        }
+
+        div[data-testid="stRadio"] [role="radiogroup"] label:hover {
+            background: rgba(14, 165, 233, 0.12) !important;
+            color: #e2e8f0 !important;
+        }
+
+        /* Hide the dot/circle */
+        div[data-testid="stRadio"] [data-testid="stMarker"] {
+            display: none !important;
+        }
+
+        /* Active/Selected State Styling */
+        div[data-testid="stRadio"] [role="radiogroup"] label:has(input:checked) {
+            background: linear-gradient(135deg, rgba(14, 165, 233, 0.25), rgba(34, 197, 94, 0.25)) !important;
+            border: 1px solid rgba(14, 165, 233, 0.5) !important;
+            box-shadow: 0 0 15px rgba(14, 165, 233, 0.2) !important;
+        }
+
+        div[data-testid="stRadio"] [role="radiogroup"] label:has(input:checked) p {
+            color: #38bdf8 !important;
+            font-weight: 700 !important;
+            letter-spacing: 0.3px !important;
         }
 
         .flow-card {
@@ -545,7 +600,8 @@ def inject_shared_styles() -> None:
 
 
 def render_top_nav() -> str:
-    st.markdown('<div class="top-nav-wrap"><strong>Navigation</strong></div>', unsafe_allow_html=True)
+    # Empty placeholder to push the main content down from the fixed navbar
+    st.markdown('<div class="top-nav-placeholder"></div>', unsafe_allow_html=True)
     return st.radio(
         "Select view",
         ["Dashboard", "Bronze -> Validation -> Silver", "Quality Report"],
@@ -1014,10 +1070,24 @@ def render_dashboard_home() -> None:
     min_date = unique_dates[0]
     max_date = unique_dates[-1]
     
+    # Filter for 2026 by default if data exists
+    from datetime import date
+    year_2026_start = date(2026, 1, 1)
+    year_2026_end = date(2026, 12, 31)
+    
+    d_start = max(min_date, year_2026_start)
+    d_end = min(max_date, year_2026_end)
+    
+    if d_start > d_end:
+        # No 2026 data, fallback to full range
+        default_val = (min_date, max_date)
+    else:
+        default_val = (d_start, d_end)
+    
     # Let user select a date range
     selected_dates = st.date_input(
         "Select Date Range (Simulates reading specific partition folders):",
-        value=(min_date, max_date),
+        value=default_val,
         min_value=min_date,
         max_value=max_date
     )
