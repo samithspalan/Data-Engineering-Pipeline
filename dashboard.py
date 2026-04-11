@@ -1812,7 +1812,6 @@ def render_email_sidebar() -> None:
 
 def render_dashboard() -> None:
     inject_shared_styles()
-    render_email_sidebar()
     current_view = render_top_nav()
 
     if current_view == "Dashboard":
